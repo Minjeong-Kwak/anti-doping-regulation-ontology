@@ -75,8 +75,7 @@ CASES = {
    samples=[("A", "A1164806")],
    lab=None,
    analysis=dict(sample="A", method=None,
-     quote="The laboratory test report for the A Sample was provided to UKAD on 1 March 2022",
-     date="2022-03-01"),
+     quote="The laboratory test report for the A Sample was provided to UKAD on 1 March 2022"),
    finding=dict(substance="Substance_Oxymetholone_Methasterone_LTM", value=None, unit=None,
      quote="It revealed that it contained a small quantity of the Metabolite"),
    list_edition=None,
@@ -126,10 +125,9 @@ CASES = {
      context="CompetitionContext_InCompetition",
      context_quote="the sample was given at the Kansas Relays"),
    samples=[("A", "496040")],
-   sample_note="The award prints the specimen number as 4960404 where the sample is first "
-               "identified and as 496040 in the four following paragraphs. Both forms are "
-               "recorded; neither is asserted as the correct one.",
-   sample_alt="4960404",
+   sample_note="The award prints the specimen number as 4960404 once, where the sample is "
+               "first identified, and as 496040 in every later mention. The form printed "
+               "once is read as a misprint and is not recorded as an identifier.",
    lab=("UCLA_Laboratory", "World Anti-Doping Agency accredited laboratory at the "
         "University of California in Los Angeles",
      "the chain of custody for USADA specimen number 496040 from the time of collection "
@@ -256,9 +254,8 @@ def main(out, report):
             o.append(f'adro:SamplePortion_{case}_{kind} a adro:SamplePortion ;\n'
                      f'    rdfs:label "{kind} portion {num} in {src}"@en ;\n'
                      f'    adro:hasSampleIdentifier "{num}" ;\n')
-            if kind == "A" and d.get("sample_alt"):
-                o.append(f'    adro:hasSampleIdentifier "{d["sample_alt"]}" ;\n'
-                         f'    rdfs:comment "{esc(d["sample_note"])}"@en ;\n')
+            if kind == "A" and d.get("sample_note"):
+                o.append(f'    rdfs:comment "{esc(d["sample_note"])}"@en ;\n')
             o.append(f'    adro:concernsCase adro:CaseRecord_{case} ;\n'
                      f'    obo:IAO_0000119 "{src}" .\n\n')
 

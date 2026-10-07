@@ -11,8 +11,8 @@ Generated from the files by `scripts/build_documentation.py`.
 | data properties | 20 |
 | named individuals | 1765 |
 | decisions | 220 |
-| triples, summed over the modules | 11268 |
-| triples, `dist/adro-full.ttl` | 11235 |
+| triples, summed over the modules | 11266 |
+| triples, `dist/adro-full.ttl` | 11233 |
 | classes with a definition | 57 of 57 |
 | properties with a definition | 64 of 64 |
 
@@ -26,7 +26,7 @@ Generated from the files by `scripts/build_documentation.py`.
 | `doping-ontology-analytes.ttl` | 47 |
 | `doping-ontology-cases-cas.ttl` | 3459 |
 | `doping-ontology-cases-national.ttl` | 354 |
-| `doping-ontology-procedure.ttl` | 402 |
+| `doping-ontology-procedure.ttl` | 400 |
 
 The two totals differ. A triple stated in two modules is one triple once they are merged, and the release carries one ontology header in place of the seven the modules carry. The summed figure is what this table adds up to; the release figure is what a reviewer who opens `dist/adro-full.ttl` will count. Cite whichever is meant.
 

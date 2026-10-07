@@ -6989,7 +6989,6 @@ adro:LaboratoryAnalysis_NADP_SR_056_2022 a adro:LaboratoryAnalysis ;
     obo:IAO_0000119 "National Anti-Doping Panel (United Kingdom) SR/056/2022" ;
     rdfs:comment "As stated in National Anti-Doping Panel (United Kingdom) SR/056/2022: The laboratory test report for the A Sample was provided to UKAD on 1 March 2022."@en ;
     adro:concernsCase adro:CaseRecord_NADP_SR_056_2022 ;
-    adro:hasAnalysisDateTime "2022-03-01T00:00:00"^^xsd:dateTime ;
     adro:hasSpecifiedInput adro:SamplePortion_NADP_SR_056_2022_A,
         adro:Sample_NADP_SR_056_2022 ;
     adro:hasSpecifiedOutput adro:Finding_NADP_SR_056_2022 .
@@ -11697,10 +11696,9 @@ adro:ProhibitedListEdition a owl:Class ;
 adro:SamplePortion_AAA_30_190_00170_07_A a adro:SamplePortion ;
     rdfs:label "A portion 496040 in American Arbitration Association case 30 190 00170 07"@en ;
     obo:IAO_0000119 "American Arbitration Association case 30 190 00170 07" ;
-    rdfs:comment "The award prints the specimen number as 4960404 where the sample is first identified and as 496040 in the four following paragraphs. Both forms are recorded; neither is asserted as the correct one."@en ;
+    rdfs:comment "The award prints the specimen number as 4960404 once, where the sample is first identified, and as 496040 in every later mention. The form printed once is read as a misprint and is not recorded as an identifier."@en ;
     adro:concernsCase adro:CaseRecord_AAA_30_190_00170_07 ;
-    adro:hasSampleIdentifier "496040",
-        "4960404" .
+    adro:hasSampleIdentifier "496040" .
 
 adro:SamplePortion_AAA_30_190_00847_06_A a adro:SamplePortion ;
     rdfs:label "A portion 995474 in American Arbitration Association case 30 190 00847 06"@en ;

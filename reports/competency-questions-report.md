@@ -32,13 +32,13 @@ The corpus of decisions is not exhaustive, so no question asks what is most freq
 | **B12** Which persons does a decision identify as athlete support personnel, and on what wording? | 3 | 3 | 3 | none |
 | **B13** Which grounds did a decision record as raised, and did it establish them? | 4 | 4 | 4 | none |
 | **B14** Which matters fell under a given jurisdiction, and where was the decision obtained? | 4 | 4 | 4 | none |
-| **C1** For a given matter, what is the order of events from collection to decision, with the dates the decision states? | 16 | 16 | 16 | none |
-| **C2** From whom was a given sample collected? | 0 | 0 | 6 | chain |
+| **C1** For a given matter, what is the order of events from collection to decision, with the dates the decision states? | 15 | 15 | 15 | none |
+| **C2** From whom was a given sample collected? | 0 | 0 | 5 | chain |
 | **C3** Which person does a given adverse analytical finding concern? | 0 | 0 | 4 | chain |
 | **C4** Which laboratory analysed the sample in a given matter, and by what method? | 3 | 3 | 3 | none |
 | **C5** Which matters record a provisional suspension, and does the period of ineligibility run from that date? | 2 | 2 | 2 | none |
 | **C6** Which document opened a given proceeding, and when? | 4 | 4 | 4 | none |
-| **C7** What portions does a sample have, what reference does each carry, and which portion was analysed? | 6 | 6 | 6 | none |
+| **C7** What portions does a sample have, what reference does each carry, and which portion was analysed? | 5 | 5 | 5 | none |
 | **D1** For a given individual in the procedural layer, which decision states it, and by what identifier can that decision be retrieved? | 86 | 86 | 86 | none |
 | **D2** Which decisions in the register carry no link to a substance? | 6 | 75 | 75 | subclass |
 | **D3** Is there a decision stating that a given person held no exemption for a named substance, and which substance is it? | 1 | 1 | 1 | none |
@@ -84,13 +84,13 @@ None.
 | **B12** | a deciding body or a researcher | establish who a decision treated as support personnel | `AthleteSupportPersonnelRole`, `Person`, `bearerOfRole` | 3 | none |
 | **B13** | a deciding body | see which grounds were raised and which were established | `acceptsGround`, `hasCaseIdentifier`, `raisesGround` | 4 | none |
 | **B14** | a reviewer checking provenance | establish the jurisdiction of a matter and retrieve the decision | `CaseRecord`, `concernsJurisdiction`, `hasCaseIdentifier`, `hasRetrievalDate`, `hasSourceURL` | 4 | none |
-| **C1** | a results manager or a reviewer | reconstruct the order of events in a matter | `Hearing`, `LaboratoryAnalysis`, `NotificationOfCharge`, `SampleCollection`, `concernsCase`, `hasAnalysisDateTime`, `hasCaseIdentifier`, `hasCollectionDateTime` … | 16 | none |
-| **C2** | a results manager | establish from whom a sample was taken | `UrineSample`, `collectedFrom`, `hasPortion`, `hasSampleIdentifier` | 6 | chain |
+| **C1** | a results manager or a reviewer | reconstruct the order of events in a matter | `Hearing`, `LaboratoryAnalysis`, `NotificationOfCharge`, `SampleCollection`, `concernsCase`, `hasAnalysisDateTime`, `hasCaseIdentifier`, `hasCollectionDateTime` … | 15 | none |
+| **C2** | a results manager | establish from whom a sample was taken | `UrineSample`, `collectedFrom`, `hasPortion`, `hasSampleIdentifier` | 5 | chain |
 | **C3** | a results manager | establish whom an analytical finding concerns | `AdverseAnalyticalFinding`, `concernsPerson` | 4 | chain |
 | **C4** | a reviewer checking an analysis | establish which laboratory analysed a sample and how | `Laboratory`, `LaboratoryAnalysis`, `concernsCase`, `hasAnalyticalMethod`, `hasCaseIdentifier` | 3 | none |
 | **C5** | an athlete or a federation | check whether ineligibility runs from the provisional suspension | `IneligibilityStatus`, `ProvisionalSuspensionStatus`, `concernsCase`, `establishes`, `hasCaseIdentifier`, `hasEffectiveFrom` | 2 | none |
 | **C6** | a reviewer | establish the document on which a proceeding was opened | `hasIssueDateTime`, `initiatedBy` | 4 | none |
-| **C7** | a reviewer checking an analysis | establish which portion of a sample was analysed | `LaboratoryAnalysis`, `UrineSample`, `concernsCase`, `hasCaseIdentifier`, `hasPortion`, `hasSampleIdentifier`, `hasSpecifiedInput` | 6 | none |
+| **C7** | a reviewer checking an analysis | establish which portion of a sample was analysed | `LaboratoryAnalysis`, `UrineSample`, `concernsCase`, `hasCaseIdentifier`, `hasPortion`, `hasSampleIdentifier`, `hasSpecifiedInput` | 5 | none |
 | **D1** | a reviewer | retrieve the decision behind any assertion |  | 86 | none |
 | **D2** | a reviewer or a curator | find the matters that turn on conduct rather than a substance | `Decision`, `hasCaseIdentifier`, `mentions` | 75 | subclass |
 | **D3** | a deciding body | establish whether an exemption was recorded as absent | `ExemptionStatus`, `Person`, `bearerOfRole`, `exemptionFor` | 1 | none |
@@ -127,9 +127,9 @@ Which categories does a given category fall under, directly or through an interv
 
 Which substances does the List prohibit only above a stated decision limit, in what unit and in which specimen is that limit stated?
 
-- Cathine · reporting threshold for Cathine in urine, 2026 Prohibited List · 5.0 · microgram per millilitre · urine
-- Ephedrine · reporting threshold for Ephedrine in urine, 2026 Prohibited List · 10.0 · microgram per millilitre · urine
-- Formoterol · reporting threshold for Formoterol in urine, 2026 Prohibited List · 40.0 · nanogram per millilitre · urine
+- Cathine · reporting threshold for Cathine in urine, 2026 Prohibited List · 5 · microgram per millilitre · urine
+- Ephedrine · reporting threshold for Ephedrine in urine, 2026 Prohibited List · 10 · microgram per millilitre · urine
+- Formoterol · reporting threshold for Formoterol in urine, 2026 Prohibited List · 40 · nanogram per millilitre · urine
 
 ### A5
 
@@ -143,16 +143,16 @@ For which substances does the List confine the prohibition to a stated route of 
 
 Which provisions of instruments other than the Code restate a given Code article, and in which instrument does each sit?
 
-- UK Anti-Doping Rules 2021, Article 2.2 · UK Anti-Doping Rules, 1 January 2021 · World Anti-Doping Code 2021, Article 2.2
 - UK Anti-Doping Rules 2021, Article 2.1 · UK Anti-Doping Rules, 1 January 2021 · World Anti-Doping Code 2021, Article 2.1
+- UK Anti-Doping Rules 2021, Article 2.2 · UK Anti-Doping Rules, 1 January 2021 · World Anti-Doping Code 2021, Article 2.2
 - Code du sport, article L. 232-9 · Code du sport (France) · World Anti-Doping Code 2021, Article 2.1
 
 ### A7
 
 Which governing body takes over another instrument in place of stating its own rules?
 
-- Anti-Doping Rules of the British Boxing Board of Control · UK Anti-Doping Rules, 1 January 2021
 - Anti-Doping Rules of the Rugby Football League · UK Anti-Doping Rules, 1 January 2021
+- Anti-Doping Rules of the British Boxing Board of Control · UK Anti-Doping Rules, 1 January 2021
 
 ### A8
 
@@ -175,8 +175,8 @@ What do the instruments provide about an exemption, and which exemption decision
 Within which jurisdiction does a given instrument bind, and on what scope provision?
 
 - Code du sport (France) · France · As stated in Code du sport, article L. 230-3: For the purposes of the title on the fight against doping, an athlete is any person who takes part in or prepares for a sporting event organised by an approved federation or authorised by a delegated federation, a sporting event at which prizes are awarded, or an international sporting event or one within the competence of an anti-doping organisation that is a signatory of the World Anti-Doping Code.
+- UK Anti-Doping Rules, 1 January 2021 · United Kingdom · As stated in UK Anti-Doping Rules 2021, Article 1.2: These Rules apply to all Athletes and Athlete Support Personnel who are members of the NGB and/or of the NGB's members or affiliate organisations or licensees, or otherwise under the jurisdiction of the NGB.
 - Anti-Doping Rules of the British Boxing Board of Control · United Kingdom · As stated in UK Anti-Doping Rules 2021, Article 1.2: These Rules apply to all Athletes and Athlete Support Personnel who are members of the NGB and/or of the NGB's members or affiliate organisations or licensees, or otherwise under the jurisdiction of the NGB.
-- Anti-Doping Rules of the Rugby Football League · United Kingdom · As stated in UK Anti-Doping Rules 2021, Article 1.2: These Rules apply to all Athletes and Athlete Support Personnel who are members of the NGB and/or of the NGB's members or affiliate organisations or licensees, or otherwise under the jurisdiction of the NGB.
 
 ### A11
 
@@ -192,7 +192,7 @@ What does Article 2.1 cover besides the substance itself, and which such analyte
 
 - metabolite · 17a-hydroxymethyl-17β-methyl-18-nor-2-oxa-5a-androst-13-en-3-one · Oxandrolone
 - metabolite · 17β-hydroxymethyl,17α-methyl-18-norandrost-1,4,13-trien-3-one · Metandienone
-- metabolite · 18-nor-17β-hydroxymethyl-17α-methyl-2α-methyl-5α-androst-13-en-3-one · Methasterone
+- metabolite · 18-nor-17β-hydroxymethyl-17α-methyl-2α-methyl-5α-androst-13-en-3-one · Oxymetholone
 
 ### B1
 
@@ -206,16 +206,16 @@ Which decisions determine a given violation type, and under which provision was 
 
 Which decision does a given appeal reconsider, which body issued each, and did the appeal change the period of ineligibility?
 
-- CAS 2007/A/1394 · Court of Arbitration for Sport · AAA Case No. 30 190 00847 06 · North American Court of Arbitration for Sport Panel of the American Arbitration Association · None · 24.0
-- CAS 2008/A/1461 · Court of Arbitration for Sport · AAA No. 30 190 00170 07 · North American Court of Arbitration for Sport Panel of the American Arbitration Association · None · 48.0
-- CAS 2008/A/1462 · Court of Arbitration for Sport · AAA No. 30 190 00170 07 · North American Court of Arbitration for Sport Panel of the American Arbitration Association · None · 48.0
+- SR/389/2024 · National Anti-Doping Panel Appeal Tribunal (United Kingdom) · SR/007/2023 · National Anti-Doping Panel (United Kingdom) · 48 · 48
+- SR/015/2023 · National Anti-Doping Panel Appeal Tribunal (United Kingdom) · SR/056/2022 · National Anti-Doping Panel (United Kingdom) · 48 · 48
+- CAS 2007/A/1394 · Court of Arbitration for Sport · AAA Case No. 30 190 00847 06 · North American Court of Arbitration for Sport Panel of the American Arbitration Association · None · 24
 
 ### B3
 
 Which decisions name an analyte that is a metabolite rather than a listed substance, and what substance does it derive from?
 
-- CAS 2006/A/1130 · Methylecgonine · Cocaine
 - CAS 2006/A/1130 · Benzoylecgonine · Cocaine
+- CAS 2006/A/1130 · Methylecgonine · Cocaine
 - CAS 2006/A/1153 · 19-Norandrosterone · Nandrolone
 
 ### B4
@@ -230,17 +230,17 @@ Which decisions rest on more than one listed substance?
 
 Which decisions determine more than one violation type on the same matter?
 
-- SR/389/2024 · 2
-- SR/007/2023 · 2
 - CAS 2018/A/6047 · 2
+- SR/007/2023 · 2
+- SR/389/2024 · 2
 
 ### B6
 
 For a given matter, what consequence was established, for how long, and over which interval?
 
-- AAA Case No. 30 190 00847 06 · disqualification · 24.0 · 2007-01-30T00:00:00 · 2009-01-29T00:00:00
-- AAA Case No. 30 190 00847 06 · period of ineligibility · 24.0 · 2007-01-30T00:00:00 · 2009-01-29T00:00:00
-- AAA No. 30 190 00170 07 · disqualification · 48.0 · None · None
+- AAA Case No. 30 190 00847 06 · period of ineligibility · 24 · 2007-01-30T00:00:00 · 2009-01-29T00:00:00
+- AAA Case No. 30 190 00847 06 · disqualification · 24 · 2007-01-30T00:00:00 · 2009-01-29T00:00:00
+- AAA No. 30 190 00170 07 · period of ineligibility · 48 · None · None
 
 ### B7
 
@@ -319,24 +319,24 @@ For a given matter, what is the order of events from collection to decision, wit
 From whom was a given sample collected?
 
 - 496040 · Justin Gatlin
-- 4960404 · Justin Gatlin
 - 995474 · Floyd Landis
+- A1164806 · Rowland Kaye
 
 ### C3
 
 Which person does a given adverse analytical finding concern?
 
-- adverse analytical finding in American Arbitration Association case 30 190 00170 07 · Justin Gatlin
-- adverse analytical finding in American Arbitration Association case 30 190 00847 06 · Floyd Landis
 - adverse analytical finding in National Anti-Doping Panel (United Kingdom) SR/007/2023 · Emir Ahmatovic
+- adverse analytical finding in National Anti-Doping Panel (United Kingdom) SR/056/2022 · Rowland Kaye
+- adverse analytical finding in American Arbitration Association case 30 190 00847 06 · Floyd Landis
 
 ### C4
 
 Which laboratory analysed the sample in a given matter, and by what method?
 
-- AAA No. 30 190 00170 07 · World Anti-Doping Agency accredited laboratory at the University of California in Los Angeles · carbon isotope ratio analysis
-- AAA Case No. 30 190 00847 06 · Laboratoire National de Dépistage du Dopage · carbon isotope ratio analysis
 - SR/007/2023 · Drug Control Centre, King's College London · None
+- AAA Case No. 30 190 00847 06 · Laboratoire National de Dépistage du Dopage · carbon isotope ratio analysis
+- AAA No. 30 190 00170 07 · World Anti-Doping Agency accredited laboratory at the University of California in Los Angeles · carbon isotope ratio analysis
 
 ### C5
 
@@ -359,14 +359,14 @@ What portions does a sample have, what reference does each carry, and which port
 
 - AAA Case No. 30 190 00847 06 · 995474 · true
 - AAA No. 30 190 00170 07 · 496040 · true
-- AAA No. 30 190 00170 07 · 4960404 · true
+- SR/007/2023 · A1182501 · true
 
 ### D1
 
 For a given individual in the procedural layer, which decision states it, and by what identifier can that decision be retrieved?
 
 - https://w3id.org/adro/Substance_Oxandrolone_LTM · Agence française de lutte contre le dopage D. 2025-01
-- https://w3id.org/adro/LaboratoryAnalysis_AAA_30_190_00170_07 · American Arbitration Association case 30 190 00170 07
+- https://w3id.org/adro/Person_Justin_Gatlin · American Arbitration Association case 30 190 00170 07
 - https://w3id.org/adro/AthleteRole_Justin_Gatlin · American Arbitration Association case 30 190 00170 07
 
 ### D2
@@ -395,9 +395,9 @@ Which kinds of analytical report does the regulation distinguish, and which does
 
 Given a substance a decision names, which List entry, which category, which violation type and which Code article stand behind the determination?
 
-- D. 2025-15 · Methylenedioxyamphetamine · The 2026 Prohibited List, S6.B · S6.B Specified stimulants · ADRV type: Presence of a Prohibited Substance or its Metabolites or Markers in an Athlete's Sample · World Anti-Doping Code 2021, Article 2.1
-- D. 2025-15 · Methylenedioxymethamphetamine · The 2026 Prohibited List, S6.B · S6.B Specified stimulants · ADRV type: Presence of a Prohibited Substance or its Metabolites or Markers in an Athlete's Sample · World Anti-Doping Code 2021, Article 2.1
 - D. 2025-15 · Amfetamine · The 2026 Prohibited List, S6.A · S6.A Non-specified stimulants · ADRV type: Presence of a Prohibited Substance or its Metabolites or Markers in an Athlete's Sample · World Anti-Doping Code 2021, Article 2.1
+- SR/007/2023 · Metandienone · The 2026 Prohibited List, S1.1 · S1.1 Anabolic androgenic steroids (AAS) · ADRV type: Presence of a Prohibited Substance or its Metabolites or Markers in an Athlete's Sample · World Anti-Doping Code 2021, Article 2.1
+- SR/007/2023 · Metandienone · The 2026 Prohibited List, S1.1 · S1.1 Anabolic androgenic steroids (AAS) · ADRV type: Use or Attempted Use by an Athlete of a Prohibited Substance or a Prohibited Method · World Anti-Doping Code 2021, Article 2.2
 
 ### E2
 

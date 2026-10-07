@@ -117,7 +117,7 @@ Every term the ontology declares, with its definition, where it sits under the u
 
 | property | label | domain | range | assertions | definition |
 |---|---|---|---|---|---|
-| `adro:hasAnalysisDateTime` | has analysis date time | adro:LaboratoryAnalysis | xsd:dateTime | 1 | The time at which a laboratory analysis was carried out or reported, as the source states it. |
+| `adro:hasAnalysisDateTime` | has analysis date time | adro:LaboratoryAnalysis | xsd:dateTime | 0 | The time at which a laboratory analysis was carried out or reported, as the source states it. |
 | `adro:hasAnalyticalMethod` | has analytical method | adro:LaboratoryAnalysis | xsd:string | 2 | The analytical method applied, in the words the source uses for it. |
 | `adro:hasCaseIdentifier` | has case identifier | adro:Decision | xsd:string | 469 | The reference by which the issuing institution identifies a matter or a decision. |
 | `adro:hasCollectionDateTime` | has collection date time | adro:SampleCollection | xsd:dateTime | 4 | The time at which a sample was collected, as the source states it. |
@@ -130,7 +130,7 @@ Every term the ontology declares, with its definition, where it sits under the u
 | `adro:hasIssueDateTime` | has issue date time | obo:IAO_0000310 | xsd:dateTime | 6 | The time at which a document was issued by the body that issued it. |
 | `adro:hasMeasuredValue` | has measured value | adro:Measurement | xsd:decimal | 1 | The numeric value a measurement reports. |
 | `adro:hasRetrievalDate` | has retrieval date | obo:IAO_0000310 | xsd:dateTime | 4 | The date on which the document was obtained from the address recorded for it. |
-| `adro:hasSampleIdentifier` | has sample identifier | — | xsd:string | 6 | The reference the collecting authority assigns to a sample or to a portion of one. |
+| `adro:hasSampleIdentifier` | has sample identifier | — | xsd:string | 5 | The reference the collecting authority assigns to a sample or to a portion of one. |
 | `adro:hasSourceURL` | has source URL | obo:IAO_0000310 | xsd:anyURI | 4 | The address at which the issuing body published the document. |
 | `adro:hasStartDateTime` | has start date time | obo:BFO_0000015 | xsd:dateTime | 7 | The time at which a process began. |
 | `adro:hasThresholdValue` | has threshold value | adro:DecisionLimit | xsd:decimal | 6 | The numeric value at or above which a decision limit is exceeded. |

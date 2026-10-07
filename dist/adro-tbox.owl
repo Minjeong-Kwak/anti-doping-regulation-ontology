@@ -6,106 +6,22 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 >
-  <rdf:Description rdf:about="https://w3id.org/adro/isEvidenceFor">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/adro/AdverseAnalyticalFinding"/>
-    <rdfs:range rdf:resource="https://w3id.org/adro/ADRVDeterminationProcess"/>
-    <rdfs:label xml:lang="en">is evidence for</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">Relates an analytical finding to the determination process it bears upon.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/ontologicalCharacter">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <rdfs:label xml:lang="en">ontological character</rdfs:label>
-    <rdfs:comment xml:lang="en">Records whether the conduct or circumstance proscribed by a rule provision is a process, a state, or an omission. The provisions of Code Article 2 are not homogeneous in this respect.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/hasCollectionDateTime">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/adro/SampleCollection"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <rdfs:label xml:lang="en">has collection date time</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">The time at which a sample was collected, as the source states it.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/appealsAgainst">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/adro/AppealDecision"/>
-    <rdfs:range rdf:resource="https://w3id.org/adro/Decision"/>
-    <rdfs:label xml:lang="en">appeals against</rdfs:label>
-    <rdfs:comment xml:lang="en">Relates an appeal decision to the decision it reconsiders. Asserted only where the appeal decision identifies that decision.</rdfs:comment>
-    <obo:IAO_0000115 xml:lang="en">Relates an appeal decision to the decision that it reconsiders.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb48">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-    <owl:members rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb49"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/AtypicalFinding">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000088"/>
-    <rdfs:label xml:lang="en">atypical finding</rdfs:label>
-    <rdfs:label xml:lang="ko">이례결과</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">A report from an accredited laboratory that requires further investigation before an adverse analytical finding can be determined.</obo:IAO_0000115>
-    <rdfs:comment xml:lang="en">Defined in the wording of the UK Anti-Doping Rules 2021: a report from a WADA-accredited laboratory or other WADA-approved laboratory that requires further investigation as provided in the International Standard for Laboratories or related Technical Documents prior to the determination of an Adverse Analytical Finding. An atypical finding is not an adverse analytical finding and grounds no charge on its own; the two are disjoint.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/CodeArticle">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/adro/InstrumentProvision"/>
-    <rdfs:label xml:lang="en">Code article</rdfs:label>
-    <rdfs:label xml:lang="ko">규약 조항</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">A document part that constitutes a single article of a World Anti-Doping Code edition and directs conduct.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/indicatesUseOf">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/adro/Marker"/>
-    <rdfs:range rdf:resource="https://w3id.org/adro/ChemicalSubstance"/>
-    <rdfs:label xml:lang="en">indicates use of</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">Relates a marker to the substance whose use it indicates.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/hasSpecifiedInput">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
-    <rdfs:range rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb35"/>
-    <rdfs:label xml:lang="en">has specified input</rdfs:label>
-    <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
-    <obo:IAO_0000115 xml:lang="en">Relates a process to an entity it takes in and acts upon.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000119">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <rdfs:label xml:lang="en">definition source</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/bindsWithin">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/adro/AntiDopingInstrument"/>
-    <rdfs:range rdf:resource="https://w3id.org/adro/Jurisdiction"/>
-    <rdfs:label xml:lang="en">binds within</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">Relates an anti-doping instrument to the jurisdiction its own scope provision states.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/Laboratory">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/adro/Organization"/>
-    <rdfs:label xml:lang="en">laboratory</rdfs:label>
-    <rdfs:label xml:lang="ko">실험실</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">An organization accredited to analyse samples collected in doping control.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/SpecimenMatrix">
+  <rdf:Description rdf:about="https://w3id.org/adro/Sport">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
-    <rdfs:label xml:lang="en">specimen matrix</rdfs:label>
-    <rdfs:label xml:lang="ko">시료 기질</rdfs:label>
-    <rdfs:comment xml:lang="en">Held as a designation rather than as a string or a comment because the List states the matrix as part of the threshold it sets, and a threshold and a measured value are comparable only when both are stated in the same matrix. Treating the matrix as a quality of the sample was considered and rejected: what is recorded here is the kind of specimen a document names, not a property the ontology asserts of a particular sample.</rdfs:comment>
-    <obo:IAO_0000115 xml:lang="en">An information content entity that designates the kind of specimen in which a measurement is made or in which a stated threshold applies.</obo:IAO_0000115>
+    <rdfs:label xml:lang="en">sport</rdfs:label>
+    <rdfs:label xml:lang="ko">종목</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">An information content entity that designates a sport for the purposes of applying and recording anti-doping regulation.</obo:IAO_0000115>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb68">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="https://w3id.org/adro/indicatesUseOf"/>
-    <owl:someValuesFrom rdf:resource="https://w3id.org/adro/ChemicalSubstance"/>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b2"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/concernsPerson">
+  <rdf:Description rdf:about="https://w3id.org/adro/isCollectedSampleOf">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
-    <rdfs:range rdf:resource="https://w3id.org/adro/Person"/>
-    <rdfs:label xml:lang="en">concerns person</rdfs:label>
-    <owl:propertyChainAxiom rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb40"/>
-    <rdfs:comment xml:lang="en">Inferred for a record about a sample: such a record concerns the person that sample was collected from, and the relation is not asserted for it. Asserted only for a document addressed to a named person, such as a notice of charge.</rdfs:comment>
-    <obo:IAO_0000115 xml:lang="en">Relates an information content entity to the person it is about.</obo:IAO_0000115>
+    <owl:inverseOf rdf:resource="https://w3id.org/adro/hasCollectedSample"/>
+    <rdfs:label xml:lang="en">is collected sample of</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">Relates a sample to the collection that produced it.</obo:IAO_0000115>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/adro/sportScope">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -114,27 +30,343 @@
     <rdfs:label xml:lang="en">sport scope</rdfs:label>
     <obo:IAO_0000115 xml:lang="en">Relates a prohibition applicability to the designation of a sport to which it is confined.</obo:IAO_0000115>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/hasDecisionDate">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b57">
+    <rdf:first rdf:resource="https://w3id.org/adro/IneligibilityStatus"/>
+    <rdf:rest rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b58"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/raisesGround">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:domain rdf:resource="https://w3id.org/adro/Decision"/>
+    <rdfs:range rdf:resource="https://w3id.org/adro/SanctionModifyingGround"/>
+    <rdfs:label xml:lang="en">raises ground</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">Relates a decision to a ground it records as raised in the matter, whether or not the deciding body accepted it.</obo:IAO_0000115>
+    <rdfs:comment xml:lang="en">Raising a ground is not establishing it. A decision that records a ground as argued and rejected still raises it.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/NotificationOfCharge">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000310"/>
+    <rdfs:label xml:lang="en">notification of charge</rdfs:label>
+    <rdfs:label xml:lang="ko">혐의 통지</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">A document by which an alleged anti-doping rule violation is notified to the person concerned.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/hasExternalIdentifier">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">has external identifier</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">An identifier by which an entity is known in a resource outside this ontology, written as a prefixed identifier such as CHEBI:15365.</obo:IAO_0000115>
+    <rdfs:comment xml:lang="en">No value is asserted in this release. The mapping is mechanical and the source is public: scripts/map_external_identifiers.py reads the ChEBI flat files, or the ChEBI service, and asserts an identifier only where a substance name equals a ChEBI name or synonym exactly. Run it where that source can be reached, and load the file it writes alongside this one.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/Laboratory">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/adro/Organization"/>
+    <rdfs:label xml:lang="en">laboratory</rdfs:label>
+    <rdfs:label xml:lang="ko">실험실</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">An organization accredited to analyse samples collected in doping control.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b66">
+    <rdf:first rdf:resource="https://w3id.org/adro/AtypicalFinding"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b48">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b49"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b62">
+    <rdf:first rdf:resource="https://w3id.org/adro/AppealDecision"/>
+    <rdf:rest rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b63"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b68">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://w3id.org/adro/indicatesUseOf"/>
+    <owl:someValuesFrom rdf:resource="https://w3id.org/adro/ChemicalSubstance"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/AthleteRole">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
+    <rdfs:label xml:lang="en">athlete role</rdfs:label>
+    <rdfs:label xml:lang="ko">선수 역할</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">A role borne by a person during the interval in which that person is subject to anti-doping regulation in connection with sporting competition.</obo:IAO_0000115>
+    <rdfs:comment xml:lang="en">The role ceases when the person is no longer subject to regulation, while the person persists. This is why athlete is not a subtype of person.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b13">
+    <rdf:first rdf:resource="https://w3id.org/adro/Decision"/>
+    <rdf:rest rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b14"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/Sample">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
+    <rdfs:label xml:lang="en">sample</rdfs:label>
+    <rdfs:label xml:lang="ko">시료</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">A material entity that is biological material collected from a person in a doping control procedure for the purpose of analysis.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/appliedProvision">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/adro/Decision"/>
+    <rdfs:range rdf:resource="https://w3id.org/adro/InstrumentProvision"/>
+    <rdfs:label xml:lang="en">applied provision</rdfs:label>
+    <rdfs:comment xml:lang="en">The provision the deciding body applied in reaching its determination, in the numbering the decision itself uses.</rdfs:comment>
+    <obo:IAO_0000115 xml:lang="en">Relates a decision to the provision that the deciding body applied in reaching its determination.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/caseStatus">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/adro/CaseRecord"/>
+    <rdfs:range rdf:resource="https://w3id.org/adro/CaseStatus"/>
+    <rdfs:label xml:lang="en">case status</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">Relates a case record to the designation of the stage the matter has reached.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/statedIn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/adro/ProhibitionApplicability"/>
+    <rdfs:range rdf:resource="https://w3id.org/adro/ProhibitedListEntry"/>
+    <rdfs:label xml:lang="en">stated in</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">Relates a prohibition applicability to the Prohibited List entry that states it.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/NationalAntiDopingRule">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/adro/AntiDopingInstrument"/>
+    <rdfs:label xml:lang="en">national anti-doping rule</rdfs:label>
+    <rdfs:label xml:lang="ko">국가 도핑방지규정</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">A document adopted by a national anti-doping organization that applies within its jurisdiction.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/hasEndDateTime">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <rdfs:label xml:lang="en">has decision date</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">The date on which a decision was issued, as the decision states it.</obo:IAO_0000115>
+    <rdfs:label xml:lang="en">has end date time</rdfs:label>
+    <rdfs:comment xml:lang="en">Asserted only where a process ran over a stated interval. A process the decision places on a single day carries a start alone.</rdfs:comment>
+    <obo:IAO_0000115 xml:lang="en">The time at which a process ended, where the source states an interval.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/initiatedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+    <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/IAO_0000310"/>
+    <rdfs:label xml:lang="en">initiated by</rdfs:label>
+    <rdfs:comment xml:lang="en">The document by which a process was set in motion, where a decision states one. A charge letter opens a determination; a notice of appeal opens an appeal.</rdfs:comment>
+    <obo:IAO_0000115 xml:lang="en">Relates a process to the document by which it was set in motion.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b37">
+    <rdf:first rdf:resource="https://w3id.org/adro/SamplePortion"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/AppealDecision">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/adro/Decision"/>
+    <owl:equivalentClass rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b7"/>
+    <rdfs:label xml:lang="en">appeal decision</rdfs:label>
+    <rdfs:label xml:lang="ko">항소 결정</rdfs:label>
+    <rdfs:comment xml:lang="en">A defined class. What makes a decision an appeal decision is that it reconsiders another decision, and nothing else; the condition is therefore stated as necessary and sufficient rather than as a subclass axiom.</rdfs:comment>
+    <obo:IAO_0000115 xml:lang="en">A decision issued by a body that reconsiders a decision of a lower body.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/CodeArticle">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/adro/InstrumentProvision"/>
+    <rdfs:label xml:lang="en">Code article</rdfs:label>
+    <rdfs:label xml:lang="ko">규약 조항</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">A document part that constitutes a single article of a World Anti-Doping Code edition and directs conduct.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/hasMeasuredValue">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/adro/Measurement"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:label xml:lang="en">has measured value</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">The numeric value a measurement reports.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/hasStartDateTime">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label xml:lang="en">has start date time</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">The time at which a process began.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/concernsPerson">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
+    <rdfs:range rdf:resource="https://w3id.org/adro/Person"/>
+    <rdfs:label xml:lang="en">concerns person</rdfs:label>
+    <owl:propertyChainAxiom rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b40"/>
+    <rdfs:comment xml:lang="en">Inferred for a record about a sample: such a record concerns the person that sample was collected from, and the relation is not asserted for it. Asserted only for a document addressed to a named person, such as a notice of charge.</rdfs:comment>
+    <obo:IAO_0000115 xml:lang="en">Relates an information content entity to the person it is about.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/measuresAnalyte">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/adro/Measurement"/>
+    <rdfs:range rdf:resource="https://w3id.org/adro/ChemicalSubstance"/>
+    <rdfs:label xml:lang="en">measures analyte</rdfs:label>
+    <rdfs:comment xml:lang="en">The definition of a measurement names the analyte, so the analyte is carried by a relation rather than left to the label. Where a decision reports a concentration for a metabolite, this relates the measurement to that metabolite, not to the substance it derives from.</rdfs:comment>
+    <obo:IAO_0000115 xml:lang="en">Relates a measurement to the substance whose quantity it reports.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b31">
+    <rdf:first rdf:resource="https://w3id.org/adro/MeasurementUnit"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b60">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b61"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/hasDecisionLimit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/adro/ProhibitionApplicability"/>
+    <rdfs:range rdf:resource="https://w3id.org/adro/DecisionLimit"/>
+    <rdfs:label xml:lang="en">has decision limit</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">Relates a prohibition applicability to the decision limit above which a finding is reported.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/IneligibilityStatus">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
+    <rdfs:label xml:lang="en">ineligibility status</rdfs:label>
+    <rdfs:label xml:lang="ko">자격정지 지위</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">A role borne by a person during the interval in which that person is barred from participation by a sanction decision.</obo:IAO_0000115>
+    <rdfs:comment xml:lang="en">Modelled as a role because it exists by virtue of an institutional circumstance and does not alter the physical make-up of its bearer. Modelling it as an information content entity was considered and rejected, since the decision document and the status it establishes must be distinguished.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/competitionContext">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="https://w3id.org/adro/CompetitionContext"/>
+    <rdfs:label xml:lang="en">competition context</rdfs:label>
+    <rdfs:comment xml:lang="en">Qualifies a prohibition applicability, which holds in a stated context, and a sample collection, which occurs in one. No domain is asserted because the two are of different categories.</rdfs:comment>
+    <obo:IAO_0000115 xml:lang="en">Relates a prohibition applicability or a sample collection to the designation of the competition context in which it holds or occurs.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b17">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://w3id.org/adro/statedIn"/>
+    <owl:someValuesFrom rdf:resource="https://w3id.org/adro/ProhibitedListEntry"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/adro/CaseRecord">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000310"/>
-    <rdfs:subClassOf rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb15"/>
+    <rdfs:subClassOf rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b15"/>
     <rdfs:label xml:lang="en">case record</rdfs:label>
     <rdfs:label xml:lang="ko">사건 기록</rdfs:label>
     <obo:IAO_0000115 xml:lang="en">A document that identifies a single matter and gathers the procedures and decisions pertaining to it.</obo:IAO_0000115>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/Hearing">
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b35">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/adro/ResultsManagementProcess"/>
-    <rdfs:label xml:lang="en">hearing</rdfs:label>
-    <rdfs:label xml:lang="ko">청문</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">A results management process in which a deciding body receives submissions from the parties and reaches a determination.</obo:IAO_0000115>
+    <owl:unionOf rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b36"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/ProvisionalSuspensionStatus">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
+    <rdfs:label xml:lang="en">provisional suspension status</rdfs:label>
+    <rdfs:label xml:lang="ko">잠정자격정지 지위</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">A role borne by a person during the interval in which that person is barred from participation before a final decision is reached.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/SanctionDecision">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/adro/Decision"/>
+    <owl:equivalentClass rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b11"/>
+    <rdfs:label xml:lang="en">sanction decision</rdfs:label>
+    <rdfs:label xml:lang="ko">제재 결정</rdfs:label>
+    <rdfs:comment xml:lang="en">A defined class. A decision is a sanction decision exactly when it states a kind of consequence; the condition that was a subclass axiom is stated here as necessary and sufficient.</rdfs:comment>
+    <obo:IAO_0000115 xml:lang="en">A decision that determines the kind and extent of the consequence imposed in respect of an anti-doping rule violation.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/Metabolite">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/adro/ChemicalSubstance"/>
+    <rdfs:label xml:lang="en">metabolite</rdfs:label>
+    <rdfs:label xml:lang="ko">대사체</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">A chemical substance that is produced by the metabolism of another chemical substance.</obo:IAO_0000115>
+    <rdfs:comment xml:lang="en">Article 2.1 of the Code concerns the presence of a prohibited substance or its metabolites or markers in a sample, so a metabolite is distinguished from the listed substance it derives from. A metabolite is not itself an entry of the Prohibited List and therefore carries no prohibition applicability of its own.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/isEvidenceFor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/adro/AdverseAnalyticalFinding"/>
+    <rdfs:range rdf:resource="https://w3id.org/adro/ADRVDeterminationProcess"/>
+    <rdfs:label xml:lang="en">is evidence for</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">Relates an analytical finding to the determination process it bears upon.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/Marker">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+    <owl:equivalentClass rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b67"/>
+    <rdfs:label xml:lang="en">marker</rdfs:label>
+    <rdfs:label xml:lang="ko">표지자</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">A material entity whose presence or quantity indicates the use of a prohibited substance or a prohibited method.</obo:IAO_0000115>
+    <rdfs:comment xml:lang="en">Defined in the wording of the UK Anti-Doping Rules 2021: a compound, group of compounds or biological variable that indicates the Use of a Prohibited Substance or Prohibited Method. The instrument's definition also covers a biological variable, which is a quality rather than a material entity; nothing in the sources held instantiates that reading, so the class is placed with the compound reading and the difference is recorded here.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b21">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b22"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/hasSanctionType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/adro/SanctionDecision"/>
+    <rdfs:range rdf:resource="https://w3id.org/adro/SanctionType"/>
+    <rdfs:label xml:lang="en">has sanction type</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">Relates a sanction decision to the designation of the kind of consequence it imposes.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/concernsJurisdiction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="https://w3id.org/adro/Jurisdiction"/>
+    <rdfs:label xml:lang="en">concerns jurisdiction</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">Relates a case record or a prohibition applicability to the jurisdiction within which it holds.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/establishes">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/adro/Decision"/>
+    <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
+    <rdfs:label xml:lang="en">establishes</rdfs:label>
+    <rdfs:comment xml:lang="en">A sanction decision establishes an ineligibility; an exemption decision establishes an exemption. The domain is the decision, not the sanction decision, because both are determinations that bring a status into being.</rdfs:comment>
+    <obo:IAO_0000115 xml:lang="en">Relates a decision to the role it brings into being in the person it concerns.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/SanctionModifyingGround">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
+    <rdfs:label xml:lang="en">sanction modifying ground</rdfs:label>
+    <rdfs:label xml:lang="ko">제재 조정 사유</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">A designation of a circumstance which, if established, lengthens or shortens the period of ineligibility that would otherwise follow from an established violation.</obo:IAO_0000115>
+    <rdfs:comment xml:lang="en">A designation rather than a class of circumstances, for the same reason as the violation types: whether a circumstance counts as such a ground is fixed by a provision of a stated instrument, not by the circumstance itself.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/hasMeasurementUnit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b45"/>
+    <rdfs:range rdf:resource="https://w3id.org/adro/MeasurementUnit"/>
+    <rdfs:label xml:lang="en">has measurement unit</rdfs:label>
+    <rdfs:comment xml:lang="en">The domain is the union of the two. Asserting the domain as measurement alone, as an earlier version did, made every decision limit a measurement by inference, which is wrong: a threshold the List states is not a value an analysis reported.</rdfs:comment>
+    <obo:IAO_0000115 xml:lang="en">Relates a measurement or a decision limit to the designation of the unit in which its value is expressed.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/RouteOfAdministration">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
+    <rdfs:label xml:lang="en">route of administration</rdfs:label>
+    <rdfs:label xml:lang="ko">투여 경로</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">An information content entity that designates a route of administration on which prohibition may depend.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/resultsManagementAuthority">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/adro/CaseRecord"/>
+    <rdfs:range rdf:resource="https://w3id.org/adro/AntiDopingOrganization"/>
+    <rdfs:label xml:lang="en">results management authority</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">Relates a case record to the organization that managed the results of the matter.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/UrineSample">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/adro/Sample"/>
+    <rdfs:label xml:lang="en">urine sample</rdfs:label>
+    <rdfs:label xml:lang="ko">소변 시료</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">A sample that consists of urine.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/Person">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
+    <rdfs:label xml:lang="en">person</rdfs:label>
+    <rdfs:label xml:lang="ko">사람</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">A material entity that is a human being falling within the scope of anti-doping regulation or participating in its administration.</obo:IAO_0000115>
+    <rdfs:comment xml:lang="en">Being an athlete is a role borne by a person and is therefore not modelled as a subclass here.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/InternationalStandard">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000310"/>
+    <rdfs:label xml:lang="en">international standard</rdfs:label>
+    <rdfs:label xml:lang="ko">국제표준</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">A document that supplements the Code by specifying requirements in a defined area.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/implementsCodeArticle">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/adro/InstrumentProvision"/>
+    <rdfs:range rdf:resource="https://w3id.org/adro/CodeArticle"/>
+    <rdfs:label xml:lang="en">implements Code article</rdfs:label>
+    <rdfs:comment xml:lang="en">Relates a provision of another instrument to the Code article it restates. The relation is asserted only where the instrument itself states the correspondence or the deciding body relies on it.</rdfs:comment>
+    <obo:IAO_0000115 xml:lang="en">Relates a provision of an instrument other than the Code to the Code article it restates.</obo:IAO_0000115>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/adro/broaderCategory">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -145,242 +377,44 @@
     <rdfs:comment xml:lang="en">Transitive. Supports inference over designation hierarchies without subsumption.</rdfs:comment>
     <obo:IAO_0000115 xml:lang="en">Relates a regulatory designation to a designation under which it falls.</obo:IAO_0000115>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/hasSanctionType">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/adro/SanctionDecision"/>
-    <rdfs:range rdf:resource="https://w3id.org/adro/SanctionType"/>
-    <rdfs:label xml:lang="en">has sanction type</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">Relates a sanction decision to the designation of the kind of consequence it imposes.</obo:IAO_0000115>
+  <rdf:Description rdf:about="https://w3id.org/adro/tbox">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <owl:versionIRI rdf:resource="https://w3id.org/adro/tbox/2026-10-07"/>
+    <owl:imports rdf:resource="http://purl.obolibrary.org/obo/bfo.owl"/>
+    <owl:imports rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
+    <dcterms:title xml:lang="en">Anti-Doping Regulation Ontology, vocabulary only</dcterms:title>
+    <rdfs:comment xml:lang="en">Built by scripts/build_release.py from the modules, which are the source. Do not edit this file: edit the module and build again. The Basic Formal Ontology and the Information Artifact Ontology are imported by IRI rather than merged in; the OASIS catalog in this directory resolves them, and every module, to local copies.</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/Measurement">
+  <rdf:Description rdf:about="https://w3id.org/adro/Decision">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000109"/>
-    <rdfs:subClassOf rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb20"/>
-    <rdfs:label xml:lang="en">measurement</rdfs:label>
-    <rdfs:label xml:lang="ko">측정</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">A measurement datum that records a value, its unit, and the analyte measured, as produced by an analysis.</obo:IAO_0000115>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000310"/>
+    <rdfs:label xml:lang="en">decision</rdfs:label>
+    <rdfs:label xml:lang="ko">결정</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">A document in which a deciding body records its determination of a matter.</obo:IAO_0000115>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/establishes">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/adro/Decision"/>
-    <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
-    <rdfs:label xml:lang="en">establishes</rdfs:label>
-    <rdfs:comment xml:lang="en">A sanction decision establishes an ineligibility; an exemption decision establishes an exemption. The domain is the decision, not the sanction decision, because both are determinations that bring a status into being.</rdfs:comment>
-    <obo:IAO_0000115 xml:lang="en">Relates a decision to the role it brings into being in the person it concerns.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/SamplePortion">
+  <rdf:Description rdf:about="https://w3id.org/adro/ResultsManagementProcess">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
-    <rdfs:label xml:lang="en">sample portion</rdfs:label>
-    <rdfs:label xml:lang="ko">시료 분할분</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">A continuant that is a part of a sample, separated at collection and given its own reference, so that it can be analysed independently of the remainder.</obo:IAO_0000115>
-    <rdfs:comment xml:lang="en">The instruments define one Sample, which the person splits into an A portion and a B portion at collection, each bearing its own reference. Modelling each portion as a sample in its own right would make one collection yield two samples from one person, and would make the confirmation of an A portion by a B portion a comparison between two samples rather than within one.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+    <rdfs:label xml:lang="en">results management process</rdfs:label>
+    <rdfs:label xml:lang="ko">결과관리 절차</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">A process in which an anti-doping organization handles information bearing on whether an anti-doping rule has been violated.</obo:IAO_0000115>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb6">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
-    <owl:someValuesFrom rdf:resource="https://w3id.org/adro/Sample"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/hasSpecifiedOutput">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
-    <rdfs:range rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb32"/>
-    <rdfs:label xml:lang="en">has specified output</rdfs:label>
-    <rdfs:comment xml:lang="en">A process produces either a material output, which in this domain is a sample, or an information output, which is a finding or a decision. The range is the union of the two. Narrowing the domain to sample collection was considered and rejected: an analysis produces a finding and a determination produces a decision, and those are outputs in the same sense.</rdfs:comment>
-    <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
-    <obo:IAO_0000115 xml:lang="en">Relates a process to an entity it produces.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/Person">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
-    <rdfs:label xml:lang="en">person</rdfs:label>
-    <rdfs:label xml:lang="ko">사람</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">A material entity that is a human being falling within the scope of anti-doping regulation or participating in its administration.</obo:IAO_0000115>
-    <rdfs:comment xml:lang="en">Being an athlete is a role borne by a person and is therefore not modelled as a subclass here.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/hasIssueDateTime">
+  <rdf:Description rdf:about="https://w3id.org/adro/hasEffectiveFrom">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/IAO_0000310"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <rdfs:label xml:lang="en">has issue date time</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">The time at which a document was issued by the body that issued it.</obo:IAO_0000115>
+    <rdfs:label xml:lang="en">has effective from</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">The time from which a document, an edition or a status takes effect.</obo:IAO_0000115>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/hasEndDateTime">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <rdfs:label xml:lang="en">has end date time</rdfs:label>
-    <rdfs:comment xml:lang="en">Asserted only where a process ran over a stated interval. A process the decision places on a single day carries a start alone.</rdfs:comment>
-    <obo:IAO_0000115 xml:lang="en">The time at which a process ended, where the source states an interval.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/InternationalStandard">
+  <rdf:Description rdf:about="https://w3id.org/adro/NationalAntiDopingOrganization">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000310"/>
-    <rdfs:label xml:lang="en">international standard</rdfs:label>
-    <rdfs:label xml:lang="ko">국제표준</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">A document that supplements the Code by specifying requirements in a defined area.</obo:IAO_0000115>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/adro/AntiDopingOrganization"/>
+    <rdfs:label xml:lang="en">national anti-doping organization</rdfs:label>
+    <rdfs:label xml:lang="ko">국가도핑방지기구</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">An anti-doping organization with authority to operate an anti-doping programme within a given jurisdiction.</obo:IAO_0000115>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/AntiDopingOrganization">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/adro/Organization"/>
-    <rdfs:label xml:lang="en">anti-doping organization</rdfs:label>
-    <rdfs:label xml:lang="ko">도핑방지기구</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">An organization with authority to adopt or enforce anti-doping rules.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/FirstInstanceDecision">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/adro/Decision"/>
-    <rdfs:label xml:lang="en">first instance decision</rdfs:label>
-    <rdfs:label xml:lang="ko">1심 결정</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">A decision issued by a body of first instance.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb11">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:intersectionOf rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb13"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/Sport">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
-    <rdfs:label xml:lang="en">sport</rdfs:label>
-    <rdfs:label xml:lang="ko">종목</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">An information content entity that designates a sport for the purposes of applying and recording anti-doping regulation.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb45">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:unionOf rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb46"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/isSpecifiedOutputOf">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/adro/hasSpecifiedOutput"/>
-    <rdfs:label xml:lang="en">is specified output of</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">Relates an entity to the process that produced it.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/isMetaboliteOf">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/adro/Metabolite"/>
-    <rdfs:range rdf:resource="https://w3id.org/adro/ChemicalSubstance"/>
-    <rdfs:label xml:lang="en">is metabolite of</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">Relates a metabolite to a substance from which a biotransformation process produces it.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb23">
-    <rdf:first rdf:resource="https://w3id.org/adro/ProhibitedSubstanceCategory"/>
-    <rdf:rest rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb24"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/mentions">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
-    <rdfs:range rdf:resource="https://w3id.org/adro/ChemicalSubstance"/>
-    <rdfs:label xml:lang="en">mentions</rdfs:label>
-    <rdfs:comment xml:lang="en">Relates a decision to a substance it names. A mention records what the document states. It does not assert that the substance was present in a sample, nor that a violation was established in respect of it.</rdfs:comment>
-    <obo:IAO_0000115 xml:lang="en">Relates an information content entity to a substance it names.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/hasCategory">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/adro/ProhibitionApplicability"/>
-    <rdfs:label xml:lang="en">has category</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">Relates a prohibition applicability to the designation of the category under which the substance or method falls.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/ProhibitedMethodCategory">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
-    <rdfs:label xml:lang="en">prohibited method category</rdfs:label>
-    <rdfs:label xml:lang="ko">금지방법 범주</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">An information content entity that designates a category of prohibited methods as specified by a Prohibited List entry.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/competitionContext">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:range rdf:resource="https://w3id.org/adro/CompetitionContext"/>
-    <rdfs:label xml:lang="en">competition context</rdfs:label>
-    <rdfs:comment xml:lang="en">Qualifies a prohibition applicability, which holds in a stated context, and a sample collection, which occurs in one. No domain is asserted because the two are of different categories.</rdfs:comment>
-    <obo:IAO_0000115 xml:lang="en">Relates a prohibition applicability or a sample collection to the designation of the competition context in which it holds or occurs.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/AntiDopingInstrument">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000310"/>
-    <rdfs:label xml:lang="en">anti-doping instrument</rdfs:label>
-    <rdfs:label xml:lang="ko">도핑방지 규범문서</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">A document that states anti-doping rules binding on the persons within its stated scope.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/appliesTo">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/adro/ProhibitionApplicability"/>
-    <rdfs:range rdf:resource="https://w3id.org/adro/ChemicalSubstance"/>
-    <rdfs:label xml:lang="en">applies to</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">Relates a prohibition applicability to the chemical substance whose prohibition it states.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/isCollectedSampleOf">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <owl:inverseOf rdf:resource="https://w3id.org/adro/hasCollectedSample"/>
-    <rdfs:label xml:lang="en">is collected sample of</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">Relates a sample to the collection that produced it.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb40">
-    <rdf:first rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
-    <rdf:rest rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb41"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb65">
-    <rdf:first rdf:resource="https://w3id.org/adro/AdverseAnalyticalFinding"/>
-    <rdf:rest rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb66"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/concernsSport">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/adro/CaseRecord"/>
-    <rdfs:range rdf:resource="https://w3id.org/adro/Sport"/>
-    <rdfs:label xml:lang="en">concerns sport</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">Relates a case record to the designation of the sport in which the matter arose.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/initiatedBy">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
-    <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/IAO_0000310"/>
-    <rdfs:label xml:lang="en">initiated by</rdfs:label>
-    <rdfs:comment xml:lang="en">The document by which a process was set in motion, where a decision states one. A charge letter opens a determination; a notice of appeal opens an appeal.</rdfs:comment>
-    <obo:IAO_0000115 xml:lang="en">Relates a process to the document by which it was set in motion.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/NoticeOfAppeal">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000310"/>
-    <rdfs:label xml:lang="en">notice of appeal</rdfs:label>
-    <rdfs:label xml:lang="ko">항소 통지</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">A document by which a party states that it appeals a decision, and on which an appeal process is opened.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/MeasurementUnit">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
-    <rdfs:label xml:lang="en">measurement unit</rdfs:label>
-    <rdfs:label xml:lang="ko">측정 단위</rdfs:label>
-    <rdfs:comment xml:lang="en">Held as a designation rather than as a string because the List and the decisions write the same unit in more than one way, and a string comparison of those spellings does not hold. No external unit vocabulary is imported; the reason is given in the paper.</rdfs:comment>
-    <obo:IAO_0000115 xml:lang="en">An information content entity that designates the unit in which a measured value or a stated threshold is expressed.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/appliedProvision">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/adro/Decision"/>
-    <rdfs:range rdf:resource="https://w3id.org/adro/InstrumentProvision"/>
-    <rdfs:label xml:lang="en">applied provision</rdfs:label>
-    <rdfs:comment xml:lang="en">The provision the deciding body applied in reaching its determination, in the numbering the decision itself uses.</rdfs:comment>
-    <obo:IAO_0000115 xml:lang="en">Relates a decision to the provision that the deciding body applied in reaching its determination.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/Metabolite">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/adro/ChemicalSubstance"/>
-    <rdfs:label xml:lang="en">metabolite</rdfs:label>
-    <rdfs:label xml:lang="ko">대사체</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">A chemical substance that is produced by the metabolism of another chemical substance.</obo:IAO_0000115>
-    <rdfs:comment xml:lang="en">Article 2.1 of the Code concerns the presence of a prohibited substance or its metabolites or markers in a sample, so a metabolite is distinguished from the listed substance it derives from. A metabolite is not itself an entry of the Prohibited List and therefore carries no prohibition applicability of its own.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/caseStatus">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/adro/CaseRecord"/>
-    <rdfs:range rdf:resource="https://w3id.org/adro/CaseStatus"/>
-    <rdfs:label xml:lang="en">case status</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">Relates a case record to the designation of the stage the matter has reached.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/hasDecisionLimit">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/adro/ProhibitionApplicability"/>
-    <rdfs:range rdf:resource="https://w3id.org/adro/DecisionLimit"/>
-    <rdfs:label xml:lang="en">has decision limit</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">Relates a prohibition applicability to the decision limit above which a finding is reported.</obo:IAO_0000115>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b28">
+    <rdf:first rdf:resource="https://w3id.org/adro/Sport"/>
+    <rdf:rest rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b29"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/adro/hasPortion">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -390,292 +424,29 @@
     <rdfs:label xml:lang="en">has portion</rdfs:label>
     <obo:IAO_0000115 xml:lang="en">Relates a sample to a portion of it that carries its own reference.</obo:IAO_0000115>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/isSpecified">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/adro/ProhibitedListEntry"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <rdfs:label xml:lang="en">is specified</rdfs:label>
-    <rdfs:comment xml:lang="en">Whether the substances or methods covered by this Prohibited List entry are Specified within the meaning of Code Article 4.2.2. Recorded on the entry rather than on the category, because the designation is edition-dependent.</rdfs:comment>
-    <obo:IAO_0000115 xml:lang="en">Whether a Prohibited List entry is designated as specified, which governs the range of sanction available.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/AthleteRole">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
-    <rdfs:label xml:lang="en">athlete role</rdfs:label>
-    <rdfs:label xml:lang="ko">선수 역할</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">A role borne by a person during the interval in which that person is subject to anti-doping regulation in connection with sporting competition.</obo:IAO_0000115>
-    <rdfs:comment xml:lang="en">The role ceases when the person is no longer subject to regulation, while the person persists. This is why athlete is not a subtype of person.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb39">
-    <rdf:first rdf:resource="http://purl.obolibrary.org/obo/BFO_0000057"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/tbox">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
-    <owl:versionIRI rdf:resource="https://w3id.org/adro/tbox/2026-10-07"/>
-    <owl:imports rdf:resource="http://purl.obolibrary.org/obo/bfo.owl"/>
-    <owl:imports rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
-    <dcterms:title xml:lang="en">Anti-Doping Regulation Ontology, vocabulary only</dcterms:title>
-    <rdfs:comment xml:lang="en">Built by scripts/build_release.py from the modules, which are the source. Do not edit this file: edit the module and build again. The Basic Formal Ontology and the Information Artifact Ontology are imported by IRI rather than merged in; the OASIS catalog in this directory resolves them, and every module, to local copies.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb20">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="https://w3id.org/adro/measuresAnalyte"/>
-    <owl:someValuesFrom rdf:resource="https://w3id.org/adro/ChemicalSubstance"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/NotificationOfCharge">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000310"/>
-    <rdfs:label xml:lang="en">notification of charge</rdfs:label>
-    <rdfs:label xml:lang="ko">혐의 통지</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">A document by which an alleged anti-doping rule violation is notified to the person concerned.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/ADRVDeterminationProcess">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/adro/ResultsManagementProcess"/>
-    <rdfs:label xml:lang="en">ADRV determination process</rdfs:label>
-    <rdfs:label xml:lang="ko">위반 판정 절차</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">A results management process in which it is determined whether a given matter constitutes an anti-doping rule violation.</obo:IAO_0000115>
-    <rdfs:comment xml:lang="en">This process exists irrespective of whether the rule provision at issue concerns a process, a state, or an omission. Whether a violation is established is asserted by a decision record, not by the type of this process.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/ProhibitionApplicability">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000001"/>
-    <owl:equivalentClass rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb16"/>
-    <rdfs:label xml:lang="en">prohibition applicability</rdfs:label>
-    <rdfs:label xml:lang="ko">금지 적용가능성</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">A conditional specification that states that a substance or method is prohibited under stated conditions of time, competition context, sport, route of administration, threshold, and jurisdiction.</obo:IAO_0000115>
-    <rdfs:comment xml:lang="en">Reified because the conditions are n-ary and cannot be carried by binary object properties. Every instance must cite the entry it derives from. A defined class: the necessary and sufficient condition is the List entry that states it. A substance is not part of the condition, because the List prohibits methods and whole categories as well as named substances; appliesTo links the substance only where the entry names one.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb57">
-    <rdf:first rdf:resource="https://w3id.org/adro/IneligibilityStatus"/>
-    <rdf:rest rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb58"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/hasEffectiveFrom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <rdfs:label xml:lang="en">has effective from</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">The time from which a document, an edition or a status takes effect.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/AdverseAnalyticalFinding">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000088"/>
-    <rdfs:subClassOf rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb6"/>
-    <rdfs:label xml:lang="en">adverse analytical finding</rdfs:label>
-    <rdfs:label xml:lang="ko">비정상분석결과</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">A report in which a laboratory states that a prohibited substance, its metabolite, or a marker has been identified in a sample.</obo:IAO_0000115>
-    <rdfs:comment xml:lang="en">A finding is evidence bearing on a determination. It is not itself a violation.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb25">
-    <rdf:first rdf:resource="https://w3id.org/adro/SanctionType"/>
-    <rdf:rest rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb26"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/ResultsManagementProcess">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
-    <rdfs:label xml:lang="en">results management process</rdfs:label>
-    <rdfs:label xml:lang="ko">결과관리 절차</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">A process in which an anti-doping organization handles information bearing on whether an anti-doping rule has been violated.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/CaseStatus">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
-    <rdfs:label xml:lang="en">case status</rdfs:label>
-    <rdfs:label xml:lang="ko">사건 상태</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">An information content entity that designates the procedural standing of a matter, such as final, under appeal, or overturned.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb38">
-    <rdf:first rdf:resource="https://w3id.org/adro/isCollectedSampleOf"/>
-    <rdf:rest rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb39"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/Decision">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000310"/>
-    <rdfs:label xml:lang="en">decision</rdfs:label>
-    <rdfs:label xml:lang="ko">결정</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">A document in which a deciding body records its determination of a matter.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/exemptionFor">
+  <rdf:Description rdf:about="https://w3id.org/adro/hasSpecifiedInput">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/adro/ExemptionStatus"/>
-    <rdfs:range rdf:resource="https://w3id.org/adro/ChemicalSubstance"/>
-    <rdfs:label xml:lang="en">exemption for</rdfs:label>
-    <rdfs:comment xml:lang="en">The substance an exemption permits. An exemption is always for a stated substance or method, so an unqualified exemption is not expressible here, which is the intended behaviour.</rdfs:comment>
-    <obo:IAO_0000115 xml:lang="en">Relates an exemption status to the substance whose use it permits.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/hasAnalysisDateTime">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/adro/LaboratoryAnalysis"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <rdfs:label xml:lang="en">has analysis date time</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">The time at which a laboratory analysis was carried out or reported, as the source states it.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/concernsJurisdiction">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:range rdf:resource="https://w3id.org/adro/Jurisdiction"/>
-    <rdfs:label xml:lang="en">concerns jurisdiction</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">Relates a case record or a prohibition applicability to the jurisdiction within which it holds.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/acceptsGround">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/adro/raisesGround"/>
-    <rdfs:domain rdf:resource="https://w3id.org/adro/Decision"/>
-    <rdfs:range rdf:resource="https://w3id.org/adro/SanctionModifyingGround"/>
-    <rdfs:label xml:lang="en">accepts ground</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">Relates a decision to a ground it establishes, so that the period of ineligibility is altered accordingly.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/SampleCollection">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
-    <rdfs:subClassOf rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb4"/>
-    <rdfs:label xml:lang="en">sample collection</rdfs:label>
-    <rdfs:label xml:lang="ko">시료채취</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">A process in which a sample is collected from a person under a doping control procedure.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/hasStartDateTime">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <rdfs:label xml:lang="en">has start date time</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">The time at which a process began.</obo:IAO_0000115>
+    <rdfs:range rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b35"/>
+    <rdfs:label xml:lang="en">has specified input</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+    <obo:IAO_0000115 xml:lang="en">Relates a process to an entity it takes in and acts upon.</obo:IAO_0000115>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/ProhibitedListEdition">
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b32">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/adro/InternationalStandard"/>
-    <rdfs:label xml:lang="en">Prohibited List edition</rdfs:label>
-    <rdfs:label xml:lang="ko">금지목록 판본</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">An international standard that is a given edition of the Prohibited List, effective over a stated interval.</obo:IAO_0000115>
+    <owl:unionOf rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b33"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/NationalLegislation">
+  <rdf:Description rdf:about="https://w3id.org/adro/SamplePortion">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/adro/AntiDopingInstrument"/>
-    <rdfs:label xml:lang="en">national legislation</rdfs:label>
-    <rdfs:label xml:lang="ko">국내 법령</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">An anti-doping instrument enacted by a state and binding within its territory.</obo:IAO_0000115>
-    <rdfs:comment xml:lang="en">Distinguished from a national anti-doping rule because the enacting authority is a legislature, not an anti-doping organization. Where a state legislates on doping, the deciding body cites the statute.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
+    <rdfs:label xml:lang="en">sample portion</rdfs:label>
+    <rdfs:label xml:lang="ko">시료 분할분</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">A continuant that is a part of a sample, separated at collection and given its own reference, so that it can be analysed independently of the remainder.</obo:IAO_0000115>
+    <rdfs:comment xml:lang="en">The instruments define one Sample, which the person splits into an A portion and a B portion at collection, each bearing its own reference. Modelling each portion as a sample in its own right would make one collection yield two samples from one person, and would make the confirmation of an A portion by a B portion a comparison between two samples rather than within one.</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/DecisionLimit">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
-    <rdfs:label xml:lang="en">decision limit</rdfs:label>
-    <rdfs:label xml:lang="ko">결정한계</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">An information content entity that states the threshold at or above which an analytical result for a given analyte is to be reported.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/RouteOfAdministration">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
-    <rdfs:label xml:lang="en">route of administration</rdfs:label>
-    <rdfs:label xml:lang="ko">투여 경로</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">An information content entity that designates a route of administration on which prohibition may depend.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb17">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="https://w3id.org/adro/statedIn"/>
-    <owl:someValuesFrom rdf:resource="https://w3id.org/adro/ProhibitedListEntry"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/validTo">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/adro/ProhibitionApplicability"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <rdfs:label xml:lang="en">valid to</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">The time at which a prohibition applicability ceases to hold.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb27">
-    <rdf:first rdf:resource="https://w3id.org/adro/RouteOfAdministration"/>
-    <rdf:rest rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb28"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/assignsType">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/adro/Decision"/>
-    <rdfs:range rdf:resource="https://w3id.org/adro/ADRVType"/>
-    <rdfs:label xml:lang="en">assigns type</rdfs:label>
-    <rdfs:comment xml:lang="en">A decision assigns a violation type to a matter. Violation types are not asserted as classes of events.</rdfs:comment>
-    <obo:IAO_0000115 xml:lang="en">Relates a decision to the violation type that the deciding body assigned to the matter.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/hasCollectedSample">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/adro/hasSpecifiedOutput"/>
-    <rdfs:domain rdf:resource="https://w3id.org/adro/SampleCollection"/>
-    <rdfs:range rdf:resource="https://w3id.org/adro/Sample"/>
-    <rdfs:label xml:lang="en">has collected sample</rdfs:label>
-    <rdfs:comment xml:lang="en">The sample a collection produced. A specialisation of the general output relation, kept separate because the inference that a sample was taken from a person holds of this relation alone. Drawing that inference from the general relation would make a decision the output of a determination into something taken from the person heard, which is absurd.</rdfs:comment>
-    <obo:IAO_0000115 xml:lang="en">Relates a sample collection to the sample it produced.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/SanctionDecision">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/adro/Decision"/>
-    <owl:equivalentClass rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb11"/>
-    <rdfs:label xml:lang="en">sanction decision</rdfs:label>
-    <rdfs:label xml:lang="ko">제재 결정</rdfs:label>
-    <rdfs:comment xml:lang="en">A defined class. A decision is a sanction decision exactly when it states a kind of consequence; the condition that was a subclass axiom is stated here as necessary and sufficient.</rdfs:comment>
-    <obo:IAO_0000115 xml:lang="en">A decision that determines the kind and extent of the consequence imposed in respect of an anti-doping rule violation.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb15">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="https://w3id.org/adro/caseStatus"/>
-    <owl:someValuesFrom rdf:resource="https://w3id.org/adro/CaseStatus"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/hasThresholdValue">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/adro/DecisionLimit"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-    <rdfs:label xml:lang="en">has threshold value</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">The numeric value at or above which a decision limit is exceeded.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb3">
-    <rdf:first rdf:resource="https://w3id.org/adro/AthleteSupportPersonnelRole"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/SanctionType">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
-    <rdfs:label xml:lang="en">sanction type</rdfs:label>
-    <rdfs:label xml:lang="ko">제재 종류</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">An information content entity that designates a kind of consequence specified by the Code.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/measuresAnalyte">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/adro/Measurement"/>
-    <rdfs:range rdf:resource="https://w3id.org/adro/ChemicalSubstance"/>
-    <rdfs:label xml:lang="en">measures analyte</rdfs:label>
-    <rdfs:comment xml:lang="en">The definition of a measurement names the analyte, so the analyte is carried by a relation rather than left to the label. Where a decision reports a concentration for a metabolite, this relates the measurement to that metabolite, not to the substance it derives from.</rdfs:comment>
-    <obo:IAO_0000115 xml:lang="en">Relates a measurement to the substance whose quantity it reports.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/hasIneligibilityDurationInMonths">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/adro/IneligibilityStatus"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-    <rdfs:label xml:lang="en">has ineligibility duration in months</rdfs:label>
-    <rdfs:comment xml:lang="en">Months, as a number. xsd:duration lies outside the OWL 2 datatype map and cannot be used in a range axiom without breaking reasoning, so the unit is fixed by the property instead. Lifetime ineligibility carries no duration and is expressed by a sanction type designation.</rdfs:comment>
-    <obo:IAO_0000115 xml:lang="en">The length of a period of ineligibility, in months, as a number.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb50">
-    <rdf:first rdf:resource="https://w3id.org/adro/NationalAntiDopingRule"/>
-    <rdf:rest rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb51"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000115">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <rdfs:label xml:lang="en">definition</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/AppealDecision">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/adro/Decision"/>
-    <owl:equivalentClass rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb7"/>
-    <rdfs:label xml:lang="en">appeal decision</rdfs:label>
-    <rdfs:label xml:lang="ko">항소 결정</rdfs:label>
-    <rdfs:comment xml:lang="en">A defined class. What makes a decision an appeal decision is that it reconsiders another decision, and nothing else; the condition is therefore stated as necessary and sufficient rather than as a subclass axiom.</rdfs:comment>
-    <obo:IAO_0000115 xml:lang="en">A decision issued by a body that reconsiders a decision of a lower body.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/hasMeasuredValue">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/adro/Measurement"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-    <rdfs:label xml:lang="en">has measured value</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">The numeric value a measurement reports.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb32">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:unionOf rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb33"/>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b64">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b65"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/adro/bearerOfRole">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -686,137 +457,37 @@
     <rdfs:comment xml:lang="en">A subproperty of the BFO bearer relation, narrowed to a person and a role, so that role placement is explicit at the instance level.</rdfs:comment>
     <obo:IAO_0000115 xml:lang="en">Relates a person to a role that inheres in that person.</obo:IAO_0000115>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb37">
-    <rdf:first rdf:resource="https://w3id.org/adro/SamplePortion"/>
+  <rdf:Description rdf:about="https://w3id.org/adro/appliesTo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/adro/ProhibitionApplicability"/>
+    <rdfs:range rdf:resource="https://w3id.org/adro/ChemicalSubstance"/>
+    <rdfs:label xml:lang="en">applies to</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">Relates a prohibition applicability to the chemical substance whose prohibition it states.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/hasCaseIdentifier">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/adro/Decision"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">has case identifier</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">The reference by which the issuing institution identifies a matter or a decision.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b41">
+    <rdf:first rdf:resource="https://w3id.org/adro/collectedFrom"/>
     <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/SanctionModifyingGround">
+  <rdf:Description rdf:about="https://w3id.org/adro/CompetitionContext">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
-    <rdfs:label xml:lang="en">sanction modifying ground</rdfs:label>
-    <rdfs:label xml:lang="ko">제재 조정 사유</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">A designation of a circumstance which, if established, lengthens or shortens the period of ineligibility that would otherwise follow from an established violation.</obo:IAO_0000115>
-    <rdfs:comment xml:lang="en">A designation rather than a class of circumstances, for the same reason as the violation types: whether a circumstance counts as such a ground is fixed by a provision of a stated instrument, not by the circumstance itself.</rdfs:comment>
+    <rdfs:label xml:lang="en">competition context</rdfs:label>
+    <rdfs:label xml:lang="ko">경기 맥락</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">An information content entity that designates a distinction of competition context on which prohibition depends.</obo:IAO_0000115>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/adoptsInstrument">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/adro/AntiDopingInstrument"/>
-    <rdfs:range rdf:resource="https://w3id.org/adro/AntiDopingInstrument"/>
-    <rdfs:label xml:lang="en">adopts instrument</rdfs:label>
-    <rdfs:comment xml:lang="en">Relates the instrument of a governing body to the instrument it takes over in place of stating its own rules. Asserted only where a decision or the instrument itself states the adoption.</rdfs:comment>
-    <obo:IAO_0000115 xml:lang="en">Relates an anti-doping instrument to another instrument that it takes over in place of stating its own rules.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/SportGoverningBodyRule">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/adro/AntiDopingInstrument"/>
-    <rdfs:label xml:lang="en">sport governing body rule</rdfs:label>
-    <rdfs:label xml:lang="ko">경기단체 규정</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">An anti-doping instrument adopted by a body that governs a sport, binding on the persons under that body.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/IneligibilityStatus">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
-    <rdfs:label xml:lang="en">ineligibility status</rdfs:label>
-    <rdfs:label xml:lang="ko">자격정지 지위</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">A role borne by a person during the interval in which that person is barred from participation by a sanction decision.</obo:IAO_0000115>
-    <rdfs:comment xml:lang="en">Modelled as a role because it exists by virtue of an institutional circumstance and does not alter the physical make-up of its bearer. Modelling it as an information content entity was considered and rejected, since the decision document and the status it establishes must be distinguished.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/issuedBy">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:range rdf:resource="https://w3id.org/adro/Organization"/>
-    <rdfs:label xml:lang="en">issued by</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">Relates a document to the organization that issued it.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/validFrom">
+  <rdf:Description rdf:about="https://w3id.org/adro/hasDecisionDate">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/adro/ProhibitionApplicability"/>
+    <rdfs:domain rdf:resource="https://w3id.org/adro/Decision"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <rdfs:label xml:lang="en">valid from</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">The time from which a prohibition applicability holds.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/routeOfAdministration">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/adro/ProhibitionApplicability"/>
-    <rdfs:range rdf:resource="https://w3id.org/adro/RouteOfAdministration"/>
-    <rdfs:label xml:lang="en">route of administration</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">Relates a prohibition applicability to the designation of the route of administration to which it is confined.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/TUEDecision">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/adro/Decision"/>
-    <rdfs:label xml:lang="en">therapeutic use exemption decision</rdfs:label>
-    <rdfs:label xml:lang="ko">치료목적사용면책 결정</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">A decision in which a body determines an application to use a prohibited substance or method for a therapeutic purpose.</obo:IAO_0000115>
-    <rdfs:comment xml:lang="en">The instrument distinguishes a grant from a denial, and a recognition from a non-recognition. That distinction is not drawn as a subclass here because no decision in the sources carries a text from which the distinction could be read. The application process the provision describes is likewise not given a class of its own, because no competency question needs one.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb36">
-    <rdf:first rdf:resource="https://w3id.org/adro/Sample"/>
-    <rdf:rest rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb37"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb56">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-    <owl:members rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb57"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/NationalAntiDopingOrganization">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/adro/AntiDopingOrganization"/>
-    <rdfs:label xml:lang="en">national anti-doping organization</rdfs:label>
-    <rdfs:label xml:lang="ko">국가도핑방지기구</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">An anti-doping organization with authority to operate an anti-doping programme within a given jurisdiction.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb8">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="https://w3id.org/adro/appealsAgainst"/>
-    <owl:someValuesFrom rdf:resource="https://w3id.org/adro/Decision"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb67">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:intersectionOf rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb69"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb24">
-    <rdf:first rdf:resource="https://w3id.org/adro/ProhibitedMethodCategory"/>
-    <rdf:rest rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb25"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb42">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:unionOf rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb43"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/definedIn">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
-    <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/IAO_0000314"/>
-    <rdfs:label xml:lang="en">defined in</rdfs:label>
-    <rdfs:comment xml:lang="en">Links a regulatory designation to the document part that specifies it.</rdfs:comment>
-    <obo:IAO_0000115 xml:lang="en">Relates a regulatory designation to the document part that specifies it.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb13">
-    <rdf:first rdf:resource="https://w3id.org/adro/Decision"/>
-    <rdf:rest rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb14"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb14">
-    <rdf:first rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb12"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb61">
-    <rdf:first rdf:resource="https://w3id.org/adro/FirstInstanceDecision"/>
-    <rdf:rest rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb62"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/implementsCodeArticle">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/adro/InstrumentProvision"/>
-    <rdfs:range rdf:resource="https://w3id.org/adro/CodeArticle"/>
-    <rdfs:label xml:lang="en">implements Code article</rdfs:label>
-    <rdfs:comment xml:lang="en">Relates a provision of another instrument to the Code article it restates. The relation is asserted only where the instrument itself states the correspondence or the deciding body relies on it.</rdfs:comment>
-    <obo:IAO_0000115 xml:lang="en">Relates a provision of an instrument other than the Code to the Code article it restates.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/collectedFrom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/adro/Sample"/>
-    <rdfs:range rdf:resource="https://w3id.org/adro/Person"/>
-    <rdfs:label xml:lang="en">collected from</rdfs:label>
-    <owl:propertyChainAxiom rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb38"/>
-    <rdfs:comment xml:lang="en">Inferred, not asserted. A sample is collected from the person who participates in the collection that produced it.</rdfs:comment>
-    <obo:IAO_0000115 xml:lang="en">Relates a sample to the person from whom it was collected.</obo:IAO_0000115>
+    <rdfs:label xml:lang="en">has decision date</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">The date on which a decision was issued, as the decision states it.</obo:IAO_0000115>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/adro/hasAnalyticalMethod">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
@@ -826,13 +497,392 @@
     <rdfs:comment xml:lang="en">The method as the decision names it. Recorded as a string because the decisions name methods in their own terms and no method vocabulary is asserted here.</rdfs:comment>
     <obo:IAO_0000115 xml:lang="en">The analytical method applied, in the words the source uses for it.</obo:IAO_0000115>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb5">
+  <rdf:Description rdf:about="https://w3id.org/adro/isSpecified">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/adro/ProhibitedListEntry"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:label xml:lang="en">is specified</rdfs:label>
+    <rdfs:comment xml:lang="en">Whether the substances or methods covered by this Prohibited List entry are Specified within the meaning of Code Article 4.2.2. Recorded on the entry rather than on the category, because the designation is edition-dependent.</rdfs:comment>
+    <obo:IAO_0000115 xml:lang="en">Whether a Prohibited List entry is designated as specified, which governs the range of sanction available.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/hasSampleIdentifier">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b53"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">has sample identifier</rdfs:label>
+    <rdfs:comment xml:lang="en">The reference the collecting authority assigns to a sample or to a portion of one, and the decision reproduces.</rdfs:comment>
+    <obo:IAO_0000115 xml:lang="en">The reference the collecting authority assigns to a sample or to a portion of one.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/SpecimenMatrix">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
+    <rdfs:label xml:lang="en">specimen matrix</rdfs:label>
+    <rdfs:label xml:lang="ko">시료 기질</rdfs:label>
+    <rdfs:comment xml:lang="en">Held as a designation rather than as a string or a comment because the List states the matrix as part of the threshold it sets, and a threshold and a measured value are comparable only when both are stated in the same matrix. Treating the matrix as a quality of the sample was considered and rejected: what is recorded here is the kind of specimen a document names, not a property the ontology asserts of a particular sample.</rdfs:comment>
+    <obo:IAO_0000115 xml:lang="en">An information content entity that designates the kind of specimen in which a measurement is made or in which a stated threshold applies.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/hasSpecifiedOutput">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+    <rdfs:range rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b32"/>
+    <rdfs:label xml:lang="en">has specified output</rdfs:label>
+    <rdfs:comment xml:lang="en">A process produces either a material output, which in this domain is a sample, or an information output, which is a finding or a decision. The range is the union of the two. Narrowing the domain to sample collection was considered and rejected: an analysis produces a finding and a determination produces a decision, and those are outputs in the same sense.</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+    <obo:IAO_0000115 xml:lang="en">Relates a process to an entity it produces.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/isSpecifiedOutputOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="https://w3id.org/adro/hasSpecifiedOutput"/>
+    <rdfs:label xml:lang="en">is specified output of</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">Relates an entity to the process that produced it.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/bindsWithin">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/adro/AntiDopingInstrument"/>
+    <rdfs:range rdf:resource="https://w3id.org/adro/Jurisdiction"/>
+    <rdfs:label xml:lang="en">binds within</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">Relates an anti-doping instrument to the jurisdiction its own scope provision states.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/isMetaboliteOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/adro/Metabolite"/>
+    <rdfs:range rdf:resource="https://w3id.org/adro/ChemicalSubstance"/>
+    <rdfs:label xml:lang="en">is metabolite of</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">Relates a metabolite to a substance from which a biotransformation process produces it.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/ProhibitedSubstanceCategory">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
+    <rdfs:label xml:lang="en">prohibited substance category</rdfs:label>
+    <rdfs:label xml:lang="ko">금지물질 범주</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">An information content entity that designates a category of prohibited substances as specified by a Prohibited List entry.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/ProhibitionApplicability">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000001"/>
+    <owl:equivalentClass rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b16"/>
+    <rdfs:label xml:lang="en">prohibition applicability</rdfs:label>
+    <rdfs:label xml:lang="ko">금지 적용가능성</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">A conditional specification that states that a substance or method is prohibited under stated conditions of time, competition context, sport, route of administration, threshold, and jurisdiction.</obo:IAO_0000115>
+    <rdfs:comment xml:lang="en">Reified because the conditions are n-ary and cannot be carried by binary object properties. Every instance must cite the entry it derives from. A defined class: the necessary and sufficient condition is the List entry that states it. A substance is not part of the condition, because the List prohibits methods and whole categories as well as named substances; appliesTo links the substance only where the entry names one.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/ProhibitedListEdition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/adro/InternationalStandard"/>
+    <rdfs:label xml:lang="en">Prohibited List edition</rdfs:label>
+    <rdfs:label xml:lang="ko">금지목록 판본</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">An international standard that is a given edition of the Prohibited List, effective over a stated interval.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b52">
+    <rdf:first rdf:resource="https://w3id.org/adro/NationalLegislation"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b9">
+    <rdf:first rdf:resource="https://w3id.org/adro/Decision"/>
+    <rdf:rest rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b10"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/FirstInstanceDecision">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/adro/Decision"/>
+    <rdfs:label xml:lang="en">first instance decision</rdfs:label>
+    <rdfs:label xml:lang="ko">1심 결정</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">A decision issued by a body of first instance.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/DecisionLimit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
+    <rdfs:label xml:lang="en">decision limit</rdfs:label>
+    <rdfs:label xml:lang="ko">결정한계</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">An information content entity that states the threshold at or above which an analytical result for a given analyte is to be reported.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b33">
+    <rdf:first rdf:resource="https://w3id.org/adro/Sample"/>
+    <rdf:rest rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b34"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b42">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b43"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b14">
+    <rdf:first rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b12"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/SanctionType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
+    <rdfs:label xml:lang="en">sanction type</rdfs:label>
+    <rdfs:label xml:lang="ko">제재 종류</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">An information content entity that designates a kind of consequence specified by the Code.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/AntiDopingInstrument">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000310"/>
+    <rdfs:label xml:lang="en">anti-doping instrument</rdfs:label>
+    <rdfs:label xml:lang="ko">도핑방지 규범문서</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">A document that states anti-doping rules binding on the persons within its stated scope.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/WorldAntiDopingCode">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/adro/AntiDopingInstrument"/>
+    <rdfs:label xml:lang="en">World Anti-Doping Code</rdfs:label>
+    <rdfs:label xml:lang="ko">세계도핑방지규약</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">A document that is a given edition of the Code issued by the World Anti-Doping Agency.</obo:IAO_0000115>
+    <rdfs:comment xml:lang="en">Each edition is a distinct individual.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b26">
+    <rdf:first rdf:resource="https://w3id.org/adro/CompetitionContext"/>
+    <rdf:rest rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b27"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/definedIn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
+    <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/IAO_0000314"/>
+    <rdfs:label xml:lang="en">defined in</rdfs:label>
+    <rdfs:comment xml:lang="en">Links a regulatory designation to the document part that specifies it.</rdfs:comment>
+    <obo:IAO_0000115 xml:lang="en">Relates a regulatory designation to the document part that specifies it.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/Organization">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000027"/>
+    <rdfs:label xml:lang="en">organization</rdfs:label>
+    <rdfs:label xml:lang="ko">조직</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">An object aggregate of persons that acts with an assigned authority or function within the anti-doping system.</obo:IAO_0000115>
+    <rdfs:comment xml:lang="en">BFO 2020 provides no category for social entities. The aggregate placement is a deliberate choice; see the ontological choices section of the accompanying paper.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b6">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+    <owl:someValuesFrom rdf:resource="https://w3id.org/adro/Sample"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/hasThresholdValue">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/adro/DecisionLimit"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:label xml:lang="en">has threshold value</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">The numeric value at or above which a decision limit is exceeded.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/LaboratoryAnalysis">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+    <rdfs:subClassOf rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b5"/>
+    <rdfs:label xml:lang="en">laboratory analysis</rdfs:label>
+    <rdfs:label xml:lang="ko">실험실 분석</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">A process in which an accredited laboratory analyses a sample and produces a finding.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/NoticeOfAppeal">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000310"/>
+    <rdfs:label xml:lang="en">notice of appeal</rdfs:label>
+    <rdfs:label xml:lang="ko">항소 통지</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">A document by which a party states that it appeals a decision, and on which an appeal process is opened.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/routeOfAdministration">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/adro/ProhibitionApplicability"/>
+    <rdfs:range rdf:resource="https://w3id.org/adro/RouteOfAdministration"/>
+    <rdfs:label xml:lang="en">route of administration</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">Relates a prohibition applicability to the designation of the route of administration to which it is confined.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000115">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label xml:lang="en">definition</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/InstrumentProvision">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000314"/>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000033"/>
+    <rdfs:label xml:lang="en">instrument provision</rdfs:label>
+    <rdfs:label xml:lang="ko">규범 조항</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">A document part that constitutes a single numbered provision of an anti-doping instrument and directs conduct.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b22">
+    <rdf:first rdf:resource="https://w3id.org/adro/ADRVType"/>
+    <rdf:rest rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b23"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/validFrom">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/adro/ProhibitionApplicability"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label xml:lang="en">valid from</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">The time from which a prohibition applicability holds.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b29">
+    <rdf:first rdf:resource="https://w3id.org/adro/CaseStatus"/>
+    <rdf:rest rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b30"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b54">
+    <rdf:first rdf:resource="https://w3id.org/adro/Sample"/>
+    <rdf:rest rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b55"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/hasCollectedSample">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/adro/hasSpecifiedOutput"/>
+    <rdfs:domain rdf:resource="https://w3id.org/adro/SampleCollection"/>
+    <rdfs:range rdf:resource="https://w3id.org/adro/Sample"/>
+    <rdfs:label xml:lang="en">has collected sample</rdfs:label>
+    <rdfs:comment xml:lang="en">The sample a collection produced. A specialisation of the general output relation, kept separate because the inference that a sample was taken from a person holds of this relation alone. Drawing that inference from the general relation would make a decision the output of a determination into something taken from the person heard, which is absurd.</rdfs:comment>
+    <obo:IAO_0000115 xml:lang="en">Relates a sample collection to the sample it produced.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/issuedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="https://w3id.org/adro/Organization"/>
+    <rdfs:label xml:lang="en">issued by</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">Relates a document to the organization that issued it.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b34">
+    <rdf:first rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b36">
+    <rdf:first rdf:resource="https://w3id.org/adro/Sample"/>
+    <rdf:rest rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b37"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/Measurement">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000109"/>
+    <rdfs:subClassOf rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b20"/>
+    <rdfs:label xml:lang="en">measurement</rdfs:label>
+    <rdfs:label xml:lang="ko">측정</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">A measurement datum that records a value, its unit, and the analyte measured, as produced by an analysis.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/ProhibitedListEntry">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000314"/>
+    <rdfs:label xml:lang="en">Prohibited List entry</rdfs:label>
+    <rdfs:label xml:lang="ko">금지목록 항목</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">A document part of a Prohibited List edition that specifies a substance, a method, or a category thereof.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/MeasurementUnit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
+    <rdfs:label xml:lang="en">measurement unit</rdfs:label>
+    <rdfs:label xml:lang="ko">측정 단위</rdfs:label>
+    <rdfs:comment xml:lang="en">Held as a designation rather than as a string because the List and the decisions write the same unit in more than one way, and a string comparison of those spellings does not hold. No external unit vocabulary is imported; the reason is given in the paper.</rdfs:comment>
+    <obo:IAO_0000115 xml:lang="en">An information content entity that designates the unit in which a measured value or a stated threshold is expressed.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/adoptsInstrument">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/adro/AntiDopingInstrument"/>
+    <rdfs:range rdf:resource="https://w3id.org/adro/AntiDopingInstrument"/>
+    <rdfs:label xml:lang="en">adopts instrument</rdfs:label>
+    <rdfs:comment xml:lang="en">Relates the instrument of a governing body to the instrument it takes over in place of stating its own rules. Asserted only where a decision or the instrument itself states the adoption.</rdfs:comment>
+    <obo:IAO_0000115 xml:lang="en">Relates an anti-doping instrument to another instrument that it takes over in place of stating its own rules.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/AntiDopingOrganization">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/adro/Organization"/>
+    <rdfs:label xml:lang="en">anti-doping organization</rdfs:label>
+    <rdfs:label xml:lang="ko">도핑방지기구</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">An organization with authority to adopt or enforce anti-doping rules.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b23">
+    <rdf:first rdf:resource="https://w3id.org/adro/ProhibitedSubstanceCategory"/>
+    <rdf:rest rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b24"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/AthleteSupportPersonnelRole">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
+    <rdfs:label xml:lang="en">athlete support personnel role</rdfs:label>
+    <rdfs:label xml:lang="ko">선수지원요원 역할</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">A role borne by a person during the interval in which that person works with, treats or assists an athlete participating in or preparing for sporting competition, and is for that reason subject to anti-doping regulation.</obo:IAO_0000115>
+    <rdfs:comment xml:lang="en">The genus is taken from the definition the instruments give: any coach, trainer, manager, agent, team staff, official, nutritionist, medical or paramedical personnel, parent or any other person working with, treating or assisting an athlete participating in or preparing for sports competition. The role is needed because the regulation directs violations at such a person directly, not only at the athlete: trafficking, administration, complicity and prohibited association are each stated as committed by an athlete or other person.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b71">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b72"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/hasSpecimenMatrix">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b42"/>
+    <rdfs:range rdf:resource="https://w3id.org/adro/SpecimenMatrix"/>
+    <rdfs:label xml:lang="en">has specimen matrix</rdfs:label>
+    <rdfs:comment xml:lang="en">The domain is the union of the two, because a threshold and the measurement it is compared with are each stated in a matrix, and neither is a kind of the other.</rdfs:comment>
+    <obo:IAO_0000115 xml:lang="en">Relates a measurement or a decision limit to the designation of the kind of specimen in which it is stated.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/mentions">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
+    <rdfs:range rdf:resource="https://w3id.org/adro/ChemicalSubstance"/>
+    <rdfs:label xml:lang="en">mentions</rdfs:label>
+    <rdfs:comment xml:lang="en">Relates a decision to a substance it names. A mention records what the document states. It does not assert that the substance was present in a sample, nor that a violation was established in respect of it.</rdfs:comment>
+    <obo:IAO_0000115 xml:lang="en">Relates an information content entity to a substance it names.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b12">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://w3id.org/adro/hasSanctionType"/>
+    <owl:someValuesFrom rdf:resource="https://w3id.org/adro/SanctionType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/AdverseAnalyticalFinding">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000088"/>
+    <rdfs:subClassOf rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b6"/>
+    <rdfs:label xml:lang="en">adverse analytical finding</rdfs:label>
+    <rdfs:label xml:lang="ko">비정상분석결과</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">A report in which a laboratory states that a prohibited substance, its metabolite, or a marker has been identified in a sample.</obo:IAO_0000115>
+    <rdfs:comment xml:lang="en">A finding is evidence bearing on a determination. It is not itself a violation.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/hasIneligibilityDurationInMonths">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/adro/IneligibilityStatus"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:label xml:lang="en">has ineligibility duration in months</rdfs:label>
+    <rdfs:comment xml:lang="en">Months, as a number. xsd:duration lies outside the OWL 2 datatype map and cannot be used in a range axiom without breaking reasoning, so the unit is fixed by the property instead. Lifetime ineligibility carries no duration and is expressed by a sanction type designation.</rdfs:comment>
+    <obo:IAO_0000115 xml:lang="en">The length of a period of ineligibility, in months, as a number.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/indicatesUseOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/adro/Marker"/>
+    <rdfs:range rdf:resource="https://w3id.org/adro/ChemicalSubstance"/>
+    <rdfs:label xml:lang="en">indicates use of</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">Relates a marker to the substance whose use it indicates.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b61">
+    <rdf:first rdf:resource="https://w3id.org/adro/FirstInstanceDecision"/>
+    <rdf:rest rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b62"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b58">
+    <rdf:first rdf:resource="https://w3id.org/adro/ProvisionalSuspensionStatus"/>
+    <rdf:rest rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b59"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b8">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://w3id.org/adro/appealsAgainst"/>
+    <owl:someValuesFrom rdf:resource="https://w3id.org/adro/Decision"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/appealsAgainst">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/adro/AppealDecision"/>
+    <rdfs:range rdf:resource="https://w3id.org/adro/Decision"/>
+    <rdfs:label xml:lang="en">appeals against</rdfs:label>
+    <rdfs:comment xml:lang="en">Relates an appeal decision to the decision it reconsiders. Asserted only where the appeal decision identifies that decision.</rdfs:comment>
+    <obo:IAO_0000115 xml:lang="en">Relates an appeal decision to the decision that it reconsiders.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/hasAnalysisDateTime">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/adro/LaboratoryAnalysis"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label xml:lang="en">has analysis date time</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">The time at which a laboratory analysis was carried out or reported, as the source states it.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b24">
+    <rdf:first rdf:resource="https://w3id.org/adro/ProhibitedMethodCategory"/>
+    <rdf:rest rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b25"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/hasRetrievalDate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/IAO_0000310"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label xml:lang="en">has retrieval date</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">The date on which the document was obtained from the address recorded for it.</obo:IAO_0000115>
+    <rdfs:comment xml:lang="en">A decision may be corrected or replaced after it is published. The retrieval date states which state of the document the assertions here were taken from.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b5">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
     <owl:onProperty rdf:resource="https://w3id.org/adro/hasSpecifiedInput"/>
     <owl:someValuesFrom rdf:resource="https://w3id.org/adro/Sample"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb55">
-    <rdf:first rdf:resource="https://w3id.org/adro/SamplePortion"/>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b19">
+    <rdf:first rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b17"/>
     <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/adro/Jurisdiction">
@@ -843,37 +893,6 @@
     <obo:IAO_0000115 xml:lang="en">An information content entity that designates the persons and the territory within which an anti-doping instrument binds.</obo:IAO_0000115>
     <rdfs:comment xml:lang="en">Each instrument states its own scope. The UK Anti-Doping Rules bind the athletes and support personnel under a national governing body; the French code du sport binds within the territory of the state that enacted it. A designation, not a place: the same territory may fall under several instruments at once.</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/hasExternalIdentifier">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:label xml:lang="en">has external identifier</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">An identifier by which an entity is known in a resource outside this ontology, written as a prefixed identifier such as CHEBI:15365.</obo:IAO_0000115>
-    <rdfs:comment xml:lang="en">No value is asserted in this release. The mapping is mechanical and the source is public: scripts/map_external_identifiers.py reads the ChEBI flat files, or the ChEBI service, and asserts an identifier only where a substance name equals a ChEBI name or synonym exactly. Run it where that source can be reached, and load the file it writes alongside this one.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/ChemicalSubstance">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-    <rdfs:label xml:lang="en">chemical substance</rdfs:label>
-    <rdfs:label xml:lang="ko">화학물질</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">A material entity that is individuated by its chemical composition.</obo:IAO_0000115>
-    <rdfs:comment xml:lang="en">Prohibited status is not a property of this class. It is expressed by a prohibition applicability.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb60">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-    <owl:members rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb61"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb7">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:intersectionOf rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb9"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/statedIn">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/adro/ProhibitionApplicability"/>
-    <rdfs:range rdf:resource="https://w3id.org/adro/ProhibitedListEntry"/>
-    <rdfs:label xml:lang="en">stated in</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">Relates a prohibition applicability to the Prohibited List entry that states it.</obo:IAO_0000115>
-  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/adro/ADRVType">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000033"/>
@@ -881,23 +900,105 @@
     <rdfs:label xml:lang="ko">위반 유형</rdfs:label>
     <obo:IAO_0000115 xml:lang="en">A directive information entity that designates a type of anti-doping rule violation as specified by a Code article.</obo:IAO_0000115>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/appliedEdition">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/adro/Decision"/>
-    <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/IAO_0000310"/>
-    <rdfs:label xml:lang="en">applied edition</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">Relates a decision to the edition of a normative document that the deciding body applied.</obo:IAO_0000115>
+  <rdf:Description rdf:about="https://w3id.org/adro/NationalLegislation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/adro/AntiDopingInstrument"/>
+    <rdfs:label xml:lang="en">national legislation</rdfs:label>
+    <rdfs:label xml:lang="ko">국내 법령</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">An anti-doping instrument enacted by a state and binding within its territory.</obo:IAO_0000115>
+    <rdfs:comment xml:lang="en">Distinguished from a national anti-doping rule because the enacting authority is a legislature, not an anti-doping organization. Where a state legislates on doping, the deciding body cites the statute.</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/resultsManagementAuthority">
+  <rdf:Description rdf:about="https://w3id.org/adro/concernsSport">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:domain rdf:resource="https://w3id.org/adro/CaseRecord"/>
-    <rdfs:range rdf:resource="https://w3id.org/adro/AntiDopingOrganization"/>
-    <rdfs:label xml:lang="en">results management authority</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">Relates a case record to the organization that managed the results of the matter.</obo:IAO_0000115>
+    <rdfs:range rdf:resource="https://w3id.org/adro/Sport"/>
+    <rdfs:label xml:lang="en">concerns sport</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">Relates a case record to the designation of the sport in which the matter arose.</obo:IAO_0000115>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb41">
-    <rdf:first rdf:resource="https://w3id.org/adro/collectedFrom"/>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b69">
+    <rdf:first rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+    <rdf:rest rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b70"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b65">
+    <rdf:first rdf:resource="https://w3id.org/adro/AdverseAnalyticalFinding"/>
+    <rdf:rest rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b66"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b4">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://w3id.org/adro/hasSpecifiedOutput"/>
+    <owl:someValuesFrom rdf:resource="https://w3id.org/adro/Sample"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/Hearing">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/adro/ResultsManagementProcess"/>
+    <rdfs:label xml:lang="en">hearing</rdfs:label>
+    <rdfs:label xml:lang="ko">청문</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">A results management process in which a deciding body receives submissions from the parties and reaches a determination.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b38">
+    <rdf:first rdf:resource="https://w3id.org/adro/isCollectedSampleOf"/>
+    <rdf:rest rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b39"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/AtypicalFinding">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000088"/>
+    <rdfs:label xml:lang="en">atypical finding</rdfs:label>
+    <rdfs:label xml:lang="ko">이례결과</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">A report from an accredited laboratory that requires further investigation before an adverse analytical finding can be determined.</obo:IAO_0000115>
+    <rdfs:comment xml:lang="en">Defined in the wording of the UK Anti-Doping Rules 2021: a report from a WADA-accredited laboratory or other WADA-approved laboratory that requires further investigation as provided in the International Standard for Laboratories or related Technical Documents prior to the determination of an Adverse Analytical Finding. An atypical finding is not an adverse analytical finding and grounds no charge on its own; the two are disjoint.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b18">
+    <rdf:first rdf:resource="http://purl.obolibrary.org/obo/IAO_0000001"/>
+    <rdf:rest rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b19"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b55">
+    <rdf:first rdf:resource="https://w3id.org/adro/SamplePortion"/>
     <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/validTo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/adro/ProhibitionApplicability"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label xml:lang="en">valid to</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">The time at which a prohibition applicability ceases to hold.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b70">
+    <rdf:first rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b68"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/concernsCase">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="https://w3id.org/adro/CaseRecord"/>
+    <rdfs:label xml:lang="en">concerns case</rdfs:label>
+    <rdfs:comment xml:lang="en">Gathers into one matter the entities a decision states belong to it.</rdfs:comment>
+    <obo:IAO_0000115 xml:lang="en">Relates an entity to the case record that gathers the matter it belongs to.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/hasCollectionDateTime">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/adro/SampleCollection"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label xml:lang="en">has collection date time</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">The time at which a sample was collected, as the source states it.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b30">
+    <rdf:first rdf:resource="https://w3id.org/adro/SpecimenMatrix"/>
+    <rdf:rest rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b31"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b27">
+    <rdf:first rdf:resource="https://w3id.org/adro/RouteOfAdministration"/>
+    <rdf:rest rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b28"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b72">
+    <rdf:first rdf:resource="https://w3id.org/adro/Sample"/>
+    <rdf:rest rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b73"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/ADRVDeterminationProcess">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/adro/ResultsManagementProcess"/>
+    <rdfs:label xml:lang="en">ADRV determination process</rdfs:label>
+    <rdfs:label xml:lang="ko">위반 판정 절차</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">A results management process in which it is determined whether a given matter constitutes an anti-doping rule violation.</obo:IAO_0000115>
+    <rdfs:comment xml:lang="en">This process exists irrespective of whether the rule provision at issue concerns a process, a state, or an omission. Whether a violation is established is asserted by a decision record, not by the type of this process.</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/adro/hasSourceURL">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
@@ -907,115 +1008,196 @@
     <obo:IAO_0000115 xml:lang="en">The address at which the issuing body published the document.</obo:IAO_0000115>
     <rdfs:comment xml:lang="en">Recorded in addition to the issuing body and the identifier, not in place of them. An address can change; the body and its own reference are what let a reader retrieve the document when it does.</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/hasMeasurementUnit">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb45"/>
-    <rdfs:range rdf:resource="https://w3id.org/adro/MeasurementUnit"/>
-    <rdfs:label xml:lang="en">has measurement unit</rdfs:label>
-    <rdfs:comment xml:lang="en">The domain is the union of the two. Asserting the domain as measurement alone, as an earlier version did, made every decision limit a measurement by inference, which is wrong: a threshold the List states is not a value an analysis reported.</rdfs:comment>
-    <obo:IAO_0000115 xml:lang="en">Relates a measurement or a decision limit to the designation of the unit in which its value is expressed.</obo:IAO_0000115>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b56">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b57"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/hasSampleIdentifier">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:domain rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb53"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:label xml:lang="en">has sample identifier</rdfs:label>
-    <rdfs:comment xml:lang="en">The reference the collecting authority assigns to a sample or to a portion of one, and the decision reproduces.</rdfs:comment>
-    <obo:IAO_0000115 xml:lang="en">The reference the collecting authority assigns to a sample or to a portion of one.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/ProhibitedSubstanceCategory">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
-    <rdfs:label xml:lang="en">prohibited substance category</rdfs:label>
-    <rdfs:label xml:lang="ko">금지물질 범주</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">An information content entity that designates a category of prohibited substances as specified by a Prohibited List entry.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb63">
-    <rdf:first rdf:resource="https://w3id.org/adro/TUEDecision"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/hasCaseIdentifier">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/adro/Decision"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:label xml:lang="en">has case identifier</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">The reference by which the issuing institution identifies a matter or a decision.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/hasRetrievalDate">
+  <rdf:Description rdf:about="https://w3id.org/adro/hasIssueDateTime">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/IAO_0000310"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <rdfs:label xml:lang="en">has retrieval date</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">The date on which the document was obtained from the address recorded for it.</obo:IAO_0000115>
-    <rdfs:comment xml:lang="en">A decision may be corrected or replaced after it is published. The retrieval date states which state of the document the assertions here were taken from.</rdfs:comment>
+    <rdfs:label xml:lang="en">has issue date time</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">The time at which a document was issued by the body that issued it.</obo:IAO_0000115>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/LaboratoryAnalysis">
+  <rdf:Description rdf:about="https://w3id.org/adro/acceptsGround">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/adro/raisesGround"/>
+    <rdfs:domain rdf:resource="https://w3id.org/adro/Decision"/>
+    <rdfs:range rdf:resource="https://w3id.org/adro/SanctionModifyingGround"/>
+    <rdfs:label xml:lang="en">accepts ground</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">Relates a decision to a ground it establishes, so that the period of ineligibility is altered accordingly.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b51">
+    <rdf:first rdf:resource="https://w3id.org/adro/SportGoverningBodyRule"/>
+    <rdf:rest rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b52"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b10">
+    <rdf:first rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b8"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/CaseStatus">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
+    <rdfs:label xml:lang="en">case status</rdfs:label>
+    <rdfs:label xml:lang="ko">사건 상태</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">An information content entity that designates the procedural standing of a matter, such as final, under appeal, or overturned.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/ProhibitedMethodCategory">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
+    <rdfs:label xml:lang="en">prohibited method category</rdfs:label>
+    <rdfs:label xml:lang="ko">금지방법 범주</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">An information content entity that designates a category of prohibited methods as specified by a Prohibited List entry.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/hasCategory">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/adro/ProhibitionApplicability"/>
+    <rdfs:label xml:lang="en">has category</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">Relates a prohibition applicability to the designation of the category under which the substance or method falls.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b45">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b46"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/collectedFrom">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/adro/Sample"/>
+    <rdfs:range rdf:resource="https://w3id.org/adro/Person"/>
+    <rdfs:label xml:lang="en">collected from</rdfs:label>
+    <owl:propertyChainAxiom rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b38"/>
+    <rdfs:comment xml:lang="en">Inferred, not asserted. A sample is collected from the person who participates in the collection that produced it.</rdfs:comment>
+    <obo:IAO_0000115 xml:lang="en">Relates a sample to the person from whom it was collected.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b39">
+    <rdf:first rdf:resource="http://purl.obolibrary.org/obo/BFO_0000057"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b16">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b18"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/assignsType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/adro/Decision"/>
+    <rdfs:range rdf:resource="https://w3id.org/adro/ADRVType"/>
+    <rdfs:label xml:lang="en">assigns type</rdfs:label>
+    <rdfs:comment xml:lang="en">A decision assigns a violation type to a matter. Violation types are not asserted as classes of events.</rdfs:comment>
+    <obo:IAO_0000115 xml:lang="en">Relates a decision to the violation type that the deciding body assigned to the matter.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b73">
+    <rdf:first rdf:resource="https://w3id.org/adro/SamplePortion"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/TUEDecision">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/adro/Decision"/>
+    <rdfs:label xml:lang="en">therapeutic use exemption decision</rdfs:label>
+    <rdfs:label xml:lang="ko">치료목적사용면책 결정</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">A decision in which a body determines an application to use a prohibited substance or method for a therapeutic purpose.</obo:IAO_0000115>
+    <rdfs:comment xml:lang="en">The instrument distinguishes a grant from a denial, and a recognition from a non-recognition. That distinction is not drawn as a subclass here because no decision in the sources carries a text from which the distinction could be read. The application process the provision describes is likewise not given a class of its own, because no competency question needs one.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b63">
+    <rdf:first rdf:resource="https://w3id.org/adro/TUEDecision"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/SampleCollection">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
-    <rdfs:subClassOf rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb5"/>
-    <rdfs:label xml:lang="en">laboratory analysis</rdfs:label>
-    <rdfs:label xml:lang="ko">실험실 분석</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">A process in which an accredited laboratory analyses a sample and produces a finding.</obo:IAO_0000115>
+    <rdfs:subClassOf rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b4"/>
+    <rdfs:label xml:lang="en">sample collection</rdfs:label>
+    <rdfs:label xml:lang="ko">시료채취</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">A process in which a sample is collected from a person under a doping control procedure.</obo:IAO_0000115>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb72">
-    <rdf:first rdf:resource="https://w3id.org/adro/Sample"/>
-    <rdf:rest rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb73"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb34">
-    <rdf:first rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/WorldAntiDopingCode">
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b7">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/adro/AntiDopingInstrument"/>
-    <rdfs:label xml:lang="en">World Anti-Doping Code</rdfs:label>
-    <rdfs:label xml:lang="ko">세계도핑방지규약</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">A document that is a given edition of the Code issued by the World Anti-Doping Agency.</obo:IAO_0000115>
-    <rdfs:comment xml:lang="en">Each edition is a distinct individual.</rdfs:comment>
+    <owl:intersectionOf rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b9"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb52">
-    <rdf:first rdf:resource="https://w3id.org/adro/NationalLegislation"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000119">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label xml:lang="en">definition source</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb66">
-    <rdf:first rdf:resource="https://w3id.org/adro/AtypicalFinding"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  <rdf:Description rdf:about="https://w3id.org/adro/hasEffectiveTo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label xml:lang="en">has effective to</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">The time at which a document, an edition or a status ceases to have effect.</obo:IAO_0000115>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/ProhibitedListEntry">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000314"/>
-    <rdfs:label xml:lang="en">Prohibited List entry</rdfs:label>
-    <rdfs:label xml:lang="ko">금지목록 항목</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">A document part of a Prohibited List edition that specifies a substance, a method, or a category thereof.</obo:IAO_0000115>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b25">
+    <rdf:first rdf:resource="https://w3id.org/adro/SanctionType"/>
+    <rdf:rest rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b26"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb22">
-    <rdf:first rdf:resource="https://w3id.org/adro/ADRVType"/>
-    <rdf:rest rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb23"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb54">
-    <rdf:first rdf:resource="https://w3id.org/adro/Sample"/>
-    <rdf:rest rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb55"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/Marker">
+  <rdf:Description rdf:about="https://w3id.org/adro/ChemicalSubstance">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-    <owl:equivalentClass rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb67"/>
-    <rdfs:label xml:lang="en">marker</rdfs:label>
-    <rdfs:label xml:lang="ko">표지자</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">A material entity whose presence or quantity indicates the use of a prohibited substance or a prohibited method.</obo:IAO_0000115>
-    <rdfs:comment xml:lang="en">Defined in the wording of the UK Anti-Doping Rules 2021: a compound, group of compounds or biological variable that indicates the Use of a Prohibited Substance or Prohibited Method. The instrument's definition also covers a biological variable, which is a quality rather than a material entity; nothing in the sources held instantiates that reading, so the class is placed with the compound reading and the difference is recorded here.</rdfs:comment>
+    <rdfs:label xml:lang="en">chemical substance</rdfs:label>
+    <rdfs:label xml:lang="ko">화학물질</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">A material entity that is individuated by its chemical composition.</obo:IAO_0000115>
+    <rdfs:comment xml:lang="en">Prohibited status is not a property of this class. It is expressed by a prohibition applicability.</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb64">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-    <owl:members rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb65"/>
+  <rdf:Description rdf:about="https://w3id.org/adro/SportGoverningBodyRule">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/adro/AntiDopingInstrument"/>
+    <rdfs:label xml:lang="en">sport governing body rule</rdfs:label>
+    <rdfs:label xml:lang="ko">경기단체 규정</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">An anti-doping instrument adopted by a body that governs a sport, binding on the persons under that body.</obo:IAO_0000115>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb71">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-    <owl:members rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb72"/>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b2">
+    <rdf:first rdf:resource="https://w3id.org/adro/AthleteRole"/>
+    <rdf:rest rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b3"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb44">
+  <rdf:Description rdf:about="https://w3id.org/adro/appliedEdition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/adro/Decision"/>
+    <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/IAO_0000310"/>
+    <rdfs:label xml:lang="en">applied edition</rdfs:label>
+    <obo:IAO_0000115 xml:lang="en">Relates a decision to the edition of a normative document that the deciding body applied.</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b46">
+    <rdf:first rdf:resource="https://w3id.org/adro/Measurement"/>
+    <rdf:rest rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b47"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b20">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://w3id.org/adro/measuresAnalyte"/>
+    <owl:someValuesFrom rdf:resource="https://w3id.org/adro/ChemicalSubstance"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b40">
+    <rdf:first rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+    <rdf:rest rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b41"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/ontologicalCharacter">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label xml:lang="en">ontological character</rdfs:label>
+    <rdfs:comment xml:lang="en">Records whether the conduct or circumstance proscribed by a rule provision is a process, a state, or an omission. The provisions of Code Article 2 are not homogeneous in this respect.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b3">
+    <rdf:first rdf:resource="https://w3id.org/adro/AthleteSupportPersonnelRole"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b15">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://w3id.org/adro/caseStatus"/>
+    <owl:someValuesFrom rdf:resource="https://w3id.org/adro/CaseStatus"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b50">
+    <rdf:first rdf:resource="https://w3id.org/adro/NationalAntiDopingRule"/>
+    <rdf:rest rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b51"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b47">
     <rdf:first rdf:resource="https://w3id.org/adro/DecisionLimit"/>
     <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b49">
+    <rdf:first rdf:resource="https://w3id.org/adro/WorldAntiDopingCode"/>
+    <rdf:rest rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b50"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/adro/exemptionFor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/adro/ExemptionStatus"/>
+    <rdfs:range rdf:resource="https://w3id.org/adro/ChemicalSubstance"/>
+    <rdfs:label xml:lang="en">exemption for</rdfs:label>
+    <rdfs:comment xml:lang="en">The substance an exemption permits. An exemption is always for a stated substance or method, so an unqualified exemption is not expressible here, which is the intended behaviour.</rdfs:comment>
+    <obo:IAO_0000115 xml:lang="en">Relates an exemption status to the substance whose use it permits.</obo:IAO_0000115>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/adro/ExemptionStatus">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -1025,123 +1207,13 @@
     <obo:IAO_0000115 xml:lang="en">A role borne by a person during the interval in which that person is permitted to use a stated prohibited substance or method for a therapeutic purpose.</obo:IAO_0000115>
     <rdfs:comment xml:lang="en">Modelled as a role for the same reason as ineligibility status: it exists by virtue of an institutional circumstance and does not alter the physical make-up of its bearer. It is distinguished from the decision that grants it, which is a document.</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/InstrumentProvision">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000314"/>
-    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000033"/>
-    <rdfs:label xml:lang="en">instrument provision</rdfs:label>
-    <rdfs:label xml:lang="ko">규범 조항</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">A document part that constitutes a single numbered provision of an anti-doping instrument and directs conduct.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/hasEffectiveTo">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <rdfs:label xml:lang="en">has effective to</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">The time at which a document, an edition or a status ceases to have effect.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/concernsCase">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:range rdf:resource="https://w3id.org/adro/CaseRecord"/>
-    <rdfs:label xml:lang="en">concerns case</rdfs:label>
-    <rdfs:comment xml:lang="en">Gathers into one matter the entities a decision states belong to it.</rdfs:comment>
-    <obo:IAO_0000115 xml:lang="en">Relates an entity to the case record that gathers the matter it belongs to.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb4">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="https://w3id.org/adro/hasSpecifiedOutput"/>
-    <owl:someValuesFrom rdf:resource="https://w3id.org/adro/Sample"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/ProvisionalSuspensionStatus">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
-    <rdfs:label xml:lang="en">provisional suspension status</rdfs:label>
-    <rdfs:label xml:lang="ko">잠정자격정지 지위</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">A role borne by a person during the interval in which that person is barred from participation before a final decision is reached.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb28">
-    <rdf:first rdf:resource="https://w3id.org/adro/Sport"/>
-    <rdf:rest rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb29"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb47">
-    <rdf:first rdf:resource="https://w3id.org/adro/DecisionLimit"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/NationalAntiDopingRule">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/adro/AntiDopingInstrument"/>
-    <rdfs:label xml:lang="en">national anti-doping rule</rdfs:label>
-    <rdfs:label xml:lang="ko">국가 도핑방지규정</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">A document adopted by a national anti-doping organization that applies within its jurisdiction.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/Organization">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000027"/>
-    <rdfs:label xml:lang="en">organization</rdfs:label>
-    <rdfs:label xml:lang="ko">조직</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">An object aggregate of persons that acts with an assigned authority or function within the anti-doping system.</obo:IAO_0000115>
-    <rdfs:comment xml:lang="en">BFO 2020 provides no category for social entities. The aggregate placement is a deliberate choice; see the ontological choices section of the accompanying paper.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/Sample">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
-    <rdfs:label xml:lang="en">sample</rdfs:label>
-    <rdfs:label xml:lang="ko">시료</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">A material entity that is biological material collected from a person in a doping control procedure for the purpose of analysis.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb58">
-    <rdf:first rdf:resource="https://w3id.org/adro/ProvisionalSuspensionStatus"/>
-    <rdf:rest rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb59"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/raisesGround">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/adro/Decision"/>
-    <rdfs:range rdf:resource="https://w3id.org/adro/SanctionModifyingGround"/>
-    <rdfs:label xml:lang="en">raises ground</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">Relates a decision to a ground it records as raised in the matter, whether or not the deciding body accepted it.</obo:IAO_0000115>
-    <rdfs:comment xml:lang="en">Raising a ground is not establishing it. A decision that records a ground as argued and rejected still raises it.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb29">
-    <rdf:first rdf:resource="https://w3id.org/adro/CaseStatus"/>
-    <rdf:rest rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb30"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/CompetitionContext">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
-    <rdfs:label xml:lang="en">competition context</rdfs:label>
-    <rdfs:label xml:lang="ko">경기 맥락</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">An information content entity that designates a distinction of competition context on which prohibition depends.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb62">
-    <rdf:first rdf:resource="https://w3id.org/adro/AppealDecision"/>
-    <rdf:rest rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb63"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb59">
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b59">
     <rdf:first rdf:resource="https://w3id.org/adro/ExemptionStatus"/>
     <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb51">
-    <rdf:first rdf:resource="https://w3id.org/adro/SportGoverningBodyRule"/>
-    <rdf:rest rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb52"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/hasSpecimenMatrix">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb42"/>
-    <rdfs:range rdf:resource="https://w3id.org/adro/SpecimenMatrix"/>
-    <rdfs:label xml:lang="en">has specimen matrix</rdfs:label>
-    <rdfs:comment xml:lang="en">The domain is the union of the two, because a threshold and the measurement it is compared with are each stated in a matrix, and neither is a kind of the other.</rdfs:comment>
-    <obo:IAO_0000115 xml:lang="en">Relates a measurement or a decision limit to the designation of the kind of specimen in which it is stated.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb70">
-    <rdf:first rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb68"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/AthleteSupportPersonnelRole">
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b11">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
-    <rdfs:label xml:lang="en">athlete support personnel role</rdfs:label>
-    <rdfs:label xml:lang="ko">선수지원요원 역할</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">A role borne by a person during the interval in which that person works with, treats or assists an athlete participating in or preparing for sporting competition, and is for that reason subject to anti-doping regulation.</obo:IAO_0000115>
-    <rdfs:comment xml:lang="en">The genus is taken from the definition the instruments give: any coach, trainer, manager, agent, team staff, official, nutritionist, medical or paramedical personnel, parent or any other person working with, treating or assisting an athlete participating in or preparing for sports competition. The role is needed because the regulation directs violations at such a person directly, not only at the athlete: trafficking, administration, complicity and prohibited association are each stated as committed by an athlete or other person.</rdfs:comment>
+    <owl:intersectionOf rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b13"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/adro/AppealProcess">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -1150,92 +1222,20 @@
     <rdfs:label xml:lang="ko">항소 절차</rdfs:label>
     <obo:IAO_0000115 xml:lang="en">A results management process in which a superior body reconsiders a decision of a lower body.</obo:IAO_0000115>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb73">
-    <rdf:first rdf:resource="https://w3id.org/adro/SamplePortion"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/adro/UrineSample">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/adro/Sample"/>
-    <rdfs:label xml:lang="en">urine sample</rdfs:label>
-    <rdfs:label xml:lang="ko">소변 시료</rdfs:label>
-    <obo:IAO_0000115 xml:lang="en">A sample that consists of urine.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb69">
-    <rdf:first rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-    <rdf:rest rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb70"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb46">
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b43">
     <rdf:first rdf:resource="https://w3id.org/adro/Measurement"/>
-    <rdf:rest rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb47"/>
+    <rdf:rest rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b44"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb31">
-    <rdf:first rdf:resource="https://w3id.org/adro/MeasurementUnit"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb30">
-    <rdf:first rdf:resource="https://w3id.org/adro/SpecimenMatrix"/>
-    <rdf:rest rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb31"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb12">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="https://w3id.org/adro/hasSanctionType"/>
-    <owl:someValuesFrom rdf:resource="https://w3id.org/adro/SanctionType"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb43">
-    <rdf:first rdf:resource="https://w3id.org/adro/Measurement"/>
-    <rdf:rest rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb44"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb10">
-    <rdf:first rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb8"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb53">
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b67">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:unionOf rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb54"/>
+    <owl:intersectionOf rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b69"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb18">
-    <rdf:first rdf:resource="http://purl.obolibrary.org/obo/IAO_0000001"/>
-    <rdf:rest rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb19"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb1">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-    <owl:members rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb2"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb16">
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b53">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:intersectionOf rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb18"/>
+    <owl:unionOf rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b54"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb35">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:unionOf rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb36"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb49">
-    <rdf:first rdf:resource="https://w3id.org/adro/WorldAntiDopingCode"/>
-    <rdf:rest rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb50"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb26">
-    <rdf:first rdf:resource="https://w3id.org/adro/CompetitionContext"/>
-    <rdf:rest rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb27"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb21">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-    <owl:members rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb22"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb33">
-    <rdf:first rdf:resource="https://w3id.org/adro/Sample"/>
-    <rdf:rest rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb34"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb19">
-    <rdf:first rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb17"/>
+  <rdf:Description rdf:nodeID="ncae04cee9cc1433ea50219b356efade4b44">
+    <rdf:first rdf:resource="https://w3id.org/adro/DecisionLimit"/>
     <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb9">
-    <rdf:first rdf:resource="https://w3id.org/adro/Decision"/>
-    <rdf:rest rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb10"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb2">
-    <rdf:first rdf:resource="https://w3id.org/adro/AthleteRole"/>
-    <rdf:rest rdf:nodeID="nb5e8008aea9b4b68bef9ccc666a50ebcb3"/>
   </rdf:Description>
 </rdf:RDF>
