@@ -6945,7 +6945,7 @@ adro:Category_S4_4_4 a adro:ProhibitedSubstanceCategory ;
 
 adro:Ground_Aggravating a adro:SanctionModifyingGround ;
     rdfs:label "Aggravating Circumstances"@en ;
-    rdfs:comment "As stated in the instrument: Circumstances involving, or actions by, an Athlete or other Person which may justify the imposition of a period of Ineligibility greater than the standard sanction.."@en ;
+    rdfs:comment "As stated in the instrument: Circumstances involving, or actions by, an Athlete or other Person which may justify the imposition of a period of Ineligibility greater than the standard sanction."@en ;
     adro:definedIn adro:UKAD_ADR_10_4 .
 
 adro:ISTUE a adro:InternationalStandard ;
@@ -9726,13 +9726,13 @@ adro:Finding_NADP_SR_056_2022 a adro:AdverseAnalyticalFinding ;
 
 adro:Ground_NoFault a adro:SanctionModifyingGround ;
     rdfs:label "No Fault or Negligence"@en ;
-    rdfs:comment "As stated in the instrument: The Athlete or other Person establishing that they did not know or suspect, and could not reasonably have known or suspected, even with the exercise of utmost caution, that they had Used or been administered the Prohibited Substance or Prohibited Method or otherwise violated an anti-doping rule.."@en ;
-    adro:definedIn adro:UKAD_ADR_10_4 .
+    rdfs:comment "As stated in the instrument: The Athlete or other Person establishing that they did not know or suspect, and could not reasonably have known or suspected, even with the exercise of utmost caution, that they had Used or been administered the Prohibited Substance or Prohibited Method or otherwise violated an anti-doping rule."@en ;
+    adro:definedIn adro:UKAD_ADR_10_5 .
 
 adro:Ground_NoSignificantFault a adro:SanctionModifyingGround ;
     rdfs:label "No Significant Fault or Negligence"@en ;
-    rdfs:comment "As stated in the instrument: The Athlete or other Person's establishing that any Fault or negligence, when viewed in the totality of the circumstances and taking into account the criteria for No Fault or Negligence, was not significant in relation to the Anti-Doping Rule Violation.."@en ;
-    adro:definedIn adro:UKAD_ADR_10_5 .
+    rdfs:comment "As stated in the instrument: The Athlete or other Person's establishing that any Fault or negligence, when viewed in the totality of the circumstances and taking into account the criteria for No Fault or Negligence, was not significant in relation to the Anti-Doping Rule Violation."@en ;
+    adro:definedIn adro:UKAD_ADR_10_6 .
 
 adro:Hearing_AAA_30_190_00170_07 a adro:Hearing ;
     rdfs:label "hearing in American Arbitration Association case 30 190 00170 07"@en ;
@@ -9815,8 +9815,8 @@ adro:Ineligibility_NADP_SR_389_2024 a adro:IneligibilityStatus ;
 
 adro:Jurisdiction_France a adro:Jurisdiction ;
     rdfs:label "France"@en ;
-    obo:IAO_0000119 "Code du sport" ;
-    rdfs:comment "As stated in Code du sport: The code du sport is enacted by the French state and binds within its territory.."@en .
+    obo:IAO_0000119 "Code du sport, article L. 230-3" ;
+    rdfs:comment "As stated in Code du sport, article L. 230-3: For the purposes of the title on the fight against doping, an athlete is any person who takes part in or prepares for a sporting event organised by an approved federation or authorised by a delegated federation, a sporting event at which prizes are awarded, or an international sporting event or one within the competence of an anti-doping organisation that is a signatory of the World Anti-Doping Code."@en .
 
 adro:LNDD a adro:Laboratory ;
     rdfs:label "Laboratoire National de Dépistage du Dopage"@en ;
@@ -11425,12 +11425,22 @@ adro:UKAD_ADR_10_2_1a a adro:InstrumentProvision ;
 adro:UKAD_ADR_10_2_3 a adro:InstrumentProvision ;
     rdfs:label "UK Anti-Doping Rules 2021, Article 10.2.3"@en ;
     obo:BFO_0000176 adro:UKADRules_2021 ;
-    dcterms:title "Period of Ineligibility where the violation is not intentional"@en .
+    dcterms:title "Meaning of the term intentional as used in Article 10.2"@en .
+
+adro:UKAD_ADR_10_4 a adro:InstrumentProvision ;
+    rdfs:label "UK Anti-Doping Rules 2021, Article 10.4"@en ;
+    obo:BFO_0000176 adro:UKADRules_2021 ;
+    dcterms:title "Aggravating Circumstances which may increase the period of Ineligibility"@en .
 
 adro:UKAD_ADR_10_5 a adro:InstrumentProvision ;
     rdfs:label "UK Anti-Doping Rules 2021, Article 10.5"@en ;
     obo:BFO_0000176 adro:UKADRules_2021 ;
-    dcterms:title "Reduction of the period of Ineligibility for No Significant Fault or Negligence"@en .
+    dcterms:title "Elimination of the period of Ineligibility where there is No Fault or Negligence"@en .
+
+adro:UKAD_ADR_10_6 a adro:InstrumentProvision ;
+    rdfs:label "UK Anti-Doping Rules 2021, Article 10.6"@en ;
+    obo:BFO_0000176 adro:UKADRules_2021 ;
+    dcterms:title "Reduction of the period of Ineligibility based on No Significant Fault or Negligence"@en .
 
 adro:appealsAgainst a owl:ObjectProperty ;
     rdfs:label "appeals against"@en ;
@@ -11632,7 +11642,7 @@ adro:Entry_2026_S6 a adro:ProhibitedListEntry ;
 
 adro:Ground_NotIntentional a adro:SanctionModifyingGround ;
     rdfs:label "violation not intentional"@en ;
-    rdfs:comment "As stated in the instrument: Where the Athlete or other Person establishes that the Anti-Doping Rule Violation was not intentional, the period of Ineligibility is two years rather than four.."@en ;
+    rdfs:comment "As stated in the instrument: Where the Athlete or other Person establishes that the Anti-Doping Rule Violation was not intentional, the period of Ineligibility is two years rather than four."@en ;
     adro:definedIn adro:UKAD_ADR_10_2_3 .
 
 adro:Ineligibility_AAA_30_190_00170_07 a adro:IneligibilityStatus ;
@@ -11882,11 +11892,6 @@ adro:UCIADR a adro:SportGoverningBodyRule ;
     rdfs:label "UCI Anti-Doping Regulations"@en ;
     adro:bindsWithin adro:Jurisdiction_International .
 
-adro:UKAD_ADR_10_4 a adro:InstrumentProvision ;
-    rdfs:label "UK Anti-Doping Rules 2021, Article 10.4"@en ;
-    obo:BFO_0000176 adro:UKADRules_2021 ;
-    dcterms:title "Elimination of the period of Ineligibility, and aggravating circumstances"@en .
-
 adro:UKAD_ADR_2_2 a adro:InstrumentProvision ;
     rdfs:label "UK Anti-Doping Rules 2021, Article 2.2"@en ;
     obo:BFO_0000176 adro:UKADRules_2021 ;
@@ -12033,8 +12038,8 @@ adro:ExemptionStatus a owl:Class ;
 
 adro:Jurisdiction_International a adro:Jurisdiction ;
     rdfs:label "international sport, under the instrument of a governing body"@en ;
-    obo:IAO_0000119 "UCI Anti-Doping Regulations" ;
-    rdfs:comment "As stated in UCI Anti-Doping Regulations: The regulations of an international federation bind the persons under that federation wherever they are.."@en .
+    obo:IAO_0000119 "American Arbitration Association case 30 190 00847 06, paragraphs 4 and 5" ;
+    rdfs:comment "As stated in American Arbitration Association case 30 190 00847 06, paragraphs 4 and 5: An international federation is responsible for the organisation of its sport worldwide, and an athlete is bound by its regulations through the licence the athlete holds; the decision says this of the UCI. The edition of the UCI regulations the decision applied was not held, so the scope is taken from the decision and not from a provision of the instrument."@en .
 
 adro:Laboratory a owl:Class ;
     rdfs:label "laboratory"@en,
@@ -12346,8 +12351,8 @@ adro:Jurisdiction a owl:Class ;
 
 adro:Jurisdiction_UK a adro:Jurisdiction ;
     rdfs:label "United Kingdom"@en ;
-    obo:IAO_0000119 "UK Anti-Doping Rules 2021, Article 1.5" ;
-    rdfs:comment "As stated in UK Anti-Doping Rules 2021, Article 1.5: These Rules apply to all Athletes and Athlete Support Personnel who are members of the NGB and/or of the NGB's members or affiliate organisations or licensees, or otherwise under the jurisdiction of the NGB.."@en .
+    obo:IAO_0000119 "UK Anti-Doping Rules 2021, Article 1.2" ;
+    rdfs:comment "As stated in UK Anti-Doping Rules 2021, Article 1.2: These Rules apply to all Athletes and Athlete Support Personnel who are members of the NGB and/or of the NGB's members or affiliate organisations or licensees, or otherwise under the jurisdiction of the NGB."@en .
 
 adro:Measurement a owl:Class ;
     rdfs:label "measurement"@en,
@@ -12650,10 +12655,6 @@ adro:Sample a owl:Class ;
     obo:IAO_0000115 "A material entity that is biological material collected from a person in a doping control procedure for the purpose of analysis."@en ;
     rdfs:subClassOf obo:BFO_0000030 .
 
-adro:UKADRules_2021 a adro:NationalAntiDopingRule ;
-    rdfs:label "UK Anti-Doping Rules, 1 January 2021"@en ;
-    adro:bindsWithin adro:Jurisdiction_UK .
-
 adro:WADACode_2021 a adro:WorldAntiDopingCode ;
     rdfs:label "World Anti-Doping Code 2021"@en ;
     adro:hasEffectiveFrom "2021-01-01T00:00:00"^^xsd:dateTime .
@@ -12685,6 +12686,10 @@ adro:Sport_Weightlifting a adro:Sport ;
 
 adro:Substance_Metandienone a adro:ChemicalSubstance ;
     rdfs:label "Metandienone"@en .
+
+adro:UKADRules_2021 a adro:NationalAntiDopingRule ;
+    rdfs:label "UK Anti-Doping Rules, 1 January 2021"@en ;
+    adro:bindsWithin adro:Jurisdiction_UK .
 
 adro:ADRVType a owl:Class ;
     rdfs:label "anti-doping rule violation type"@en,
@@ -12733,13 +12738,6 @@ adro:Entry_2026_S1_2 a adro:ProhibitedListEntry ;
     obo:BFO_0000176 adro:ProhibitedList_2026 ;
     dcterms:title "Other anabolic agents"@en .
 
-adro:InstrumentProvision a owl:Class ;
-    rdfs:label "instrument provision"@en,
-        "규범 조항"@ko ;
-    obo:IAO_0000115 "A document part that constitutes a single numbered provision of an anti-doping instrument and directs conduct."@en ;
-    rdfs:subClassOf obo:IAO_0000033,
-        obo:IAO_0000314 .
-
 adro:Substance_Norandrosterone_19 a adro:Metabolite ;
     rdfs:label "19-Norandrosterone"@en,
         "Norandrosterone"@en ;
@@ -12758,6 +12756,13 @@ adro:Entry_2026_S7 a adro:ProhibitedListEntry ;
     obo:BFO_0000176 adro:ProhibitedList_2026 ;
     dcterms:title "Narcotics"@en ;
     adro:isSpecified true .
+
+adro:InstrumentProvision a owl:Class ;
+    rdfs:label "instrument provision"@en,
+        "규범 조항"@ko ;
+    obo:IAO_0000115 "A document part that constitutes a single numbered provision of an anti-doping instrument and directs conduct."@en ;
+    rdfs:subClassOf obo:IAO_0000033,
+        obo:IAO_0000314 .
 
 adro:Substance_Testosterone a adro:ChemicalSubstance ;
     rdfs:label "Testosterone"@en .

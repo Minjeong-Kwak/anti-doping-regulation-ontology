@@ -44,6 +44,7 @@ Four first instance awards of the American Arbitration Association whose appeals
 | UK Anti-Doping Rules 2021, Article 10.2.3 | not asserted |  |
 | UK Anti-Doping Rules 2021, Article 10.4 | not asserted |  |
 | UK Anti-Doping Rules 2021, Article 10.5 | not asserted |  |
+| UK Anti-Doping Rules 2021, Article 10.6 | not asserted |  |
 | UK Anti-Doping Rules 2021, Article 10.2.1(a) | not asserted |  |
 | Code du sport, article L. 232-9 | 2021 Code, Presence | The correspondence is asserted because the decisions themselves gloss the article in the wording of Code Article 2.1. |
 | UCI Anti-Doping Regulations, Article 15.1 | not asserted | No correspondence to a Code article is asserted. The decision applying this provision predates the 2021 Code, and the Code articles in this ontology are parts of the 2021 edition. A correspondence holds only between an instrument and the Code edition it restates. |

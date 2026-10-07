@@ -27,7 +27,7 @@ Every term the ontology declares, with its definition, where it sits under the u
 | `adro:FirstInstanceDecision` | first instance decision | adro:Decision | 10 | A decision issued by a body of first instance. |
 | `adro:Hearing` | hearing | adro:ResultsManagementProcess | 7 | A results management process in which a deciding body receives submissions from the parties and reaches a determination. |
 | `adro:IneligibilityStatus` | ineligibility status | obo:BFO_0000023 | 8 | A role borne by a person during the interval in which that person is barred from participation by a sanction decision. |
-| `adro:InstrumentProvision` | instrument provision | obo:IAO_0000033, obo:IAO_0000314 | 12 | A document part that constitutes a single numbered provision of an anti-doping instrument and directs conduct. |
+| `adro:InstrumentProvision` | instrument provision | obo:IAO_0000033, obo:IAO_0000314 | 13 | A document part that constitutes a single numbered provision of an anti-doping instrument and directs conduct. |
 | `adro:InternationalStandard` | international standard | obo:IAO_0000310 | 1 | A document that supplements the Code by specifying requirements in a defined area. |
 | `adro:Jurisdiction` | jurisdiction | obo:IAO_0000030 | 3 | An information content entity that designates the persons and the territory within which an anti-doping instrument binds. |
 | `adro:Laboratory` | laboratory | adro:Organization | 3 | An organization accredited to analyse samples collected in doping control. |

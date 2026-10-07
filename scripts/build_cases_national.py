@@ -79,13 +79,16 @@ PROVISIONS = [
   "Use or Attempted Use by an Athlete of a Prohibited Substance or a Prohibited Method",
   "UKADRules_2021", "Article_2021_Use", None),
  ("UKAD_ADR_10_2_3", "UK Anti-Doping Rules 2021, Article 10.2.3",
-  "Period of Ineligibility where the violation is not intentional",
+  "Meaning of the term intentional as used in Article 10.2",
   "UKADRules_2021", None, None),
  ("UKAD_ADR_10_4", "UK Anti-Doping Rules 2021, Article 10.4",
-  "Elimination of the period of Ineligibility, and aggravating circumstances",
+  "Aggravating Circumstances which may increase the period of Ineligibility",
   "UKADRules_2021", None, None),
  ("UKAD_ADR_10_5", "UK Anti-Doping Rules 2021, Article 10.5",
-  "Reduction of the period of Ineligibility for No Significant Fault or Negligence",
+  "Elimination of the period of Ineligibility where there is No Fault or Negligence",
+  "UKADRules_2021", None, None),
+ ("UKAD_ADR_10_6", "UK Anti-Doping Rules 2021, Article 10.6",
+  "Reduction of the period of Ineligibility based on No Significant Fault or Negligence",
   "UKADRules_2021", None, None),
  ("UKAD_ADR_10_2_1a", "UK Anti-Doping Rules 2021, Article 10.2.1(a)",
   "Period of Ineligibility where the violation does not involve a Specified Substance and is intentional",
@@ -111,17 +114,23 @@ PROVISIONS = [
 # binds, not a place.
 JURISDICTIONS = [
  ("Jurisdiction_UK", "United Kingdom",
-  "UK Anti-Doping Rules 2021, Article 1.5",
+  "UK Anti-Doping Rules 2021, Article 1.2",
   "These Rules apply to all Athletes and Athlete Support Personnel who are members of the NGB "
   "and/or of the NGB's members or affiliate organisations or licensees, or otherwise under the "
-  "jurisdiction of the NGB."),
+  "jurisdiction of the NGB"),
  ("Jurisdiction_France", "France",
-  "Code du sport",
-  "The code du sport is enacted by the French state and binds within its territory."),
+  "Code du sport, article L. 230-3",
+  "For the purposes of the title on the fight against doping, an athlete is any person who takes "
+  "part in or prepares for a sporting event organised by an approved federation or authorised by "
+  "a delegated federation, a sporting event at which prizes are awarded, or an international "
+  "sporting event or one within the competence of an anti-doping organisation that is a "
+  "signatory of the World Anti-Doping Code"),
  ("Jurisdiction_International", "international sport, under the instrument of a governing body",
-  "UCI Anti-Doping Regulations",
-  "The regulations of an international federation bind the persons under that federation "
-  "wherever they are."),
+  "American Arbitration Association case 30 190 00847 06, paragraphs 4 and 5",
+  "An international federation is responsible for the organisation of its sport worldwide, and "
+  "an athlete is bound by its regulations through the licence the athlete holds; the decision "
+  "says this of the UCI. The edition of the UCI regulations the decision applied was not held, "
+  "so the scope is taken from the decision and not from a provision of the instrument"),
 ]
 
 INSTRUMENT_JURISDICTION = {
@@ -135,12 +144,12 @@ INSTRUMENT_JURISDICTION = {
 # Grounds that lengthen or shorten a sanction, in the wording of the instrument
 # that defines them.
 GROUNDS = [
- ("Ground_NoFault", "No Fault or Negligence", "UKAD_ADR_10_4",
+ ("Ground_NoFault", "No Fault or Negligence", "UKAD_ADR_10_5",
   "The Athlete or other Person establishing that they did not know or suspect, and could not "
   "reasonably have known or suspected, even with the exercise of utmost caution, that they had "
   "Used or been administered the Prohibited Substance or Prohibited Method or otherwise violated "
   "an anti-doping rule."),
- ("Ground_NoSignificantFault", "No Significant Fault or Negligence", "UKAD_ADR_10_5",
+ ("Ground_NoSignificantFault", "No Significant Fault or Negligence", "UKAD_ADR_10_6",
   "The Athlete or other Person's establishing that any Fault or negligence, when viewed in the "
   "totality of the circumstances and taking into account the criteria for No Fault or Negligence, "
   "was not significant in relation to the Anti-Doping Rule Violation."),
@@ -324,7 +333,7 @@ def main(out, report):
         o.append(f'adro:{jid} a adro:Jurisdiction ;\n'
                  f'    rdfs:label "{label}"@en ;\n'
                  f'    obo:IAO_0000119 "{src}" ;\n'
-                 f'    rdfs:comment "As stated in {src}: {esc(wording)}."@en .\n\n')
+                 f'    rdfs:comment "As stated in {src}: {esc(wording).rstrip(".")}."@en .\n\n')
     for inst, jid in INSTRUMENT_JURISDICTION.items():
         o.append(f'adro:{inst} adro:bindsWithin adro:{jid} .\n')
     o.append("\n")
@@ -334,11 +343,11 @@ def main(out, report):
         o.append(f'adro:{gid} a adro:SanctionModifyingGround ;\n'
                  f'    rdfs:label "{label}"@en ;\n'
                  f'    adro:definedIn adro:{prov} ;\n'
-                 f'    rdfs:comment "As stated in the instrument: {esc(wording)}."@en .\n\n')
+                 f'    rdfs:comment "As stated in the instrument: {esc(wording).rstrip(".")}."@en .\n\n')
     for case, gid, accepted, wording in GROUNDS_RAISED:
         rel = "acceptsGround" if accepted else "raisesGround"
         o.append(f'adro:Decision_{case} adro:{rel} adro:{gid} ;\n'
-                 f'    rdfs:comment "Ground raised and {"accepted" if accepted else "not established"}: {esc(wording)}."@en .\n\n')
+                 f'    rdfs:comment "Ground raised and {"accepted" if accepted else "not established"}: {esc(wording).rstrip(".")}."@en .\n\n')
 
     o.append("########  Sports not already named in the appeal register  ########\n\n")
     for local, label in SPORTS:

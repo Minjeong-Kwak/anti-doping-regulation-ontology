@@ -174,17 +174,17 @@ What do the instruments provide about an exemption, and which exemption decision
 
 Within which jurisdiction does a given instrument bind, and on what scope provision?
 
-- Code du sport (France) · France · As stated in Code du sport: The code du sport is enacted by the French state and binds within its territory..
-- Anti-Doping Rules of the British Boxing Board of Control · United Kingdom · As stated in UK Anti-Doping Rules 2021, Article 1.5: These Rules apply to all Athletes and Athlete Support Personnel who are members of the NGB and/or of the NGB's members or affiliate organisations or licensees, or otherwise under the jurisdiction of the NGB..
-- Anti-Doping Rules of the Rugby Football League · United Kingdom · As stated in UK Anti-Doping Rules 2021, Article 1.5: These Rules apply to all Athletes and Athlete Support Personnel who are members of the NGB and/or of the NGB's members or affiliate organisations or licensees, or otherwise under the jurisdiction of the NGB..
+- Code du sport (France) · France · As stated in Code du sport, article L. 230-3: For the purposes of the title on the fight against doping, an athlete is any person who takes part in or prepares for a sporting event organised by an approved federation or authorised by a delegated federation, a sporting event at which prizes are awarded, or an international sporting event or one within the competence of an anti-doping organisation that is a signatory of the World Anti-Doping Code.
+- Anti-Doping Rules of the British Boxing Board of Control · United Kingdom · As stated in UK Anti-Doping Rules 2021, Article 1.2: These Rules apply to all Athletes and Athlete Support Personnel who are members of the NGB and/or of the NGB's members or affiliate organisations or licensees, or otherwise under the jurisdiction of the NGB.
+- Anti-Doping Rules of the Rugby Football League · United Kingdom · As stated in UK Anti-Doping Rules 2021, Article 1.2: These Rules apply to all Athletes and Athlete Support Personnel who are members of the NGB and/or of the NGB's members or affiliate organisations or licensees, or otherwise under the jurisdiction of the NGB.
 
 ### A11
 
 Which grounds may lengthen or shorten a period of ineligibility, and in which provision is each defined?
 
-- Aggravating Circumstances · UK Anti-Doping Rules 2021, Article 10.4 · Elimination of the period of Ineligibility, and aggravating circumstances
-- No Fault or Negligence · UK Anti-Doping Rules 2021, Article 10.4 · Elimination of the period of Ineligibility, and aggravating circumstances
-- No Significant Fault or Negligence · UK Anti-Doping Rules 2021, Article 10.5 · Reduction of the period of Ineligibility for No Significant Fault or Negligence
+- Aggravating Circumstances · UK Anti-Doping Rules 2021, Article 10.4 · Aggravating Circumstances which may increase the period of Ineligibility
+- No Fault or Negligence · UK Anti-Doping Rules 2021, Article 10.5 · Elimination of the period of Ineligibility where there is No Fault or Negligence
+- No Significant Fault or Negligence · UK Anti-Doping Rules 2021, Article 10.6 · Reduction of the period of Ineligibility based on No Significant Fault or Negligence
 
 ### A12
 
