@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+title: Anti-Doping Regulation Ontology
+message: If you use this ontology, please cite it.
+type: dataset
+authors:
+  - family-names: Kwak
+    given-names: Minjeong
+  - family-names: Uhm
+    given-names: Jun-Phil
+  - family-names: Kim
+    given-names: Minkyu
+repository-code: https://github.com/Minjeong-Kwak/anti-doping-regulation-ontology
+url: https://w3id.org/adro/
+license: CC-BY-4.0
+version: 2026-10-07
+date-released: 2026-10-07
+keywords:
+  - ontology
+  - anti-doping
+  - Basic Formal Ontology
+  - World Anti-Doping Code

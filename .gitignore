@@ -1,0 +1,4 @@
+dist/adro-inferred.ttl
+tests/_tmp_*.owl
+__pycache__/
+*.pyc

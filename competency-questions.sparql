@@ -1,0 +1,674 @@
+# Competency questions for the Anti-Doping Regulation Ontology
+#
+# The corpus of decisions is not exhaustive. No question here asks what is most
+# frequent, how something is distributed, or which sport carries the most risk,
+# because the ontology holds no denominator from which such an answer could be
+# drawn. The questions ask what the regulation provides, what a decision states,
+# and how the two connect.
+#
+# Each question records whether it needs a reasoner. A question marked
+# "inference: required" returns nothing over the asserted triples alone; that
+# difference is the point of the property chains.
+#
+# Run with: python3 scripts/run_competency_questions.py
+
+# ---------------------------------------------------------------------------
+# A. What the regulation provides
+# ---------------------------------------------------------------------------
+
+#CQ A1 | Which Code article defines a given anti-doping rule violation type, and what does the article direct? | entailment: none
+PREFIX adro: <https://w3id.org/adro/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?adrv ?adrvLabel ?article ?articleTitle WHERE {
+  ?adrv a adro:ADRVType ;
+        rdfs:label ?adrvLabel ;
+        adro:definedIn ?article .
+  ?article dcterms:title ?articleTitle .
+} ORDER BY ?article
+
+#CQ A2 | Under which Prohibited List entry is a given substance prohibited, in which competition context, and under what category? | entailment: none
+PREFIX adro: <https://w3id.org/adro/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?substanceLabel ?entryLabel ?categoryLabel ?contextLabel WHERE {
+  ?app a adro:ProhibitionApplicability ;
+       adro:appliesTo ?substance ;
+       adro:statedIn ?entry ;
+       adro:hasCategory ?category ;
+       adro:competitionContext ?context .
+  ?substance rdfs:label ?substanceLabel .
+  ?entry rdfs:label ?entryLabel .
+  ?category rdfs:label ?categoryLabel .
+  ?context rdfs:label ?contextLabel .
+  FILTER(CONTAINS(LCASE(?substanceLabel), "stanozolol"))
+}
+
+#CQ A3 | Which categories does a given category fall under, directly or through an intervening category? | entailment: chain
+PREFIX adro: <https://w3id.org/adro/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?narrowLabel ?broadLabel WHERE {
+  ?narrow adro:broaderCategory ?broad ;
+          rdfs:label ?narrowLabel .
+  ?broad rdfs:label ?broadLabel .
+  FILTER(CONTAINS(STR(?narrow), "Category_S2_1_1"))
+}
+
+#CQ A4 | Which substances does the List prohibit only above a stated decision limit, in what unit and in which specimen is that limit stated? | entailment: none
+PREFIX adro: <https://w3id.org/adro/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?substanceLabel ?limitLabel ?value ?unitLabel ?matrixLabel WHERE {
+  ?app adro:appliesTo ?substance ;
+       adro:hasDecisionLimit ?limit .
+  ?substance rdfs:label ?substanceLabel .
+  ?limit rdfs:label ?limitLabel ;
+         adro:hasThresholdValue ?value ;
+         adro:hasMeasurementUnit ?unit ;
+         adro:hasSpecimenMatrix ?matrix .
+  ?unit rdfs:label ?unitLabel .
+  ?matrix rdfs:label ?matrixLabel .
+} ORDER BY ?substanceLabel
+
+#CQ A5 | For which substances does the List confine the prohibition to a stated route of administration? | entailment: none
+PREFIX adro: <https://w3id.org/adro/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?substanceLabel ?routeLabel WHERE {
+  ?app adro:appliesTo ?substance ;
+       adro:routeOfAdministration ?route .
+  ?substance rdfs:label ?substanceLabel .
+  ?route rdfs:label ?routeLabel .
+} ORDER BY ?substanceLabel
+
+#CQ A6 | Which provisions of instruments other than the Code restate a given Code article, and in which instrument does each sit? | entailment: none
+PREFIX adro: <https://w3id.org/adro/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?provisionLabel ?instrumentLabel ?articleLabel WHERE {
+  ?provision adro:implementsCodeArticle ?article ;
+             rdfs:label ?provisionLabel ;
+             obo:BFO_0000176 ?instrument .
+  ?instrument rdfs:label ?instrumentLabel .
+  ?article rdfs:label ?articleLabel .
+}
+
+#CQ A7 | Which governing body takes over another instrument in place of stating its own rules? | entailment: none
+PREFIX adro: <https://w3id.org/adro/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?adopterLabel ?adoptedLabel WHERE {
+  ?adopter adro:adoptsInstrument ?adopted ;
+           rdfs:label ?adopterLabel .
+  ?adopted rdfs:label ?adoptedLabel .
+}
+
+#CQ A8 | Which prohibited methods does the List state, and under which method category does each sit? | entailment: none
+PREFIX adro: <https://w3id.org/adro/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?categoryLabel ?entryLabel WHERE {
+  ?cat a adro:ProhibitedMethodCategory ;
+       rdfs:label ?categoryLabel ;
+       adro:definedIn ?entry .
+  ?entry rdfs:label ?entryLabel .
+} ORDER BY ?categoryLabel
+
+#CQ A9 | What do the instruments provide about an exemption, and which exemption decisions does the ontology hold? | entailment: none
+PREFIX adro: <https://w3id.org/adro/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?provisionLabel ?provisionTitle ?note ?exemption WHERE {
+  ?provision a adro:InstrumentProvision ;
+             rdfs:label ?provisionLabel ;
+             dcterms:title ?provisionTitle .
+  OPTIONAL { ?provision rdfs:comment ?note }
+  OPTIONAL { ?exemption a adro:TUEDecision }
+  FILTER(CONTAINS(LCASE(?provisionTitle), "exemption"))
+}
+
+#CQ A10 | Within which jurisdiction does a given instrument bind, and on what scope provision? | entailment: none
+PREFIX adro: <https://w3id.org/adro/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?instrumentLabel ?jurisdictionLabel ?basis WHERE {
+  ?inst adro:bindsWithin ?j ; rdfs:label ?instrumentLabel .
+  ?j rdfs:label ?jurisdictionLabel ; rdfs:comment ?basis .
+} ORDER BY ?jurisdictionLabel
+
+#CQ A11 | Which grounds may lengthen or shorten a period of ineligibility, and in which provision is each defined? | entailment: none
+PREFIX adro: <https://w3id.org/adro/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?groundLabel ?provisionLabel ?provisionTitle WHERE {
+  ?g a adro:SanctionModifyingGround ;
+     rdfs:label ?groundLabel ;
+     adro:definedIn ?prov .
+  ?prov rdfs:label ?provisionLabel ; dcterms:title ?provisionTitle .
+} ORDER BY ?groundLabel
+
+#CQ A12 | What does Article 2.1 cover besides the substance itself, and which such analytes does the ontology hold? | entailment: none
+PREFIX adro: <https://w3id.org/adro/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?kind ?analyteLabel ?parentLabel WHERE {
+  { ?a a adro:Metabolite ; rdfs:label ?analyteLabel ; adro:isMetaboliteOf ?parent .
+    BIND("metabolite" AS ?kind) }
+  UNION
+  { ?a a adro:Marker ; rdfs:label ?analyteLabel ; adro:indicatesUseOf ?parent .
+    BIND("marker" AS ?kind) }
+  ?parent rdfs:label ?parentLabel .
+} ORDER BY ?kind ?analyteLabel
+
+# ---------------------------------------------------------------------------
+# B. What a decision states
+# ---------------------------------------------------------------------------
+
+#CQ B1 | Which decisions determine a given violation type, and under which provision was it determined? | entailment: none
+PREFIX adro: <https://w3id.org/adro/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?decisionId ?adrvLabel ?provisionLabel WHERE {
+  ?decision adro:assignsType ?adrv ;
+            adro:hasCaseIdentifier ?decisionId .
+  ?adrv rdfs:label ?adrvLabel .
+  OPTIONAL { ?decision adro:appliedProvision ?provision . ?provision rdfs:label ?provisionLabel }
+} ORDER BY ?decisionId
+
+#CQ B2 | Which decision does a given appeal reconsider, which body issued each, and did the appeal change the period of ineligibility? | entailment: none
+PREFIX adro: <https://w3id.org/adro/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?appealId ?appealBody ?firstId ?firstBody ?appealMonths ?firstMonths WHERE {
+  ?appeal adro:appealsAgainst ?first ;
+          adro:hasCaseIdentifier ?appealId ;
+          adro:issuedBy ?ab .
+  ?ab rdfs:label ?appealBody .
+  ?first adro:hasCaseIdentifier ?firstId ;
+         adro:issuedBy ?fb .
+  ?fb rdfs:label ?firstBody .
+  OPTIONAL { ?appeal adro:establishes ?ai . ?ai adro:hasIneligibilityDurationInMonths ?appealMonths }
+  OPTIONAL { ?first adro:establishes ?fi . ?fi adro:hasIneligibilityDurationInMonths ?firstMonths }
+}
+
+#CQ B3 | Which decisions name an analyte that is a metabolite rather than a listed substance, and what substance does it derive from? | entailment: none
+PREFIX adro: <https://w3id.org/adro/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?decisionId ?metaboliteLabel ?parentLabel WHERE {
+  ?decision adro:mentions ?m ;
+            adro:hasCaseIdentifier ?decisionId .
+  ?m a adro:Metabolite ;
+     rdfs:label ?metaboliteLabel ;
+     adro:isMetaboliteOf ?parent .
+  ?parent rdfs:label ?parentLabel .
+} ORDER BY ?decisionId
+
+#CQ B4 | Which decisions rest on more than one listed substance? | entailment: subclass
+PREFIX adro: <https://w3id.org/adro/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?decisionId (COUNT(DISTINCT ?s) AS ?substances) WHERE {
+  ?decision adro:mentions ?s ;
+            adro:hasCaseIdentifier ?decisionId .
+  ?s a adro:ChemicalSubstance .
+} GROUP BY ?decisionId HAVING (COUNT(DISTINCT ?s) > 1) ORDER BY ?decisionId
+
+#CQ B5 | Which decisions determine more than one violation type on the same matter? | entailment: none
+PREFIX adro: <https://w3id.org/adro/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?decisionId (COUNT(DISTINCT ?t) AS ?types) WHERE {
+  ?decision adro:assignsType ?t ;
+            adro:hasCaseIdentifier ?decisionId .
+} GROUP BY ?decisionId HAVING (COUNT(DISTINCT ?t) > 1)
+
+#CQ B6 | For a given matter, what consequence was established, for how long, and over which interval? | entailment: none
+PREFIX adro: <https://w3id.org/adro/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?decisionId ?sanctionLabel ?months ?from ?to WHERE {
+  ?decision adro:hasCaseIdentifier ?decisionId ;
+            adro:hasSanctionType ?st ;
+            adro:establishes ?status .
+  ?st rdfs:label ?sanctionLabel .
+  ?status adro:hasIneligibilityDurationInMonths ?months .
+  OPTIONAL { ?status adro:hasEffectiveFrom ?from }
+  OPTIONAL { ?status adro:hasEffectiveTo ?to }
+} ORDER BY ?decisionId
+
+#CQ B7 | Which body managed the results of a given matter, and what kind of body is it? | entailment: subclass
+PREFIX adro: <https://w3id.org/adro/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?caseId ?bodyLabel ?kind WHERE {
+  ?c a adro:CaseRecord ;
+     adro:hasCaseIdentifier ?caseId ;
+     adro:resultsManagementAuthority ?body .
+  ?body rdfs:label ?bodyLabel ; a ?kind .
+  FILTER(?kind IN (adro:NationalAntiDopingOrganization, adro:AntiDopingOrganization, adro:Organization))
+} ORDER BY ?caseId
+
+#CQ B8 | Which matters concern athletics, whether the headnote names the sport or one of its disciplines? | entailment: none
+PREFIX adro: <https://w3id.org/adro/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?caseId ?statedLabel WHERE {
+  ?c a adro:CaseRecord ;
+     adro:hasCaseIdentifier ?caseId ;
+     adro:concernsSport ?d .
+  ?d rdfs:label ?statedLabel .
+  OPTIONAL { ?d adro:broaderCategory ?up }
+  FILTER(?d = adro:Sport_Athletics || ?up = adro:Sport_Athletics)
+} ORDER BY ?caseId
+
+#CQ B10 | Which sports does the register name, counting a discipline under its sport? | entailment: none
+PREFIX adro: <https://w3id.org/adro/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?sportLabel (COUNT(DISTINCT ?c) AS ?matters) WHERE {
+  ?c a adro:CaseRecord ; adro:concernsSport ?d .
+  OPTIONAL { ?d adro:broaderCategory ?up }
+  BIND(COALESCE(?up, ?d) AS ?sport)
+  ?sport rdfs:label ?sportLabel .
+} GROUP BY ?sportLabel ORDER BY DESC(?matters) ?sportLabel
+
+#CQ B9 | What is the recorded status of a given matter, and does a decision reconsidering it exist? | entailment: none
+PREFIX adro: <https://w3id.org/adro/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?caseId ?statusLabel ?reconsideredBy WHERE {
+  ?c a adro:CaseRecord ;
+     adro:hasCaseIdentifier ?caseId ;
+     adro:caseStatus ?status .
+  ?status rdfs:label ?statusLabel .
+  OPTIONAL {
+    ?c obo:IAO_0000136 ?d .
+    ?later adro:appealsAgainst ?d ; adro:hasCaseIdentifier ?reconsideredBy .
+  }
+} ORDER BY ?caseId
+
+#CQ B11 | Which violation types does the regulation direct at a person other than the athlete, and which matters in the register determine one? | entailment: none
+PREFIX adro: <https://w3id.org/adro/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?adrvLabel ?articleTitle ?decisionId WHERE {
+  VALUES ?adrv { adro:ADRVType_Trafficking adro:ADRVType_Administration
+                 adro:ADRVType_Complicity adro:ADRVType_ProhibitedAssociation }
+  ?adrv rdfs:label ?adrvLabel ; adro:definedIn ?article .
+  ?article dcterms:title ?articleTitle .
+  OPTIONAL { ?d adro:assignsType ?adrv ; adro:hasCaseIdentifier ?decisionId }
+} ORDER BY ?adrvLabel ?decisionId
+
+#CQ B12 | Which persons does a decision identify as athlete support personnel, and on what wording? | entailment: none
+PREFIX adro: <https://w3id.org/adro/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?personLabel ?caseId ?wording WHERE {
+  ?p a adro:Person ;
+     rdfs:label ?personLabel ;
+     adro:bearerOfRole ?role .
+  ?role a adro:AthleteSupportPersonnelRole ;
+        obo:IAO_0000119 ?caseId ;
+        rdfs:comment ?wording .
+} ORDER BY ?caseId
+
+#CQ B13 | Which grounds did a decision record as raised, and did it establish them? | entailment: none
+PREFIX adro: <https://w3id.org/adro/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?decisionId ?groundLabel ?established WHERE {
+  ?d adro:hasCaseIdentifier ?decisionId ; adro:raisesGround ?g .
+  ?g rdfs:label ?groundLabel .
+  BIND(EXISTS { ?d adro:acceptsGround ?g } AS ?established)
+} ORDER BY ?decisionId ?groundLabel
+
+#CQ B14 | Which matters fell under a given jurisdiction, and where was the decision obtained? | entailment: none
+PREFIX adro: <https://w3id.org/adro/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?caseId ?jurisdictionLabel ?url ?retrieved WHERE {
+  ?c a adro:CaseRecord ; adro:hasCaseIdentifier ?caseId ; adro:concernsJurisdiction ?j .
+  ?j rdfs:label ?jurisdictionLabel .
+  OPTIONAL { ?d adro:hasCaseIdentifier ?caseId ; adro:hasSourceURL ?url ; adro:hasRetrievalDate ?retrieved }
+} ORDER BY ?caseId
+
+# ---------------------------------------------------------------------------
+# C. How a matter ran
+# ---------------------------------------------------------------------------
+
+#CQ C1 | For a given matter, what is the order of events from collection to decision, with the dates the decision states? | entailment: none
+PREFIX adro: <https://w3id.org/adro/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?caseId ?stage ?when WHERE {
+  { ?e a adro:SampleCollection ; adro:hasCollectionDateTime ?when ; adro:concernsCase ?c .
+    BIND("1 sample collection" AS ?stage) }
+  UNION
+  { ?e a adro:LaboratoryAnalysis ; adro:hasAnalysisDateTime ?when ; adro:concernsCase ?c .
+    BIND("2 laboratory analysis" AS ?stage) }
+  UNION
+  { ?e a adro:NotificationOfCharge ; adro:hasIssueDateTime ?when ; adro:concernsCase ?c .
+    BIND("3 notification" AS ?stage) }
+  UNION
+  { ?e a adro:Hearing ; adro:hasStartDateTime ?when ; adro:concernsCase ?c .
+    BIND("4 hearing" AS ?stage) }
+  ?c adro:hasCaseIdentifier ?caseId .
+} ORDER BY ?caseId ?when
+
+#CQ C2 | From whom was a given sample collected? | entailment: chain
+PREFIX adro: <https://w3id.org/adro/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?portionRef ?personLabel WHERE {
+  ?sample a adro:UrineSample ;
+          adro:hasPortion ?por ;
+          adro:collectedFrom ?person .
+  ?por adro:hasSampleIdentifier ?portionRef .
+  ?person rdfs:label ?personLabel .
+} ORDER BY ?portionRef
+
+#CQ C3 | Which person does a given adverse analytical finding concern? | entailment: chain
+PREFIX adro: <https://w3id.org/adro/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?findingLabel ?personLabel WHERE {
+  ?f a adro:AdverseAnalyticalFinding ;
+     rdfs:label ?findingLabel ;
+     adro:concernsPerson ?person .
+  ?person rdfs:label ?personLabel .
+}
+
+#CQ C4 | Which laboratory analysed the sample in a given matter, and by what method? | entailment: none
+PREFIX adro: <https://w3id.org/adro/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?caseId ?labLabel ?method WHERE {
+  ?a a adro:LaboratoryAnalysis ;
+     adro:concernsCase ?c ;
+     obo:BFO_0000057 ?lab .
+  ?lab a adro:Laboratory ; rdfs:label ?labLabel .
+  ?c adro:hasCaseIdentifier ?caseId .
+  OPTIONAL { ?a adro:hasAnalyticalMethod ?method }
+}
+
+#CQ C5 | Which matters record a provisional suspension, and does the period of ineligibility run from that date? | entailment: none
+PREFIX adro: <https://w3id.org/adro/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?caseId ?provisionalFrom ?ineligibilityFrom WHERE {
+  ?ps a adro:ProvisionalSuspensionStatus ;
+      adro:concernsCase ?c ;
+      adro:hasEffectiveFrom ?provisionalFrom .
+  ?c adro:hasCaseIdentifier ?caseId .
+  OPTIONAL {
+    ?d adro:hasCaseIdentifier ?caseId ; adro:establishes ?is .
+    ?is a adro:IneligibilityStatus ; adro:hasEffectiveFrom ?ineligibilityFrom .
+  }
+}
+
+#CQ C6 | Which document opened a given proceeding, and when? | entailment: none
+PREFIX adro: <https://w3id.org/adro/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?processLabel ?docLabel ?when WHERE {
+  ?p adro:initiatedBy ?doc ;
+     rdfs:label ?processLabel .
+  ?doc rdfs:label ?docLabel ; adro:hasIssueDateTime ?when .
+} ORDER BY ?when
+
+#CQ C7 | What portions does a sample have, what reference does each carry, and which portion was analysed? | entailment: none
+PREFIX adro: <https://w3id.org/adro/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?caseId ?portionRef ?analysed WHERE {
+  ?s a adro:UrineSample ; adro:hasPortion ?por ; adro:concernsCase ?c .
+  ?por adro:hasSampleIdentifier ?portionRef .
+  ?c adro:hasCaseIdentifier ?caseId .
+  BIND(EXISTS { ?an a adro:LaboratoryAnalysis ; adro:hasSpecifiedInput ?por } AS ?analysed)
+} ORDER BY ?caseId ?portionRef
+
+# ---------------------------------------------------------------------------
+# D. What the ontology knows, and what it does not
+# ---------------------------------------------------------------------------
+
+#CQ D1 | For a given individual in the procedural layer, which decision states it, and by what identifier can that decision be retrieved? | entailment: none
+PREFIX adro: <https://w3id.org/adro/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?thing ?source WHERE {
+  ?thing obo:IAO_0000119 ?source .
+} ORDER BY ?source
+
+#CQ D2 | Which decisions in the register carry no link to a substance? | entailment: subclass
+PREFIX adro: <https://w3id.org/adro/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?decisionId ?subject WHERE {
+  ?d a adro:Decision ; adro:hasCaseIdentifier ?decisionId .
+  FILTER NOT EXISTS { ?d adro:mentions ?s }
+  OPTIONAL { ?d rdfs:comment ?subject }
+} ORDER BY ?decisionId
+
+#CQ D3 | Is there a decision stating that a given person held no exemption for a named substance, and which substance is it? | entailment: none
+PREFIX adro: <https://w3id.org/adro/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?personLabel ?substanceLabel ?statement WHERE {
+  ?p a adro:Person ;
+     rdfs:label ?personLabel ;
+     rdfs:comment ?statement ;
+     a ?neg .
+  ?neg owl:complementOf ?some .
+  ?some owl:onProperty adro:bearerOfRole ;
+        owl:someValuesFrom ?exemption .
+  ?exemption owl:intersectionOf ?list .
+  ?list rdf:first adro:ExemptionStatus ;
+        rdf:rest ?rest .
+  ?rest rdf:first ?forSubstance .
+  ?forSubstance owl:onProperty adro:exemptionFor ;
+                owl:hasValue ?substance .
+  ?substance rdfs:label ?substanceLabel .
+  FILTER(CONTAINS(?statement, "Exemption"))
+}
+
+#CQ D4 | Which kinds of analytical report does the regulation distinguish, and which does the ontology hold? | entailment: none
+PREFIX adro: <https://w3id.org/adro/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?kindLabel (COUNT(?r) AS ?held) WHERE {
+  VALUES ?kind { adro:AdverseAnalyticalFinding adro:AtypicalFinding }
+  ?kind rdfs:label ?kindLabel .
+  OPTIONAL { ?r a ?kind }
+} GROUP BY ?kindLabel ORDER BY ?kindLabel
+
+# ---------------------------------------------------------------------------
+# E. Across the layers
+# ---------------------------------------------------------------------------
+
+#CQ E1 | Given a substance a decision names, which List entry, which category, which violation type and which Code article stand behind the determination? | entailment: none
+PREFIX adro: <https://w3id.org/adro/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?decisionId ?substanceLabel ?entryLabel ?categoryLabel ?adrvLabel ?articleLabel WHERE {
+  ?d adro:hasCaseIdentifier ?decisionId ;
+     adro:mentions ?s ;
+     adro:assignsType ?adrv .
+  ?s a adro:ChemicalSubstance ; rdfs:label ?substanceLabel .
+  ?app adro:appliesTo ?s ; adro:statedIn ?entry ; adro:hasCategory ?cat .
+  ?entry rdfs:label ?entryLabel .
+  ?cat rdfs:label ?categoryLabel .
+  ?adrv rdfs:label ?adrvLabel ; adro:definedIn ?article .
+  ?article rdfs:label ?articleLabel .
+}
+
+#CQ E2 | Which violation types were determined under an instrument other than the Code, and under which instrument? | entailment: none
+PREFIX adro: <https://w3id.org/adro/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?decisionId ?adrvLabel ?provisionLabel ?instrumentLabel WHERE {
+  ?d adro:hasCaseIdentifier ?decisionId ;
+     adro:assignsType ?adrv ;
+     adro:appliedProvision ?prov .
+  ?prov rdfs:label ?provisionLabel ; obo:BFO_0000176 ?inst .
+  ?inst rdfs:label ?instrumentLabel .
+  ?adrv rdfs:label ?adrvLabel .
+  FILTER NOT EXISTS { ?inst a adro:WorldAntiDopingCode }
+} ORDER BY ?decisionId

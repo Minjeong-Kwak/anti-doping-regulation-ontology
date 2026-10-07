@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Resolves every imported ontology to a copy in this directory, so that the
+     whole set loads with no network access. The base IRI is not yet registered,
+     so the entries for the adro modules are what make the import chain work. -->
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="local-bfo" name="http://purl.obolibrary.org/obo/bfo.owl" uri="bfo-core.owl"/>
+    <uri id="local-bfo-version" name="http://purl.obolibrary.org/obo/bfo/2020/bfo-core.owl" uri="bfo-core.owl"/>
+    <uri id="local-iao" name="http://purl.obolibrary.org/obo/iao.owl" uri="iao.owl"/>
+    <uri id="adro-core" name="https://w3id.org/adro/" uri="doping-ontology-core.ttl"/>
+    <uri id="adro-designations" name="https://w3id.org/adro/designations" uri="doping-ontology-designations.ttl"/>
+    <uri id="adro-substances" name="https://w3id.org/adro/substances" uri="doping-ontology-substances.ttl"/>
+    <uri id="adro-analytes" name="https://w3id.org/adro/analytes" uri="doping-ontology-analytes.ttl"/>
+    <uri id="adro-cases-cas" name="https://w3id.org/adro/cases-cas" uri="doping-ontology-cases-cas.ttl"/>
+    <uri id="adro-cases-national" name="https://w3id.org/adro/cases-national" uri="doping-ontology-cases-national.ttl"/>
+    <uri id="adro-procedure" name="https://w3id.org/adro/procedure" uri="doping-ontology-procedure.ttl"/>
+</catalog>

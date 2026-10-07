@@ -1,0 +1,829 @@
+@prefix adro: <https://w3id.org/adro/> .
+@prefix obo:  <http://purl.obolibrary.org/obo/> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+########################################
+# Ontology header
+########################################
+
+<https://w3id.org/adro/> a owl:Ontology ;
+    owl:versionIRI <https://w3id.org/adro/2026-10-07/doping-ontology-core.ttl> ;
+    owl:imports <http://purl.obolibrary.org/obo/bfo.owl> ,
+                <http://purl.obolibrary.org/obo/iao.owl> ;
+    dcterms:title "Anti-Doping Regulation Ontology (core)"@en ;
+    dcterms:description "A BFO- and IAO-aligned ontology for anti-doping regulatory information, distinguishing normative documents, regulatory designations, procedural occurrents, and records of decisions."@en ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    rdfs:comment "Base IRI registration pending. Do not treat https://w3id.org/adro/ as resolvable until registered."@en .
+
+# Annotation properties reused from IAO
+obo:IAO_0000115 a owl:AnnotationProperty ; rdfs:label "definition"@en .
+obo:IAO_0000119 a owl:AnnotationProperty ; rdfs:label "definition source"@en .
+
+########################################
+# 1. Independent continuants
+########################################
+
+adro:Person a owl:Class ;
+    rdfs:subClassOf obo:BFO_0000030 ;
+    rdfs:label "person"@en , "사람"@ko ;
+    obo:IAO_0000115 "A material entity that is a human being falling within the scope of anti-doping regulation or participating in its administration."@en ;
+    rdfs:comment "Being an athlete is a role borne by a person and is therefore not modelled as a subclass here."@en .
+
+adro:Sample a owl:Class ;
+    rdfs:subClassOf obo:BFO_0000030 ;
+    rdfs:label "sample"@en , "시료"@ko ;
+    obo:IAO_0000115 "A material entity that is biological material collected from a person in a doping control procedure for the purpose of analysis."@en .
+
+adro:UrineSample a owl:Class ;
+    rdfs:subClassOf adro:Sample ;
+    rdfs:label "urine sample"@en , "소변 시료"@ko ;
+    obo:IAO_0000115 "A sample that consists of urine."@en .
+
+adro:ChemicalSubstance a owl:Class ;
+    rdfs:subClassOf obo:BFO_0000040 ;
+    rdfs:label "chemical substance"@en , "화학물질"@ko ;
+    obo:IAO_0000115 "A material entity that is individuated by its chemical composition."@en ;
+    rdfs:comment "Prohibited status is not a property of this class. It is expressed by a prohibition applicability."@en .
+
+adro:Organization a owl:Class ;
+    rdfs:subClassOf obo:BFO_0000027 ;
+    rdfs:label "organization"@en , "조직"@ko ;
+    obo:IAO_0000115 "An object aggregate of persons that acts with an assigned authority or function within the anti-doping system."@en ;
+    rdfs:comment "BFO 2020 provides no category for social entities. The aggregate placement is a deliberate choice; see the ontological choices section of the accompanying paper."@en .
+
+adro:AntiDopingOrganization a owl:Class ;
+    rdfs:subClassOf adro:Organization ;
+    rdfs:label "anti-doping organization"@en , "도핑방지기구"@ko ;
+    obo:IAO_0000115 "An organization with authority to adopt or enforce anti-doping rules."@en .
+
+adro:NationalAntiDopingOrganization a owl:Class ;
+    rdfs:subClassOf adro:AntiDopingOrganization ;
+    rdfs:label "national anti-doping organization"@en , "국가도핑방지기구"@ko ;
+    obo:IAO_0000115 "An anti-doping organization with authority to operate an anti-doping programme within a given jurisdiction."@en .
+
+adro:Laboratory a owl:Class ;
+    rdfs:subClassOf adro:Organization ;
+    rdfs:label "laboratory"@en , "실험실"@ko ;
+    obo:IAO_0000115 "An organization accredited to analyse samples collected in doping control."@en .
+
+########################################
+# 2. Roles and statuses
+########################################
+
+adro:AthleteRole a owl:Class ;
+    rdfs:subClassOf obo:BFO_0000023 ;
+    rdfs:label "athlete role"@en , "선수 역할"@ko ;
+    obo:IAO_0000115 "A role borne by a person during the interval in which that person is subject to anti-doping regulation in connection with sporting competition."@en ;
+    rdfs:comment "The role ceases when the person is no longer subject to regulation, while the person persists. This is why athlete is not a subtype of person."@en .
+
+adro:AthleteSupportPersonnelRole a owl:Class ;
+    rdfs:subClassOf obo:BFO_0000023 ;
+    rdfs:label "athlete support personnel role"@en , "선수지원요원 역할"@ko ;
+    obo:IAO_0000115 "A role borne by a person during the interval in which that person works with, treats or assists an athlete participating in or preparing for sporting competition, and is for that reason subject to anti-doping regulation."@en ;
+    rdfs:comment "The genus is taken from the definition the instruments give: any coach, trainer, manager, agent, team staff, official, nutritionist, medical or paramedical personnel, parent or any other person working with, treating or assisting an athlete participating in or preparing for sports competition. The role is needed because the regulation directs violations at such a person directly, not only at the athlete: trafficking, administration, complicity and prohibited association are each stated as committed by an athlete or other person."@en .
+
+[] a owl:AllDisjointClasses ;
+   owl:members ( adro:AthleteRole adro:AthleteSupportPersonnelRole ) .
+
+adro:IneligibilityStatus a owl:Class ;
+    rdfs:subClassOf obo:BFO_0000023 ;
+    rdfs:label "ineligibility status"@en , "자격정지 지위"@ko ;
+    obo:IAO_0000115 "A role borne by a person during the interval in which that person is barred from participation by a sanction decision."@en ;
+    rdfs:comment "Modelled as a role because it exists by virtue of an institutional circumstance and does not alter the physical make-up of its bearer. Modelling it as an information content entity was considered and rejected, since the decision document and the status it establishes must be distinguished."@en .
+
+adro:ProvisionalSuspensionStatus a owl:Class ;
+    rdfs:subClassOf obo:BFO_0000023 ;
+    rdfs:label "provisional suspension status"@en , "잠정자격정지 지위"@ko ;
+    obo:IAO_0000115 "A role borne by a person during the interval in which that person is barred from participation before a final decision is reached."@en .
+
+
+########################################
+# 3. Procedural occurrents
+########################################
+
+adro:SampleCollection a owl:Class ;
+    rdfs:subClassOf obo:BFO_0000015 ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty adro:hasSpecifiedOutput ; owl:someValuesFrom adro:Sample ] ;
+    rdfs:label "sample collection"@en , "시료채취"@ko ;
+    obo:IAO_0000115 "A process in which a sample is collected from a person under a doping control procedure."@en .
+
+adro:LaboratoryAnalysis a owl:Class ;
+    rdfs:subClassOf obo:BFO_0000015 ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty adro:hasSpecifiedInput ; owl:someValuesFrom adro:Sample ] ;
+    rdfs:label "laboratory analysis"@en , "실험실 분석"@ko ;
+    obo:IAO_0000115 "A process in which an accredited laboratory analyses a sample and produces a finding."@en .
+
+adro:ResultsManagementProcess a owl:Class ;
+    rdfs:subClassOf obo:BFO_0000015 ;
+    rdfs:label "results management process"@en , "결과관리 절차"@ko ;
+    obo:IAO_0000115 "A process in which an anti-doping organization handles information bearing on whether an anti-doping rule has been violated."@en .
+
+adro:ADRVDeterminationProcess a owl:Class ;
+    rdfs:subClassOf adro:ResultsManagementProcess ;
+    rdfs:label "ADRV determination process"@en , "위반 판정 절차"@ko ;
+    obo:IAO_0000115 "A results management process in which it is determined whether a given matter constitutes an anti-doping rule violation."@en ;
+    rdfs:comment "This process exists irrespective of whether the rule provision at issue concerns a process, a state, or an omission. Whether a violation is established is asserted by a decision record, not by the type of this process."@en .
+
+adro:Hearing a owl:Class ;
+    rdfs:subClassOf adro:ResultsManagementProcess ;
+    rdfs:label "hearing"@en , "청문"@ko ;
+    obo:IAO_0000115 "A results management process in which a deciding body receives submissions from the parties and reaches a determination."@en .
+
+adro:AppealProcess a owl:Class ;
+    rdfs:subClassOf adro:ResultsManagementProcess ;
+    rdfs:label "appeal process"@en , "항소 절차"@ko ;
+    obo:IAO_0000115 "A results management process in which a superior body reconsiders a decision of a lower body."@en .
+
+########################################
+# 4. Normative documents (L1)
+########################################
+
+adro:WorldAntiDopingCode a owl:Class ;
+    rdfs:subClassOf adro:AntiDopingInstrument ;
+    rdfs:label "World Anti-Doping Code"@en , "세계도핑방지규약"@ko ;
+    obo:IAO_0000115 "A document that is a given edition of the Code issued by the World Anti-Doping Agency."@en ;
+    rdfs:comment "Each edition is a distinct individual."@en .
+
+adro:CodeArticle a owl:Class ;
+    rdfs:subClassOf adro:InstrumentProvision ;
+    rdfs:label "Code article"@en , "규약 조항"@ko ;
+    obo:IAO_0000115 "A document part that constitutes a single article of a World Anti-Doping Code edition and directs conduct."@en .
+
+adro:InternationalStandard a owl:Class ;
+    rdfs:subClassOf obo:IAO_0000310 ;
+    rdfs:label "international standard"@en , "국제표준"@ko ;
+    obo:IAO_0000115 "A document that supplements the Code by specifying requirements in a defined area."@en .
+
+adro:ProhibitedListEdition a owl:Class ;
+    rdfs:subClassOf adro:InternationalStandard ;
+    rdfs:label "Prohibited List edition"@en , "금지목록 판본"@ko ;
+    obo:IAO_0000115 "An international standard that is a given edition of the Prohibited List, effective over a stated interval."@en .
+
+adro:ProhibitedListEntry a owl:Class ;
+    rdfs:subClassOf obo:IAO_0000314 ;
+    rdfs:label "Prohibited List entry"@en , "금지목록 항목"@ko ;
+    obo:IAO_0000115 "A document part of a Prohibited List edition that specifies a substance, a method, or a category thereof."@en .
+
+adro:NationalAntiDopingRule a owl:Class ;
+    rdfs:subClassOf adro:AntiDopingInstrument ;
+    rdfs:label "national anti-doping rule"@en , "국가 도핑방지규정"@ko ;
+    obo:IAO_0000115 "A document adopted by a national anti-doping organization that applies within its jurisdiction."@en .
+
+########################################
+# 5. Records and decisions (L4)
+########################################
+
+adro:AdverseAnalyticalFinding a owl:Class ;
+    rdfs:subClassOf obo:IAO_0000088 ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty obo:IAO_0000136 ; owl:someValuesFrom adro:Sample ] ;
+    rdfs:label "adverse analytical finding"@en , "비정상분석결과"@ko ;
+    obo:IAO_0000115 "A report in which a laboratory states that a prohibited substance, its metabolite, or a marker has been identified in a sample."@en ;
+    rdfs:comment "A finding is evidence bearing on a determination. It is not itself a violation."@en .
+
+adro:NotificationOfCharge a owl:Class ;
+    rdfs:subClassOf obo:IAO_0000310 ;
+    rdfs:label "notification of charge"@en , "혐의 통지"@ko ;
+    obo:IAO_0000115 "A document by which an alleged anti-doping rule violation is notified to the person concerned."@en .
+
+adro:Decision a owl:Class ;
+    rdfs:subClassOf obo:IAO_0000310 ;
+    rdfs:label "decision"@en , "결정"@ko ;
+    obo:IAO_0000115 "A document in which a deciding body records its determination of a matter."@en .
+
+adro:FirstInstanceDecision a owl:Class ;
+    rdfs:subClassOf adro:Decision ;
+    rdfs:label "first instance decision"@en , "1심 결정"@ko ;
+    obo:IAO_0000115 "A decision issued by a body of first instance."@en .
+
+adro:AppealDecision a owl:Class ;
+    rdfs:subClassOf adro:Decision ;
+    owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
+        adro:Decision
+        [ a owl:Restriction ; owl:onProperty adro:appealsAgainst ;
+          owl:someValuesFrom adro:Decision ] ) ] ;
+    rdfs:label "appeal decision"@en , "항소 결정"@ko ;
+    rdfs:comment "A defined class. What makes a decision an appeal decision is that it reconsiders another decision, and nothing else; the condition is therefore stated as necessary and sufficient rather than as a subclass axiom."@en ;
+    obo:IAO_0000115 "A decision issued by a body that reconsiders a decision of a lower body."@en .
+
+adro:SanctionDecision a owl:Class ;
+    rdfs:subClassOf adro:Decision ;
+    owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
+        adro:Decision
+        [ a owl:Restriction ; owl:onProperty adro:hasSanctionType ;
+          owl:someValuesFrom adro:SanctionType ] ) ] ;
+    rdfs:label "sanction decision"@en , "제재 결정"@ko ;
+    rdfs:comment "A defined class. A decision is a sanction decision exactly when it states a kind of consequence; the condition that was a subclass axiom is stated here as necessary and sufficient."@en ;
+    obo:IAO_0000115 "A decision that determines the kind and extent of the consequence imposed in respect of an anti-doping rule violation."@en .
+
+adro:CaseRecord a owl:Class ;
+    rdfs:subClassOf obo:IAO_0000310 ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty adro:caseStatus ; owl:someValuesFrom adro:CaseStatus ] ;
+    rdfs:label "case record"@en , "사건 기록"@ko ;
+    obo:IAO_0000115 "A document that identifies a single matter and gathers the procedures and decisions pertaining to it."@en .
+
+########################################
+# 6. Regulatory expression
+########################################
+
+adro:ProhibitionApplicability a owl:Class ;
+    rdfs:subClassOf obo:IAO_0000001 ;
+    owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
+        obo:IAO_0000001
+        [ a owl:Restriction ; owl:onProperty adro:appliesTo ;
+          owl:someValuesFrom adro:ChemicalSubstance ]
+        [ a owl:Restriction ; owl:onProperty adro:statedIn ;
+          owl:someValuesFrom adro:ProhibitedListEntry ] ) ] ;
+    rdfs:label "prohibition applicability"@en , "금지 적용가능성"@ko ;
+    obo:IAO_0000115 "A conditional specification that states that a substance or method is prohibited under stated conditions of time, competition context, sport, route of administration, threshold, and jurisdiction."@en ;
+    rdfs:comment "Reified because the conditions are n-ary and cannot be carried by binary object properties. Every instance must cite the entry it derives from."@en .
+
+adro:Measurement a owl:Class ;
+    rdfs:subClassOf obo:IAO_0000109 ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty adro:measuresAnalyte ;
+        owl:someValuesFrom adro:ChemicalSubstance ] ;
+    rdfs:label "measurement"@en , "측정"@ko ;
+    obo:IAO_0000115 "A measurement datum that records a value, its unit, and the analyte measured, as produced by an analysis."@en .
+
+adro:DecisionLimit a owl:Class ;
+    rdfs:subClassOf obo:IAO_0000030 ;
+    rdfs:label "decision limit"@en , "결정한계"@ko ;
+    obo:IAO_0000115 "An information content entity that states the threshold at or above which an analytical result for a given analyte is to be reported."@en .
+
+########################################
+# 7. Regulatory designations (L2)
+########################################
+
+adro:ADRVType a owl:Class ;
+    rdfs:subClassOf obo:IAO_0000033 ;
+    rdfs:label "anti-doping rule violation type"@en , "위반 유형"@ko ;
+    obo:IAO_0000115 "A directive information entity that designates a type of anti-doping rule violation as specified by a Code article."@en .
+
+adro:ProhibitedSubstanceCategory a owl:Class ;
+    rdfs:subClassOf obo:IAO_0000030 ;
+    rdfs:label "prohibited substance category"@en , "금지물질 범주"@ko ;
+    obo:IAO_0000115 "An information content entity that designates a category of prohibited substances as specified by a Prohibited List entry."@en .
+
+adro:ProhibitedMethodCategory a owl:Class ;
+    rdfs:subClassOf obo:IAO_0000030 ;
+    rdfs:label "prohibited method category"@en , "금지방법 범주"@ko ;
+    obo:IAO_0000115 "An information content entity that designates a category of prohibited methods as specified by a Prohibited List entry."@en .
+
+adro:SanctionType a owl:Class ;
+    rdfs:subClassOf obo:IAO_0000030 ;
+    rdfs:label "sanction type"@en , "제재 종류"@ko ;
+    obo:IAO_0000115 "An information content entity that designates a kind of consequence specified by the Code."@en .
+
+adro:CompetitionContext a owl:Class ;
+    rdfs:subClassOf obo:IAO_0000030 ;
+    rdfs:label "competition context"@en , "경기 맥락"@ko ;
+    obo:IAO_0000115 "An information content entity that designates a distinction of competition context on which prohibition depends."@en .
+
+adro:RouteOfAdministration a owl:Class ;
+    rdfs:subClassOf obo:IAO_0000030 ;
+    rdfs:label "route of administration"@en , "투여 경로"@ko ;
+    obo:IAO_0000115 "An information content entity that designates a route of administration on which prohibition may depend."@en .
+
+adro:Sport a owl:Class ;
+    rdfs:subClassOf obo:IAO_0000030 ;
+    rdfs:label "sport"@en , "종목"@ko ;
+    obo:IAO_0000115 "An information content entity that designates a sport for the purposes of applying and recording anti-doping regulation."@en .
+
+adro:CaseStatus a owl:Class ;
+    rdfs:subClassOf obo:IAO_0000030 ;
+    rdfs:label "case status"@en , "사건 상태"@ko ;
+    obo:IAO_0000115 "An information content entity that designates the procedural standing of a matter, such as final, under appeal, or overturned."@en .
+
+adro:SpecimenMatrix a owl:Class ;
+    rdfs:subClassOf obo:IAO_0000030 ;
+    rdfs:label "specimen matrix"@en , "시료 기질"@ko ;
+    rdfs:comment "Held as a designation rather than as a string or a comment because the List states the matrix as part of the threshold it sets, and a threshold and a measured value are comparable only when both are stated in the same matrix. Treating the matrix as a quality of the sample was considered and rejected: what is recorded here is the kind of specimen a document names, not a property the ontology asserts of a particular sample."@en ;
+    obo:IAO_0000115 "An information content entity that designates the kind of specimen in which a measurement is made or in which a stated threshold applies."@en .
+
+adro:MeasurementUnit a owl:Class ;
+    rdfs:subClassOf obo:IAO_0000030 ;
+    rdfs:label "measurement unit"@en , "측정 단위"@ko ;
+    rdfs:comment "Held as a designation rather than as a string because the List and the decisions write the same unit in more than one way, and a string comparison of those spellings does not hold. No external unit vocabulary is imported; the reason is given in the paper."@en ;
+    obo:IAO_0000115 "An information content entity that designates the unit in which a measured value or a stated threshold is expressed."@en .
+
+[] a owl:AllDisjointClasses ;
+   owl:members ( adro:ADRVType adro:ProhibitedSubstanceCategory adro:ProhibitedMethodCategory
+                 adro:SanctionType adro:CompetitionContext adro:RouteOfAdministration
+                 adro:Sport adro:CaseStatus adro:SpecimenMatrix adro:MeasurementUnit ) .
+
+########################################
+# 8. Object properties
+########################################
+
+adro:hasSpecifiedOutput a owl:ObjectProperty ;
+    rdfs:domain obo:BFO_0000015 ;
+    rdfs:range [ a owl:Class ; owl:unionOf ( adro:Sample obo:IAO_0000030 ) ] ;
+    rdfs:label "has specified output"@en ;
+    rdfs:comment "A process produces either a material output, which in this domain is a sample, or an information output, which is a finding or a decision. The range is the union of the two. Narrowing the domain to sample collection was considered and rejected: an analysis produces a finding and a determination produces a decision, and those are outputs in the same sense."@en ;
+    rdfs:seeAlso obo:OBI_0000299 ;
+    obo:IAO_0000115 "Relates a process to an entity it produces."@en .
+
+adro:isSpecifiedOutputOf a owl:ObjectProperty ;
+    owl:inverseOf adro:hasSpecifiedOutput ;
+    rdfs:label "is specified output of"@en ;
+    obo:IAO_0000115 "Relates an entity to the process that produced it."@en .
+
+adro:hasCollectedSample a owl:ObjectProperty ;
+    rdfs:subPropertyOf adro:hasSpecifiedOutput ;
+    rdfs:domain adro:SampleCollection ; rdfs:range adro:Sample ;
+    rdfs:label "has collected sample"@en ;
+    rdfs:comment "The sample a collection produced. A specialisation of the general output relation, kept separate because the inference that a sample was taken from a person holds of this relation alone. Drawing that inference from the general relation would make a decision the output of a determination into something taken from the person heard, which is absurd."@en ;
+    obo:IAO_0000115 "Relates a sample collection to the sample it produced."@en .
+
+adro:isCollectedSampleOf a owl:ObjectProperty ;
+    owl:inverseOf adro:hasCollectedSample ;
+    rdfs:label "is collected sample of"@en ;
+    obo:IAO_0000115 "Relates a sample to the collection that produced it."@en .
+
+adro:hasSpecifiedInput a owl:ObjectProperty ;
+    rdfs:domain obo:BFO_0000015 ;
+    rdfs:range [ a owl:Class ; owl:unionOf ( adro:Sample adro:SamplePortion ) ] ;
+    rdfs:label "has specified input"@en ;
+    rdfs:seeAlso obo:OBI_0000293 ;
+    obo:IAO_0000115 "Relates a process to an entity it takes in and acts upon."@en .
+
+adro:collectedFrom a owl:ObjectProperty ;
+    rdfs:domain adro:Sample ; rdfs:range adro:Person ;
+    rdfs:label "collected from"@en ;
+    owl:propertyChainAxiom ( adro:isCollectedSampleOf obo:BFO_0000057 ) ;
+    rdfs:comment "Inferred, not asserted. A sample is collected from the person who participates in the collection that produced it."@en ;
+    obo:IAO_0000115 "Relates a sample to the person from whom it was collected."@en .
+
+adro:concernsPerson a owl:ObjectProperty ;
+    rdfs:domain obo:IAO_0000030 ; rdfs:range adro:Person ;
+    rdfs:label "concerns person"@en ;
+    owl:propertyChainAxiom ( obo:IAO_0000136 adro:collectedFrom ) ;
+    rdfs:comment "Inferred, not asserted. A record about a sample concerns the person that sample was collected from."@en ;
+    obo:IAO_0000115 "Relates an information content entity to the person it is about."@en .
+
+adro:isEvidenceFor a owl:ObjectProperty ;
+    rdfs:domain adro:AdverseAnalyticalFinding ; rdfs:range adro:ADRVDeterminationProcess ;
+    rdfs:label "is evidence for"@en ;
+    obo:IAO_0000115 "Relates an analytical finding to the determination process it bears upon."@en .
+
+adro:assignsType a owl:ObjectProperty ;
+    rdfs:domain adro:Decision ; rdfs:range adro:ADRVType ;
+    rdfs:label "assigns type"@en ;
+    rdfs:comment "A decision assigns a violation type to a matter. Violation types are not asserted as classes of events."@en ;
+    obo:IAO_0000115 "Relates a decision to the violation type that the deciding body assigned to the matter."@en .
+
+adro:appliedEdition a owl:ObjectProperty ;
+    rdfs:domain adro:Decision ; rdfs:range obo:IAO_0000310 ;
+    rdfs:label "applied edition"@en ;
+    obo:IAO_0000115 "Relates a decision to the edition of a normative document that the deciding body applied."@en .
+
+adro:establishes a owl:ObjectProperty ;
+    rdfs:domain adro:Decision ; rdfs:range obo:BFO_0000023 ;
+    rdfs:label "establishes"@en ;
+    rdfs:comment "A sanction decision establishes an ineligibility; an exemption decision establishes an exemption. The domain is the decision, not the sanction decision, because both are determinations that bring a status into being."@en ;
+    obo:IAO_0000115 "Relates a decision to the role it brings into being in the person it concerns."@en .
+
+adro:hasSanctionType a owl:ObjectProperty ;
+    rdfs:domain adro:SanctionDecision ; rdfs:range adro:SanctionType ;
+    rdfs:label "has sanction type"@en ;
+    obo:IAO_0000115 "Relates a sanction decision to the designation of the kind of consequence it imposes."@en .
+
+adro:definedIn a owl:ObjectProperty ;
+    rdfs:domain obo:IAO_0000030 ; rdfs:range obo:IAO_0000314 ;
+    rdfs:label "defined in"@en ;
+    rdfs:comment "Links a regulatory designation to the document part that specifies it."@en ;
+    obo:IAO_0000115 "Relates a regulatory designation to the document part that specifies it."@en .
+
+adro:broaderCategory a owl:ObjectProperty , owl:TransitiveProperty ;
+    rdfs:domain obo:IAO_0000030 ; rdfs:range obo:IAO_0000030 ;
+    rdfs:label "broader category"@en ;
+    rdfs:comment "Transitive. Supports inference over designation hierarchies without subsumption."@en ;
+    obo:IAO_0000115 "Relates a regulatory designation to a designation under which it falls."@en .
+
+adro:appliesTo a owl:ObjectProperty ;
+    rdfs:domain adro:ProhibitionApplicability ; rdfs:range adro:ChemicalSubstance ;
+    rdfs:label "applies to"@en ;
+    obo:IAO_0000115 "Relates a prohibition applicability to the chemical substance whose prohibition it states."@en .
+
+adro:hasCategory a owl:ObjectProperty ;
+    rdfs:domain adro:ProhibitionApplicability ;
+    rdfs:label "has category"@en ;
+    obo:IAO_0000115 "Relates a prohibition applicability to the designation of the category under which the substance or method falls."@en .
+
+adro:statedIn a owl:ObjectProperty ;
+    rdfs:domain adro:ProhibitionApplicability ; rdfs:range adro:ProhibitedListEntry ;
+    rdfs:label "stated in"@en ;
+    obo:IAO_0000115 "Relates a prohibition applicability to the Prohibited List entry that states it."@en .
+
+adro:competitionContext a owl:ObjectProperty ;
+    rdfs:range adro:CompetitionContext ;
+    rdfs:label "competition context"@en ;
+    rdfs:comment "Qualifies a prohibition applicability, which holds in a stated context, and a sample collection, which occurs in one. No domain is asserted because the two are of different categories."@en ;
+    obo:IAO_0000115 "Relates a prohibition applicability or a sample collection to the designation of the competition context in which it holds or occurs."@en .
+
+adro:sportScope a owl:ObjectProperty ;
+    rdfs:domain adro:ProhibitionApplicability ; rdfs:range adro:Sport ;
+    rdfs:label "sport scope"@en ;
+    obo:IAO_0000115 "Relates a prohibition applicability to the designation of a sport to which it is confined."@en .
+
+adro:routeOfAdministration a owl:ObjectProperty ;
+    rdfs:domain adro:ProhibitionApplicability ; rdfs:range adro:RouteOfAdministration ;
+    rdfs:label "route of administration"@en ;
+    obo:IAO_0000115 "Relates a prohibition applicability to the designation of the route of administration to which it is confined."@en .
+
+adro:hasDecisionLimit a owl:ObjectProperty ;
+    rdfs:domain adro:ProhibitionApplicability ; rdfs:range adro:DecisionLimit ;
+    rdfs:label "has decision limit"@en ;
+    obo:IAO_0000115 "Relates a prohibition applicability to the decision limit above which a finding is reported."@en .
+
+adro:measuresAnalyte a owl:ObjectProperty ;
+    rdfs:domain adro:Measurement ; rdfs:range adro:ChemicalSubstance ;
+    rdfs:label "measures analyte"@en ;
+    rdfs:comment "The definition of a measurement names the analyte, so the analyte is carried by a relation rather than left to the label. Where a decision reports a concentration for a metabolite, this relates the measurement to that metabolite, not to the substance it derives from."@en ;
+    obo:IAO_0000115 "Relates a measurement to the substance whose quantity it reports."@en .
+
+adro:hasSpecimenMatrix a owl:ObjectProperty ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( adro:Measurement adro:DecisionLimit ) ] ;
+    rdfs:range adro:SpecimenMatrix ;
+    rdfs:label "has specimen matrix"@en ;
+    rdfs:comment "The domain is the union of the two, because a threshold and the measurement it is compared with are each stated in a matrix, and neither is a kind of the other."@en ;
+    obo:IAO_0000115 "Relates a measurement or a decision limit to the designation of the kind of specimen in which it is stated."@en .
+
+adro:hasMeasurementUnit a owl:ObjectProperty ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( adro:Measurement adro:DecisionLimit ) ] ;
+    rdfs:range adro:MeasurementUnit ;
+    rdfs:label "has measurement unit"@en ;
+    rdfs:comment "The domain is the union of the two. Asserting the domain as measurement alone, as an earlier version did, made every decision limit a measurement by inference, which is wrong: a threshold the List states is not a value an analysis reported."@en ;
+    obo:IAO_0000115 "Relates a measurement or a decision limit to the designation of the unit in which its value is expressed."@en .
+
+adro:resultsManagementAuthority a owl:ObjectProperty ;
+    rdfs:domain adro:CaseRecord ; rdfs:range adro:AntiDopingOrganization ;
+    rdfs:label "results management authority"@en ;
+    obo:IAO_0000115 "Relates a case record to the organization that managed the results of the matter."@en .
+
+adro:caseStatus a owl:ObjectProperty ;
+    rdfs:domain adro:CaseRecord ; rdfs:range adro:CaseStatus ;
+    rdfs:label "case status"@en ;
+    obo:IAO_0000115 "Relates a case record to the designation of the stage the matter has reached."@en .
+
+adro:issuedBy a owl:ObjectProperty ;
+    rdfs:range adro:Organization ;
+    rdfs:label "issued by"@en ;
+    obo:IAO_0000115 "Relates a document to the organization that issued it."@en .
+
+########################################
+# 9. Data properties
+########################################
+
+adro:hasCaseIdentifier a owl:DatatypeProperty ;
+    rdfs:domain adro:Decision ; rdfs:range xsd:string ;
+    rdfs:label "has case identifier"@en ;
+    obo:IAO_0000115 "The reference by which the issuing institution identifies a matter or a decision."@en .
+
+adro:hasDecisionDate a owl:DatatypeProperty ;
+    rdfs:domain adro:Decision ; rdfs:range xsd:dateTime ;
+    rdfs:label "has decision date"@en ;
+    obo:IAO_0000115 "The date on which a decision was issued, as the decision states it."@en .
+
+adro:hasSourceURL a owl:DatatypeProperty ;
+    rdfs:domain obo:IAO_0000310 ; rdfs:range xsd:anyURI ;
+    rdfs:label "has source URL"@en ;
+    obo:IAO_0000115 "The address at which the issuing body published the document."@en ;
+    rdfs:comment "Recorded in addition to the issuing body and the identifier, not in place of them. An address can change; the body and its own reference are what let a reader retrieve the document when it does."@en .
+
+adro:hasRetrievalDate a owl:DatatypeProperty ;
+    rdfs:domain obo:IAO_0000310 ; rdfs:range xsd:dateTime ;
+    rdfs:label "has retrieval date"@en ;
+    obo:IAO_0000115 "The date on which the document was obtained from the address recorded for it."@en ;
+    rdfs:comment "A decision may be corrected or replaced after it is published. The retrieval date states which state of the document the assertions here were taken from."@en .
+
+adro:hasIneligibilityDurationInMonths a owl:DatatypeProperty ;
+    rdfs:domain adro:IneligibilityStatus ; rdfs:range xsd:decimal ;
+    rdfs:label "has ineligibility duration in months"@en ;
+    rdfs:comment "Months, as a number. xsd:duration lies outside the OWL 2 datatype map and cannot be used in a range axiom without breaking reasoning, so the unit is fixed by the property instead. Lifetime ineligibility carries no duration and is expressed by a sanction type designation."@en ;
+    obo:IAO_0000115 "The length of a period of ineligibility, in months, as a number."@en .
+
+adro:hasMeasuredValue a owl:DatatypeProperty ;
+    rdfs:domain adro:Measurement ; rdfs:range xsd:decimal ;
+    rdfs:label "has measured value"@en ;
+    obo:IAO_0000115 "The numeric value a measurement reports."@en .
+
+adro:hasThresholdValue a owl:DatatypeProperty ;
+    rdfs:domain adro:DecisionLimit ; rdfs:range xsd:decimal ;
+    rdfs:label "has threshold value"@en ;
+    obo:IAO_0000115 "The numeric value at or above which a decision limit is exceeded."@en .
+
+adro:validFrom a owl:DatatypeProperty ;
+    rdfs:domain adro:ProhibitionApplicability ; rdfs:range xsd:dateTime ;
+    rdfs:label "valid from"@en ;
+    obo:IAO_0000115 "The time from which a prohibition applicability holds."@en .
+
+adro:validTo a owl:DatatypeProperty ;
+    rdfs:domain adro:ProhibitionApplicability ; rdfs:range xsd:dateTime ;
+    rdfs:label "valid to"@en ;
+    obo:IAO_0000115 "The time at which a prohibition applicability ceases to hold."@en .
+
+adro:hasCollectionDateTime a owl:DatatypeProperty ;
+    rdfs:domain adro:SampleCollection ; rdfs:range xsd:dateTime ;
+    rdfs:label "has collection date time"@en ;
+    obo:IAO_0000115 "The time at which a sample was collected, as the source states it."@en .
+
+adro:hasAnalysisDateTime a owl:DatatypeProperty ;
+    rdfs:domain adro:LaboratoryAnalysis ; rdfs:range xsd:dateTime ;
+    rdfs:label "has analysis date time"@en ;
+    obo:IAO_0000115 "The time at which a laboratory analysis was carried out or reported, as the source states it."@en .
+
+adro:hasEffectiveFrom a owl:DatatypeProperty ;
+    rdfs:range xsd:dateTime ;
+    rdfs:label "has effective from"@en ;
+    obo:IAO_0000115 "The time from which a document, an edition or a status takes effect."@en .
+
+adro:hasEffectiveTo a owl:DatatypeProperty ;
+    rdfs:range xsd:dateTime ;
+    rdfs:label "has effective to"@en ;
+    obo:IAO_0000115 "The time at which a document, an edition or a status ceases to have effect."@en .
+
+adro:isSpecified a owl:DatatypeProperty ;
+    rdfs:domain adro:ProhibitedListEntry ; rdfs:range xsd:boolean ;
+    rdfs:label "is specified"@en ;
+    rdfs:comment "Whether the substances or methods covered by this Prohibited List entry are Specified within the meaning of Code Article 4.2.2. Recorded on the entry rather than on the category, because the designation is edition-dependent."@en ;
+    obo:IAO_0000115 "Whether a Prohibited List entry is designated as specified, which governs the range of sanction available."@en .
+
+adro:ontologicalCharacter a owl:AnnotationProperty ;
+    rdfs:label "ontological character"@en ;
+    rdfs:comment "Records whether the conduct or circumstance proscribed by a rule provision is a process, a state, or an omission. The provisions of Code Article 2 are not homogeneous in this respect."@en .
+
+adro:concernsSport a owl:ObjectProperty ;
+    rdfs:domain adro:CaseRecord ; rdfs:range adro:Sport ;
+    rdfs:label "concerns sport"@en ;
+    obo:IAO_0000115 "Relates a case record to the designation of the sport in which the matter arose."@en .
+
+adro:Metabolite a owl:Class ;
+    rdfs:subClassOf adro:ChemicalSubstance ;
+    rdfs:label "metabolite"@en , "대사체"@ko ;
+    obo:IAO_0000115 "A chemical substance that is produced by the metabolism of another chemical substance."@en ;
+    rdfs:comment "Article 2.1 of the Code concerns the presence of a prohibited substance or its metabolites or markers in a sample, so a metabolite is distinguished from the listed substance it derives from. A metabolite is not itself an entry of the Prohibited List and therefore carries no prohibition applicability of its own."@en .
+
+adro:isMetaboliteOf a owl:ObjectProperty ;
+    rdfs:domain adro:Metabolite ; rdfs:range adro:ChemicalSubstance ;
+    rdfs:label "is metabolite of"@en ;
+    obo:IAO_0000115 "Relates a metabolite to a substance from which a biotransformation process produces it."@en .
+
+########################################
+# 10. Instruments other than the Code, and the appeal relation
+#
+# A first instance body does not apply the Code directly. It applies the
+# instrument that binds the person before it: the rules of a national
+# anti-doping organization, the rules of a sport governing body, or national
+# legislation. Each such instrument restates the Code in its own numbering.
+# The layer below holds those instruments and their provisions, and records
+# which Code article a provision implements, so that a violation determined
+# under any of them is identifiable as the same regulatory designation.
+########################################
+
+adro:AntiDopingInstrument a owl:Class ;
+    rdfs:subClassOf obo:IAO_0000310 ;
+    rdfs:label "anti-doping instrument"@en , "도핑방지 규범문서"@ko ;
+    obo:IAO_0000115 "A document that states anti-doping rules binding on the persons within its stated scope."@en .
+
+adro:SportGoverningBodyRule a owl:Class ;
+    rdfs:subClassOf adro:AntiDopingInstrument ;
+    rdfs:label "sport governing body rule"@en , "경기단체 규정"@ko ;
+    obo:IAO_0000115 "An anti-doping instrument adopted by a body that governs a sport, binding on the persons under that body."@en .
+
+adro:NationalLegislation a owl:Class ;
+    rdfs:subClassOf adro:AntiDopingInstrument ;
+    rdfs:label "national legislation"@en , "국내 법령"@ko ;
+    obo:IAO_0000115 "An anti-doping instrument enacted by a state and binding within its territory."@en ;
+    rdfs:comment "Distinguished from a national anti-doping rule because the enacting authority is a legislature, not an anti-doping organization. Where a state legislates on doping, the deciding body cites the statute."@en .
+
+adro:InstrumentProvision a owl:Class ;
+    rdfs:subClassOf obo:IAO_0000314 , obo:IAO_0000033 ;
+    rdfs:label "instrument provision"@en , "규범 조항"@ko ;
+    obo:IAO_0000115 "A document part that constitutes a single numbered provision of an anti-doping instrument and directs conduct."@en .
+
+[] a owl:AllDisjointClasses ;
+   owl:members ( adro:WorldAntiDopingCode adro:NationalAntiDopingRule
+                 adro:SportGoverningBodyRule adro:NationalLegislation ) .
+
+adro:implementsCodeArticle a owl:ObjectProperty ;
+    rdfs:domain adro:InstrumentProvision ; rdfs:range adro:CodeArticle ;
+    rdfs:label "implements Code article"@en ;
+    rdfs:comment "Relates a provision of another instrument to the Code article it restates. The relation is asserted only where the instrument itself states the correspondence or the deciding body relies on it."@en ;
+    obo:IAO_0000115 "Relates a provision of an instrument other than the Code to the Code article it restates."@en .
+
+adro:appliedProvision a owl:ObjectProperty ;
+    rdfs:domain adro:Decision ; rdfs:range adro:InstrumentProvision ;
+    rdfs:label "applied provision"@en ;
+    rdfs:comment "The provision the deciding body applied in reaching its determination, in the numbering the decision itself uses."@en ;
+    obo:IAO_0000115 "Relates a decision to the provision that the deciding body applied in reaching its determination."@en .
+
+adro:appealsAgainst a owl:ObjectProperty ;
+    rdfs:domain adro:AppealDecision ; rdfs:range adro:Decision ;
+    rdfs:label "appeals against"@en ;
+    rdfs:comment "Relates an appeal decision to the decision it reconsiders. Asserted only where the appeal decision identifies that decision."@en ;
+    obo:IAO_0000115 "Relates an appeal decision to the decision that it reconsiders."@en .
+
+adro:mentions a owl:ObjectProperty ;
+    rdfs:domain obo:IAO_0000030 ; rdfs:range adro:ChemicalSubstance ;
+    rdfs:label "mentions"@en ;
+    rdfs:comment "Relates a decision to a substance it names. A mention records what the document states. It does not assert that the substance was present in a sample, nor that a violation was established in respect of it."@en ;
+    obo:IAO_0000115 "Relates an information content entity to a substance it names."@en .
+
+adro:adoptsInstrument a owl:ObjectProperty ;
+    rdfs:domain adro:AntiDopingInstrument ; rdfs:range adro:AntiDopingInstrument ;
+    rdfs:label "adopts instrument"@en ;
+    rdfs:comment "Relates the instrument of a governing body to the instrument it takes over in place of stating its own rules. Asserted only where a decision or the instrument itself states the adoption."@en ;
+    obo:IAO_0000115 "Relates an anti-doping instrument to another instrument that it takes over in place of stating its own rules."@en .
+
+########################################
+# 11. Properties needed to record what a first instance decision states
+#
+# An appeal digest records the outcome. A first instance decision records the
+# course of the matter: who was tested, when the sample was taken, which
+# laboratory analysed it, when the person was notified and provisionally
+# suspended, and when the tribunal sat. The properties below carry those
+# statements. Each is used only where the decision states the fact.
+########################################
+
+adro:hasSampleIdentifier a owl:DatatypeProperty ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( adro:Sample adro:SamplePortion ) ] ;
+    rdfs:range xsd:string ;
+    rdfs:label "has sample identifier"@en ;
+    rdfs:comment "The reference the collecting authority assigns to a sample or to a portion of one, and the decision reproduces."@en ;
+    obo:IAO_0000115 "The reference the collecting authority assigns to a sample or to a portion of one."@en .
+
+adro:hasStartDateTime a owl:DatatypeProperty ;
+    rdfs:domain obo:BFO_0000015 ; rdfs:range xsd:dateTime ;
+    rdfs:label "has start date time"@en ;
+    obo:IAO_0000115 "The time at which a process began."@en .
+
+adro:hasEndDateTime a owl:DatatypeProperty ;
+    rdfs:domain obo:BFO_0000015 ; rdfs:range xsd:dateTime ;
+    rdfs:label "has end date time"@en ;
+    rdfs:comment "Asserted only where a process ran over a stated interval. A process the decision places on a single day carries a start alone."@en ;
+    obo:IAO_0000115 "The time at which a process ended, where the source states an interval."@en .
+
+adro:hasIssueDateTime a owl:DatatypeProperty ;
+    rdfs:domain obo:IAO_0000310 ; rdfs:range xsd:dateTime ;
+    rdfs:label "has issue date time"@en ;
+    obo:IAO_0000115 "The time at which a document was issued by the body that issued it."@en .
+
+adro:hasAnalyticalMethod a owl:DatatypeProperty ;
+    rdfs:domain adro:LaboratoryAnalysis ; rdfs:range xsd:string ;
+    rdfs:label "has analytical method"@en ;
+    rdfs:comment "The method as the decision names it. Recorded as a string because the decisions name methods in their own terms and no method vocabulary is asserted here."@en ;
+    obo:IAO_0000115 "The analytical method applied, in the words the source uses for it."@en .
+
+adro:concernsCase a owl:ObjectProperty ;
+    rdfs:range adro:CaseRecord ;
+    rdfs:label "concerns case"@en ;
+    rdfs:comment "Gathers into one matter the entities a decision states belong to it."@en ;
+    obo:IAO_0000115 "Relates an entity to the case record that gathers the matter it belongs to."@en .
+
+adro:bearerOfRole a owl:ObjectProperty ;
+    rdfs:domain adro:Person ; rdfs:range obo:BFO_0000023 ;
+    rdfs:subPropertyOf obo:BFO_0000196 ;
+    rdfs:label "bearer of role"@en ;
+    rdfs:comment "A subproperty of the BFO bearer relation, narrowed to a person and a role, so that role placement is explicit at the instance level."@en ;
+    obo:IAO_0000115 "Relates a person to a role that inheres in that person."@en .
+
+adro:NoticeOfAppeal a owl:Class ;
+    rdfs:subClassOf obo:IAO_0000310 ;
+    rdfs:label "notice of appeal"@en , "항소 통지"@ko ;
+    obo:IAO_0000115 "A document by which a party states that it appeals a decision, and on which an appeal process is opened."@en .
+
+adro:initiatedBy a owl:ObjectProperty ;
+    rdfs:domain obo:BFO_0000015 ; rdfs:range obo:IAO_0000310 ;
+    rdfs:label "initiated by"@en ;
+    rdfs:comment "The document by which a process was set in motion, where a decision states one. A charge letter opens a determination; a notice of appeal opens an appeal."@en ;
+    obo:IAO_0000115 "Relates a process to the document by which it was set in motion."@en .
+
+########################################
+# 12. Therapeutic use exemption
+#
+# An exemption is what makes the presence or use of a prohibited substance not
+# a violation. The regulation therefore cannot be stated without it: the
+# prohibition it defeats is stated in the same instrument. The classes below
+# rest on the instrument, not on any decision document, and the report on the
+# procedural layer records that no exemption decision in the sources carries a
+# text that could populate them.
+########################################
+
+adro:ExemptionStatus a owl:Class ;
+    rdfs:subClassOf obo:BFO_0000023 ;
+    rdfs:label "exemption status"@en , "면책 지위"@ko ;
+    obo:IAO_0000115 "A role borne by a person during the interval in which that person is permitted to use a stated prohibited substance or method for a therapeutic purpose."@en ;
+    rdfs:comment "Modelled as a role for the same reason as ineligibility status: it exists by virtue of an institutional circumstance and does not alter the physical make-up of its bearer. It is distinguished from the decision that grants it, which is a document."@en .
+
+adro:exemptionFor a owl:ObjectProperty ;
+    rdfs:domain adro:ExemptionStatus ; rdfs:range adro:ChemicalSubstance ;
+    rdfs:label "exemption for"@en ;
+    rdfs:comment "The substance an exemption permits. An exemption is always for a stated substance or method, so an unqualified exemption is not expressible here, which is the intended behaviour."@en ;
+    obo:IAO_0000115 "Relates an exemption status to the substance whose use it permits."@en .
+
+adro:TUEDecision a owl:Class ;
+    rdfs:subClassOf adro:Decision ;
+    rdfs:label "therapeutic use exemption decision"@en , "치료목적사용면책 결정"@ko ;
+    obo:IAO_0000115 "A decision in which a body determines an application to use a prohibited substance or method for a therapeutic purpose."@en ;
+    rdfs:comment "The instrument distinguishes a grant from a denial, and a recognition from a non-recognition. That distinction is not drawn as a subclass here because no decision in the sources carries a text from which the distinction could be read. The application process the provision describes is likewise not given a class of its own, because no competency question needs one."@en .
+
+[] a owl:AllDisjointClasses ;
+   owl:members ( adro:IneligibilityStatus adro:ProvisionalSuspensionStatus adro:ExemptionStatus ) .
+
+[] a owl:AllDisjointClasses ;
+   owl:members ( adro:FirstInstanceDecision adro:AppealDecision adro:TUEDecision ) .
+
+########################################
+# 13. Terms the instruments define that the review requires
+#
+# Each class below is defined in the wording of the instrument that defines it.
+# Some carry no individual, because the sources held state nothing that would
+# populate them. They are kept because the regulation is stated in terms of
+# them: a finding that is atypical rather than adverse, a ground that reduces
+# or increases a sanction, and the territory within which a rule binds are
+# distinctions the instruments draw, and a determination cannot be described
+# without them.
+########################################
+
+adro:Jurisdiction a owl:Class ;
+    rdfs:subClassOf obo:IAO_0000030 ;
+    rdfs:label "jurisdiction"@en , "관할"@ko ;
+    obo:IAO_0000115 "An information content entity that designates the persons and the territory within which an anti-doping instrument binds."@en ;
+    rdfs:comment "Each instrument states its own scope. The UK Anti-Doping Rules bind the athletes and support personnel under a national governing body; the French code du sport binds within the territory of the state that enacted it. A designation, not a place: the same territory may fall under several instruments at once."@en .
+
+adro:bindsWithin a owl:ObjectProperty ;
+    rdfs:domain adro:AntiDopingInstrument ; rdfs:range adro:Jurisdiction ;
+    rdfs:label "binds within"@en ;
+    obo:IAO_0000115 "Relates an anti-doping instrument to the jurisdiction its own scope provision states."@en .
+
+adro:concernsJurisdiction a owl:ObjectProperty ;
+    rdfs:range adro:Jurisdiction ;
+    rdfs:label "concerns jurisdiction"@en ;
+    obo:IAO_0000115 "Relates a case record or a prohibition applicability to the jurisdiction within which it holds."@en .
+
+adro:AtypicalFinding a owl:Class ;
+    rdfs:subClassOf obo:IAO_0000088 ;
+    rdfs:label "atypical finding"@en , "이례결과"@ko ;
+    obo:IAO_0000115 "A report from an accredited laboratory that requires further investigation before an adverse analytical finding can be determined."@en ;
+    rdfs:comment "Defined in the wording of the UK Anti-Doping Rules 2021: a report from a WADA-accredited laboratory or other WADA-approved laboratory that requires further investigation as provided in the International Standard for Laboratories or related Technical Documents prior to the determination of an Adverse Analytical Finding. An atypical finding is not an adverse analytical finding and grounds no charge on its own; the two are disjoint."@en .
+
+[] a owl:AllDisjointClasses ;
+   owl:members ( adro:AdverseAnalyticalFinding adro:AtypicalFinding ) .
+
+adro:SanctionModifyingGround a owl:Class ;
+    rdfs:subClassOf obo:IAO_0000030 ;
+    rdfs:label "sanction modifying ground"@en , "제재 조정 사유"@ko ;
+    obo:IAO_0000115 "A designation of a circumstance which, if established, lengthens or shortens the period of ineligibility that would otherwise follow from an established violation."@en ;
+    rdfs:comment "A designation rather than a class of circumstances, for the same reason as the violation types: whether a circumstance counts as such a ground is fixed by a provision of a stated instrument, not by the circumstance itself."@en .
+
+adro:raisesGround a owl:ObjectProperty ;
+    rdfs:domain adro:Decision ; rdfs:range adro:SanctionModifyingGround ;
+    rdfs:label "raises ground"@en ;
+    obo:IAO_0000115 "Relates a decision to a ground it records as raised in the matter, whether or not the deciding body accepted it."@en ;
+    rdfs:comment "Raising a ground is not establishing it. A decision that records a ground as argued and rejected still raises it."@en .
+
+adro:acceptsGround a owl:ObjectProperty ;
+    rdfs:subPropertyOf adro:raisesGround ;
+    rdfs:domain adro:Decision ; rdfs:range adro:SanctionModifyingGround ;
+    rdfs:label "accepts ground"@en ;
+    obo:IAO_0000115 "Relates a decision to a ground it establishes, so that the period of ineligibility is altered accordingly."@en .
+
+adro:Marker a owl:Class ;
+    rdfs:subClassOf obo:BFO_0000040 ;
+    owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
+        obo:BFO_0000040
+        [ a owl:Restriction ; owl:onProperty adro:indicatesUseOf ;
+          owl:someValuesFrom adro:ChemicalSubstance ] ) ] ;
+    rdfs:label "marker"@en , "표지자"@ko ;
+    obo:IAO_0000115 "A material entity whose presence or quantity indicates the use of a prohibited substance or a prohibited method."@en ;
+    rdfs:comment "Defined in the wording of the UK Anti-Doping Rules 2021: a compound, group of compounds or biological variable that indicates the Use of a Prohibited Substance or Prohibited Method. The instrument's definition also covers a biological variable, which is a quality rather than a material entity; nothing in the sources held instantiates that reading, so the class is placed with the compound reading and the difference is recorded here."@en .
+
+adro:indicatesUseOf a owl:ObjectProperty ;
+    rdfs:domain adro:Marker ; rdfs:range adro:ChemicalSubstance ;
+    rdfs:label "indicates use of"@en ;
+    obo:IAO_0000115 "Relates a marker to the substance whose use it indicates."@en .
+
+adro:SamplePortion a owl:Class ;
+    rdfs:subClassOf obo:BFO_0000030 ;
+    rdfs:label "sample portion"@en , "시료 분할분"@ko ;
+    obo:IAO_0000115 "A continuant that is a part of a sample, separated at collection and given its own reference, so that it can be analysed independently of the remainder."@en ;
+    rdfs:comment "The instruments define one Sample, which the person splits into an A portion and a B portion at collection, each bearing its own reference. Modelling each portion as a sample in its own right would make one collection yield two samples from one person, and would make the confirmation of an A portion by a B portion a comparison between two samples rather than within one."@en .
+
+[] a owl:AllDisjointClasses ;
+   owl:members ( adro:Sample adro:SamplePortion ) .
+
+adro:hasPortion a owl:ObjectProperty ;
+    rdfs:domain adro:Sample ; rdfs:range adro:SamplePortion ;
+    rdfs:subPropertyOf obo:BFO_0000178 ;
+    rdfs:label "has portion"@en ;
+    obo:IAO_0000115 "Relates a sample to a portion of it that carries its own reference."@en .
+
+adro:hasExternalIdentifier a owl:DatatypeProperty ;
+    rdfs:domain obo:BFO_0000040 ; rdfs:range xsd:string ;
+    rdfs:label "has external identifier"@en ;
+    obo:IAO_0000115 "An identifier by which an entity is known in a resource outside this ontology, written as a prefixed identifier such as CHEBI:15365."@en ;
+    rdfs:comment "No value is asserted in this release. The mapping is mechanical and the source is public: scripts/map_external_identifiers.py reads the ChEBI flat files, or the ChEBI service, and asserts an identifier only where a substance name equals a ChEBI name or synonym exactly. Run it where that source can be reached, and load the file it writes alongside this one."@en .
