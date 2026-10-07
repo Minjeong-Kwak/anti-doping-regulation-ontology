@@ -248,7 +248,8 @@ run('D16 an exemption for a different substance stays consistent',
      (ADRO.Person_Emir_Ahmatovic, ADRO.bearerOfRole, X('E16'))], 'CONSISTENT')
 
 # D12  the property chains fire on the procedural data, not only on test data.
-# Neither collectedFrom nor concernsPerson is asserted anywhere in the files.
+# collectedFrom is asserted nowhere in the files. concernsPerson is asserted
+# only for notices addressed to a named person, never for a finding.
 _pg = rdflib.Graph()
 _pg.parse(os.path.join(ROOT, 'doping-ontology-procedure.ttl'), format='turtle')
 _asserted = {p for _, p, _ in _pg} | {p for _, p, _ in _cg}

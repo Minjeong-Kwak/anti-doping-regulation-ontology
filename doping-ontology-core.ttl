@@ -233,13 +233,11 @@ adro:ProhibitionApplicability a owl:Class ;
     rdfs:subClassOf obo:IAO_0000001 ;
     owl:equivalentClass [ a owl:Class ; owl:intersectionOf (
         obo:IAO_0000001
-        [ a owl:Restriction ; owl:onProperty adro:appliesTo ;
-          owl:someValuesFrom adro:ChemicalSubstance ]
         [ a owl:Restriction ; owl:onProperty adro:statedIn ;
           owl:someValuesFrom adro:ProhibitedListEntry ] ) ] ;
     rdfs:label "prohibition applicability"@en , "금지 적용가능성"@ko ;
     obo:IAO_0000115 "A conditional specification that states that a substance or method is prohibited under stated conditions of time, competition context, sport, route of administration, threshold, and jurisdiction."@en ;
-    rdfs:comment "Reified because the conditions are n-ary and cannot be carried by binary object properties. Every instance must cite the entry it derives from."@en .
+    rdfs:comment "Reified because the conditions are n-ary and cannot be carried by binary object properties. Every instance must cite the entry it derives from. A defined class: the necessary and sufficient condition is the List entry that states it. A substance is not part of the condition, because the List prohibits methods and whole categories as well as named substances; appliesTo links the substance only where the entry names one."@en .
 
 adro:Measurement a owl:Class ;
     rdfs:subClassOf obo:IAO_0000109 ;
@@ -361,7 +359,7 @@ adro:concernsPerson a owl:ObjectProperty ;
     rdfs:domain obo:IAO_0000030 ; rdfs:range adro:Person ;
     rdfs:label "concerns person"@en ;
     owl:propertyChainAxiom ( obo:IAO_0000136 adro:collectedFrom ) ;
-    rdfs:comment "Inferred, not asserted. A record about a sample concerns the person that sample was collected from."@en ;
+    rdfs:comment "Inferred for a record about a sample: such a record concerns the person that sample was collected from, and the relation is not asserted for it. Asserted only for a document addressed to a named person, such as a notice of charge."@en ;
     obo:IAO_0000115 "Relates an information content entity to the person it is about."@en .
 
 adro:isEvidenceFor a owl:ObjectProperty ;

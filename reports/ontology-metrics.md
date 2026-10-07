@@ -11,8 +11,8 @@ Generated from the files by `scripts/build_documentation.py`.
 | data properties | 20 |
 | named individuals | 1764 |
 | decisions | 220 |
-| triples, summed over the modules | 11269 |
-| triples, `dist/adro-full.ttl` | 11236 |
+| triples, summed over the modules | 11264 |
+| triples, `dist/adro-full.ttl` | 11231 |
 | classes with a definition | 57 of 57 |
 | properties with a definition | 64 of 64 |
 
@@ -20,7 +20,7 @@ Generated from the files by `scripts/build_documentation.py`.
 
 | module | triples |
 |---|---|
-| `doping-ontology-core.ttl` | 843 |
+| `doping-ontology-core.ttl` | 838 |
 | `doping-ontology-designations.ttl` | 769 |
 | `doping-ontology-substances.ttl` | 5399 |
 | `doping-ontology-analytes.ttl` | 47 |
@@ -37,7 +37,7 @@ The two totals differ. A triple stated in two modules is one triple once they ar
 | disjointness | 7 |
 | property chains | 2 |
 | transitive | 1 |
-| existential | 10 |
+| existential | 9 |
 | inverse | 2 |
 | subproperty | 4 |
 | class complement | 1 |
