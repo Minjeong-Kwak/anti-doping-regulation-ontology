@@ -11,7 +11,7 @@
 ########################################
 
 <https://w3id.org/adro/> a owl:Ontology ;
-    owl:versionIRI <https://w3id.org/adro/2026-10-07/doping-ontology-core.ttl> ;
+    owl:versionIRI <https://w3id.org/adro/2026-10-08/doping-ontology-core.ttl> ;
     owl:imports <http://purl.obolibrary.org/obo/bfo.owl> ,
                 <http://purl.obolibrary.org/obo/iao.owl> ;
     dcterms:title "Anti-Doping Regulation Ontology (core)"@en ;
