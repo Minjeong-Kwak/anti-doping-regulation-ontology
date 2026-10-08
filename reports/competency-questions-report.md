@@ -39,11 +39,11 @@ The corpus of decisions is not exhaustive, so no question asks what is most freq
 | **C5** Which matters record a provisional suspension, and does the period of ineligibility run from that date? | 2 | 2 | 2 | none |
 | **C6** Which document opened a given proceeding, and when? | 4 | 4 | 4 | none |
 | **C7** What portions does a sample have, what reference does each carry, and which portion was analysed? | 5 | 5 | 5 | none |
-| **D1** For a given individual in the procedural layer, which decision states it, and by what identifier can that decision be retrieved? | 86 | 86 | 86 | none |
+| **D1** For a given individual in the procedural layer, which decision states it, and by what identifier can that decision be retrieved? | 88 | 88 | 88 | none |
 | **D2** Which decisions in the register carry no link to a substance? | 6 | 75 | 75 | subclass |
 | **D3** Is there a decision stating that a given person held no exemption for a named substance, and which substance is it? | 1 | 1 | 1 | none |
 | **D4** Which kinds of analytical report does the regulation distinguish, and which does the ontology hold? | 4 | 4 | 4 | none |
-| **E1** Given a substance a decision names, which List entry, which category, which violation type and which Code article stand behind the determination? | 10 | 10 | 10 | none |
+| **E1** Given a substance a decision names, which List entry, which category, which violation type and which Code article stand behind the determination? | 12 | 12 | 12 | none |
 | **E2** Which violation types were determined under an instrument other than the Code, and under which instrument? | 16 | 16 | 16 | none |
 
 ## Questions that return nothing
@@ -91,11 +91,11 @@ None.
 | **C5** | an athlete or a federation | check whether ineligibility runs from the provisional suspension | `IneligibilityStatus`, `ProvisionalSuspensionStatus`, `concernsCase`, `establishes`, `hasCaseIdentifier`, `hasEffectiveFrom` | 2 | none |
 | **C6** | a reviewer | establish the document on which a proceeding was opened | `hasIssueDateTime`, `initiatedBy` | 4 | none |
 | **C7** | a reviewer checking an analysis | establish which portion of a sample was analysed | `LaboratoryAnalysis`, `UrineSample`, `concernsCase`, `hasCaseIdentifier`, `hasPortion`, `hasSampleIdentifier`, `hasSpecifiedInput` | 5 | none |
-| **D1** | a reviewer | retrieve the decision behind any assertion |  | 86 | none |
+| **D1** | a reviewer | retrieve the decision behind any assertion |  | 88 | none |
 | **D2** | a reviewer or a curator | find the matters that turn on conduct rather than a substance | `Decision`, `hasCaseIdentifier`, `mentions` | 75 | subclass |
 | **D3** | a deciding body | establish whether an exemption was recorded as absent | `ExemptionStatus`, `Person`, `bearerOfRole`, `exemptionFor` | 1 | none |
 | **D4** | a reviewer | see which kinds of analytical report the ontology holds | `AdverseAnalyticalFinding`, `AtypicalFinding` | 4 | none |
-| **E1** | a deciding body or a researcher | trace a determination from the substance to the Code article | `ChemicalSubstance`, `appliesTo`, `assignsType`, `definedIn`, `hasCaseIdentifier`, `hasCategory`, `mentions`, `statedIn` | 10 | none |
+| **E1** | a deciding body or a researcher | trace a determination from the substance to the Code article | `ChemicalSubstance`, `appliedEdition`, `appliesTo`, `assignsType`, `definedIn`, `hasCaseIdentifier`, `hasCategory`, `mentions` … | 12 | none |
 | **E2** | a results manager | find determinations made under an instrument other than the Code | `WorldAntiDopingCode`, `appliedProvision`, `assignsType`, `hasCaseIdentifier` | 16 | none |
 
 The expected answer for each question is the one recorded in the section below, taken from the run that produced this report. A question whose row count changes after an edit to the ontology is a question to re-read, not a number to update.
@@ -396,8 +396,8 @@ Which kinds of analytical report does the regulation distinguish, and which does
 Given a substance a decision names, which List entry, which category, which violation type and which Code article stand behind the determination?
 
 - D. 2025-15 · Amfetamine · The 2026 Prohibited List, S6.A · S6.A Non-specified stimulants · ADRV type: Presence of a Prohibited Substance or its Metabolites or Markers in an Athlete's Sample · World Anti-Doping Code 2021, Article 2.1
-- SR/007/2023 · Metandienone · The 2026 Prohibited List, S1.1 · S1.1 Anabolic androgenic steroids (AAS) · ADRV type: Presence of a Prohibited Substance or its Metabolites or Markers in an Athlete's Sample · World Anti-Doping Code 2021, Article 2.1
-- SR/007/2023 · Metandienone · The 2026 Prohibited List, S1.1 · S1.1 Anabolic androgenic steroids (AAS) · ADRV type: Use or Attempted Use by an Athlete of a Prohibited Substance or a Prohibited Method · World Anti-Doping Code 2021, Article 2.2
+- SR/389/2024 · Metandienone · The 2026 Prohibited List, S1.1 · S1.1 Anabolic androgenic steroids (AAS) · ADRV type: Presence of a Prohibited Substance or its Metabolites or Markers in an Athlete's Sample · World Anti-Doping Code 2021, Article 2.1
+- SR/389/2024 · Metandienone · The 2026 Prohibited List, S1.1 · S1.1 Anabolic androgenic steroids (AAS) · ADRV type: Use or Attempted Use by an Athlete of a Prohibited Substance or a Prohibited Method · World Anti-Doping Code 2021, Article 2.2
 
 ### E2
 

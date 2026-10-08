@@ -44,10 +44,10 @@ Every term the ontology declares, with its definition, where it sits under the u
 | `adro:Organization` | organization | obo:BFO_0000027 | 4 | An object aggregate of persons that acts with an assigned authority or function within the anti-doping system. |
 | `adro:Person` | person | obo:BFO_0000030 | 7 | A material entity that is a human being falling within the scope of anti-doping regulation or participating in its administration. |
 | `adro:ProhibitedListEdition` | Prohibited List edition | adro:InternationalStandard | 2 | An international standard that is a given edition of the Prohibited List, effective over a stated interval. |
-| `adro:ProhibitedListEntry` | Prohibited List entry | obo:IAO_0000314 | 46 | A document part of a Prohibited List edition that specifies a substance, a method, or a category thereof. |
+| `adro:ProhibitedListEntry` | Prohibited List entry | obo:IAO_0000314 | 47 | A document part of a Prohibited List edition that specifies a substance, a method, or a category thereof. |
 | `adro:ProhibitedMethodCategory` | prohibited method category | obo:IAO_0000030 | 11 | An information content entity that designates a category of prohibited methods as specified by a Prohibited List entry. |
 | `adro:ProhibitedSubstanceCategory` | prohibited substance category | obo:IAO_0000030 | 35 | An information content entity that designates a category of prohibited substances as specified by a Prohibited List entry. |
-| `adro:ProhibitionApplicability` | prohibition applicability | obo:IAO_0000001 | 504 | A conditional specification that states that a substance or method is prohibited under stated conditions of time, competition context, sport, route of administration, threshold, and jurisdiction. |
+| `adro:ProhibitionApplicability` | prohibition applicability | obo:IAO_0000001 | 505 | A conditional specification that states that a substance or method is prohibited under stated conditions of time, competition context, sport, route of administration, threshold, and jurisdiction. |
 | `adro:ProvisionalSuspensionStatus` | provisional suspension status | obo:BFO_0000023 | 2 | A role borne by a person during the interval in which that person is barred from participation before a final decision is reached. |
 | `adro:ResultsManagementProcess` | results management process | obo:BFO_0000015 | 0 | A process in which an anti-doping organization handles information bearing on whether an anti-doping rule has been violated. |
 | `adro:RouteOfAdministration` | route of administration | obo:IAO_0000030 | 12 | An information content entity that designates a route of administration on which prohibition may depend. |
@@ -73,14 +73,14 @@ Every term the ontology declares, with its definition, where it sits under the u
 | `adro:appealsAgainst` | appeals against | adro:AppealDecision | adro:Decision | 4 | Relates an appeal decision to the decision that it reconsiders. |
 | `adro:appliedEdition` | applied edition | adro:Decision | obo:IAO_0000310 | 1 | Relates a decision to the edition of a normative document that the deciding body applied. |
 | `adro:appliedProvision` | applied provision | adro:Decision | adro:InstrumentProvision | 11 | Relates a decision to the provision that the deciding body applied in reaching its determination. |
-| `adro:appliesTo` | applies to | adro:ProhibitionApplicability | adro:ChemicalSubstance | 479 | Relates a prohibition applicability to the chemical substance whose prohibition it states. |
+| `adro:appliesTo` | applies to | adro:ProhibitionApplicability | adro:ChemicalSubstance | 480 | Relates a prohibition applicability to the chemical substance whose prohibition it states. |
 | `adro:assignsType` | assigns type | adro:Decision | adro:ADRVType | 31 | Relates a decision to the violation type that the deciding body assigned to the matter. |
 | `adro:bearerOfRole` | bearer of role | adro:Person | obo:BFO_0000023 | 13 | Relates a person to a role that inheres in that person. |
 | `adro:bindsWithin` | binds within | adro:AntiDopingInstrument | adro:Jurisdiction | 5 | Relates an anti-doping instrument to the jurisdiction its own scope provision states. |
 | `adro:broaderCategory` | broader category | obo:IAO_0000030 | obo:IAO_0000030 | 56 | Relates a regulatory designation to a designation under which it falls. |
 | `adro:caseStatus` | case status | adro:CaseRecord | adro:CaseStatus | 220 | Relates a case record to the designation of the stage the matter has reached. |
 | `adro:collectedFrom` | collected from | adro:Sample | adro:Person | 0 | Relates a sample to the person from whom it was collected. |
-| `adro:competitionContext` | competition context | — | adro:CompetitionContext | 507 | Relates a prohibition applicability or a sample collection to the designation of the competition context in which it holds or occurs. |
+| `adro:competitionContext` | competition context | — | adro:CompetitionContext | 508 | Relates a prohibition applicability or a sample collection to the designation of the competition context in which it holds or occurs. |
 | `adro:concernsCase` | concerns case | — | adro:CaseRecord | 49 | Relates an entity to the case record that gathers the matter it belongs to. |
 | `adro:concernsJurisdiction` | concerns jurisdiction | — | adro:Jurisdiction | 4 | Relates a case record or a prohibition applicability to the jurisdiction within which it holds. |
 | `adro:concernsPerson` | concerns person | obo:IAO_0000030 | adro:Person | 4 | Relates an information content entity to the person it is about. |
@@ -88,7 +88,7 @@ Every term the ontology declares, with its definition, where it sits under the u
 | `adro:definedIn` | defined in | obo:IAO_0000030 | obo:IAO_0000314 | 65 | Relates a regulatory designation to the document part that specifies it. |
 | `adro:establishes` | establishes | adro:Decision | obo:BFO_0000023 | 8 | Relates a decision to the role it brings into being in the person it concerns. |
 | `adro:exemptionFor` | exemption for | adro:ExemptionStatus | adro:ChemicalSubstance | 0 | Relates an exemption status to the substance whose use it permits. |
-| `adro:hasCategory` | has category | adro:ProhibitionApplicability | — | 504 | Relates a prohibition applicability to the designation of the category under which the substance or method falls. |
+| `adro:hasCategory` | has category | adro:ProhibitionApplicability | — | 505 | Relates a prohibition applicability to the designation of the category under which the substance or method falls. |
 | `adro:hasCollectedSample` | has collected sample | adro:SampleCollection | adro:Sample | 4 | Relates a sample collection to the sample it produced. |
 | `adro:hasDecisionLimit` | has decision limit | adro:ProhibitionApplicability | adro:DecisionLimit | 6 | Relates a prohibition applicability to the decision limit above which a finding is reported. |
 | `adro:hasMeasurementUnit` | has measurement unit | — | adro:MeasurementUnit | 7 | Relates a measurement or a decision limit to the designation of the unit in which its value is expressed. |
@@ -111,7 +111,7 @@ Every term the ontology declares, with its definition, where it sits under the u
 | `adro:resultsManagementAuthority` | results management authority | adro:CaseRecord | adro:AntiDopingOrganization | 220 | Relates a case record to the organization that managed the results of the matter. |
 | `adro:routeOfAdministration` | route of administration | adro:ProhibitionApplicability | adro:RouteOfAdministration | 68 | Relates a prohibition applicability to the designation of the route of administration to which it is confined. |
 | `adro:sportScope` | sport scope | adro:ProhibitionApplicability | adro:Sport | 11 | Relates a prohibition applicability to the designation of a sport to which it is confined. |
-| `adro:statedIn` | stated in | adro:ProhibitionApplicability | adro:ProhibitedListEntry | 504 | Relates a prohibition applicability to the Prohibited List entry that states it. |
+| `adro:statedIn` | stated in | adro:ProhibitionApplicability | adro:ProhibitedListEntry | 505 | Relates a prohibition applicability to the Prohibited List entry that states it. |
 
 ## Data properties
 
@@ -122,7 +122,7 @@ Every term the ontology declares, with its definition, where it sits under the u
 | `adro:hasCaseIdentifier` | has case identifier | adro:Decision | xsd:string | 469 | The reference by which the issuing institution identifies a matter or a decision. |
 | `adro:hasCollectionDateTime` | has collection date time | adro:SampleCollection | xsd:dateTime | 4 | The time at which a sample was collected, as the source states it. |
 | `adro:hasDecisionDate` | has decision date | adro:Decision | xsd:dateTime | 214 | The date on which a decision was issued, as the decision states it. |
-| `adro:hasEffectiveFrom` | has effective from | — | xsd:dateTime | 9 | The time from which a document, an edition or a status takes effect. |
+| `adro:hasEffectiveFrom` | has effective from | — | xsd:dateTime | 10 | The time from which a document, an edition or a status takes effect. |
 | `adro:hasEffectiveTo` | has effective to | — | xsd:dateTime | 6 | The time at which a document, an edition or a status ceases to have effect. |
 | `adro:hasEndDateTime` | has end date time | obo:BFO_0000015 | xsd:dateTime | 2 | The time at which a process ended, where the source states an interval. |
 | `adro:hasExternalIdentifier` | has external identifier | obo:BFO_0000040 | xsd:string | 0 | An identifier by which an entity is known in a resource outside this ontology, written as a prefixed identifier such as CHEBI:15365. |
@@ -135,7 +135,7 @@ Every term the ontology declares, with its definition, where it sits under the u
 | `adro:hasStartDateTime` | has start date time | obo:BFO_0000015 | xsd:dateTime | 7 | The time at which a process began. |
 | `adro:hasThresholdValue` | has threshold value | adro:DecisionLimit | xsd:decimal | 6 | The numeric value at or above which a decision limit is exceeded. |
 | `adro:isSpecified` | is specified | adro:ProhibitedListEntry | xsd:boolean | 19 | Whether a Prohibited List entry is designated as specified, which governs the range of sanction available. |
-| `adro:validFrom` | valid from | adro:ProhibitionApplicability | xsd:dateTime | 504 | The time from which a prohibition applicability holds. |
+| `adro:validFrom` | valid from | adro:ProhibitionApplicability | xsd:dateTime | 505 | The time from which a prohibition applicability holds. |
 | `adro:validTo` | valid to | adro:ProhibitionApplicability | xsd:dateTime | 504 | The time at which a prohibition applicability ceases to hold. |
 
 A property with no domain or range has none asserted, because its subjects or values belong to more than one category. A property with no assertions is inferred rather than stated; the competency question report says which.

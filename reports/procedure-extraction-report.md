@@ -18,6 +18,8 @@ Appeal digests state the outcome. First instance decisions state how the matter 
 | measurement | 1 |
 | edition | 1 |
 | portion | 5 |
+| list_entry | 1 |
+| applicability | 1 |
 | appeal | 2 |
 
 ## Fields not asserted, and why

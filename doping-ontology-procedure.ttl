@@ -132,6 +132,25 @@ adro:ProhibitedList_2023 a adro:ProhibitedListEdition ;
 
 adro:Decision_NADP_SR_007_2023 adro:appliedEdition adro:ProhibitedList_2023 .
 
+adro:ProhibitedList_2023 adro:hasEffectiveFrom "2023-01-01T00:00:00"^^xsd:dateTime ;
+    rdfs:comment "As stated on the cover of World Anti-Doping Agency, The 2023 Prohibited List: This List shall come into effect on 1 January 2023."@en .
+
+adro:Entry_2023_S1_1 a adro:ProhibitedListEntry ;
+    rdfs:label "World Anti-Doping Agency 2023 Prohibited List, S1.1"@en ;
+    dcterms:title "Anabolic androgenic steroids (AAS)"@en ;
+    obo:BFO_0000176 adro:ProhibitedList_2023 ;
+    obo:IAO_0000119 "World Anti-Doping Agency, The 2023 Prohibited List" .
+
+adro:App_2023_Metandienone a adro:ProhibitionApplicability ;
+    rdfs:label "applicability of Metandienone under the World Anti-Doping Agency 2023 Prohibited List"@en ;
+    adro:appliesTo adro:Substance_Metandienone ;
+    adro:hasCategory adro:Category_S1_1 ;
+    adro:statedIn adro:Entry_2023_S1_1 ;
+    adro:validFrom "2023-01-01T00:00:00"^^xsd:dateTime ;
+    adro:competitionContext adro:Context_AtAllTimes ;
+    obo:IAO_0000119 "World Anti-Doping Agency, The 2023 Prohibited List" ;
+    rdfs:comment "Context as stated in the running header of section S1 of World Anti-Doping Agency, The 2023 Prohibited List: PROHIBITED AT ALL TIMES (IN- AND OUT-OF-COMPETITION)"@en .
+
 ########  National Anti-Doping Panel (United Kingdom) SR/056/2022  ########
 
 adro:Person_Rowland_Kaye a adro:Person ;

@@ -653,6 +653,9 @@ SELECT ?decisionId ?substanceLabel ?entryLabel ?categoryLabel ?adrvLabel ?articl
   ?cat rdfs:label ?categoryLabel .
   ?adrv rdfs:label ?adrvLabel ; adro:definedIn ?article .
   ?article rdfs:label ?articleLabel .
+  # where the decision records the List edition it applied, only that edition's entries
+  OPTIONAL { ?d adro:appliedEdition ?edition }
+  FILTER (!BOUND(?edition) || EXISTS { ?entry obo:BFO_0000176 ?edition })
 }
 
 #CQ E2 | Which violation types were determined under an instrument other than the Code, and under which instrument? | entailment: none

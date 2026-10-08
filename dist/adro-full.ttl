@@ -27,6 +27,16 @@ adro:ADRVType_Retaliation a adro:ADRVType ;
     adro:definedIn adro:Article_2021_Retaliation ;
     adro:ontologicalCharacter "process" .
 
+adro:App_2023_Metandienone a adro:ProhibitionApplicability ;
+    rdfs:label "applicability of Metandienone under the World Anti-Doping Agency 2023 Prohibited List"@en ;
+    obo:IAO_0000119 "World Anti-Doping Agency, The 2023 Prohibited List" ;
+    rdfs:comment "Context as stated in the running header of section S1 of World Anti-Doping Agency, The 2023 Prohibited List: PROHIBITED AT ALL TIMES (IN- AND OUT-OF-COMPETITION)"@en ;
+    adro:appliesTo adro:Substance_Metandienone ;
+    adro:competitionContext adro:Context_AtAllTimes ;
+    adro:hasCategory adro:Category_S1_1 ;
+    adro:statedIn adro:Entry_2023_S1_1 ;
+    adro:validFrom "2023-01-01T00:00:00"^^xsd:dateTime .
+
 adro:App_2026_11_Ketoandrostenedione a adro:ProhibitionApplicability ;
     rdfs:label "applicability of 11-Ketoandrostenedione under the 2026 Prohibited List"@en ;
     rdfs:comment "Context as stated in the running header of section S1: PROHIBITED AT ALL TIMES (IN- AND OUT-OF-COMPETITION)"@en ;
@@ -9579,6 +9589,12 @@ adro:DrugControlCentre_KCL a adro:Laboratory ;
     obo:IAO_0000119 "National Anti-Doping Panel (United Kingdom) SR/007/2023" ;
     rdfs:comment "As stated in National Anti-Doping Panel (United Kingdom) SR/007/2023: Both Samples were transported to the World Anti-Doping Agency accredited laboratory, the Drug Control Centre, King's College London."@en .
 
+adro:Entry_2023_S1_1 a adro:ProhibitedListEntry ;
+    rdfs:label "World Anti-Doping Agency 2023 Prohibited List, S1.1"@en ;
+    obo:BFO_0000176 adro:ProhibitedList_2023 ;
+    obo:IAO_0000119 "World Anti-Doping Agency, The 2023 Prohibited List" ;
+    dcterms:title "Anabolic androgenic steroids (AAS)"@en .
+
 adro:Entry_2026_M1_1 a adro:ProhibitedListEntry ;
     rdfs:label "The 2026 Prohibited List, M1.1"@en ;
     obo:BFO_0000176 adro:ProhibitedList_2026 ;
@@ -9854,12 +9870,6 @@ adro:NoticeOfAppeal_NADP_SR_389_2024 a adro:NoticeOfAppeal ;
     rdfs:comment "As stated in National Anti-Doping Panel Appeal Tribunal (United Kingdom) SR/389/2024: The Appellant appeals by way of a Notice and Grounds of Appeal dated 7 November 2024."@en ;
     adro:concernsCase adro:CaseRecord_NADP_SR_389_2024 ;
     adro:hasIssueDateTime "2024-11-07T00:00:00"^^xsd:dateTime .
-
-adro:ProhibitedList_2023 a adro:ProhibitedListEdition ;
-    rdfs:label "World Anti-Doping Agency 2023 Prohibited List"@en ;
-    obo:IAO_0000119 "National Anti-Doping Panel (United Kingdom) SR/007/2023" ;
-    rdfs:comment "As stated in National Anti-Doping Panel (United Kingdom) SR/007/2023: Metandienone is listed under section 1.1 of the WADA 2023 Prohibited List as an Anabolic Androgenic Steroid. It is a non-Specified Substance that is prohibited at all times."@en ;
-    adro:issuedBy adro:WADA .
 
 adro:ProvisionalSuspension_NADP_SR_007_2023 a adro:ProvisionalSuspensionStatus ;
     rdfs:label "provisional suspension in National Anti-Doping Panel (United Kingdom) SR/007/2023"@en ;
@@ -11693,6 +11703,14 @@ adro:ProhibitedListEdition a owl:Class ;
     obo:IAO_0000115 "An international standard that is a given edition of the Prohibited List, effective over a stated interval."@en ;
     rdfs:subClassOf adro:InternationalStandard .
 
+adro:ProhibitedList_2023 a adro:ProhibitedListEdition ;
+    rdfs:label "World Anti-Doping Agency 2023 Prohibited List"@en ;
+    obo:IAO_0000119 "National Anti-Doping Panel (United Kingdom) SR/007/2023" ;
+    rdfs:comment "As stated in National Anti-Doping Panel (United Kingdom) SR/007/2023: Metandienone is listed under section 1.1 of the WADA 2023 Prohibited List as an Anabolic Androgenic Steroid. It is a non-Specified Substance that is prohibited at all times."@en,
+        "As stated on the cover of World Anti-Doping Agency, The 2023 Prohibited List: This List shall come into effect on 1 January 2023."@en ;
+    adro:hasEffectiveFrom "2023-01-01T00:00:00"^^xsd:dateTime ;
+    adro:issuedBy adro:WADA .
+
 adro:SamplePortion_AAA_30_190_00170_07_A a adro:SamplePortion ;
     rdfs:label "A portion 496040 in American Arbitration Association case 30 190 00170 07"@en ;
     obo:IAO_0000119 "American Arbitration Association case 30 190 00170 07" ;
@@ -12682,9 +12700,6 @@ adro:Sport_Weightlifting a adro:Sport ;
     rdfs:label "Weightlifting"@en ;
     rdfs:comment "As stated in the award headnotes: Weightlifting."@en .
 
-adro:Substance_Metandienone a adro:ChemicalSubstance ;
-    rdfs:label "Metandienone"@en .
-
 adro:UKADRules_2021 a adro:NationalAntiDopingRule ;
     rdfs:label "UK Anti-Doping Rules, 1 January 2021"@en ;
     adro:bindsWithin adro:Jurisdiction_UK .
@@ -12701,6 +12716,9 @@ adro:Substance_Cocaine a adro:ChemicalSubstance ;
 
 adro:Substance_Furosemide a adro:ChemicalSubstance ;
     rdfs:label "Furosemide"@en .
+
+adro:Substance_Metandienone a adro:ChemicalSubstance ;
+    rdfs:label "Metandienone"@en .
 
 adro:Substance_Methylhexaneamine a adro:ChemicalSubstance ;
     rdfs:label "Methylhexaneamine"@en .

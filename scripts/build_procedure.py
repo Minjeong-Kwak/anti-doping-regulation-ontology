@@ -53,6 +53,12 @@ CASES = {
      "Metandienone is listed under section 1.1 of the WADA 2023 Prohibited List as an "
      "Anabolic Androgenic Steroid. It is a non-Specified Substance that is prohibited at "
      "all times"),
+   list_text=dict(src="World Anti-Doping Agency, The 2023 Prohibited List",
+     effective_from="2023-01-01",
+     effective_quote="This List shall come into effect on 1 January 2023",
+     entries=[("Entry_2023_S1_1", "S1.1", "Anabolic androgenic steroids (AAS)",
+               "Metandienone", "Metandienone", "Category_S1_1", "Context_AtAllTimes",
+               "PROHIBITED AT ALL TIMES (IN- AND OUT-OF-COMPETITION)")]),
    notices=[("Notice", "2023-08-09",
      "On 9 August 2023, UKAD sent a letter (the 'Notice Letter') to the Athlete formally "
      "notifying him that he may have committed"),
@@ -377,6 +383,31 @@ def main(out, report):
                      f'    obo:IAO_0000119 "{src}" ;\n'
                      f'    rdfs:comment "As stated in {src}: {esc(equote)}."@en .\n\n')
             o.append(f'adro:Decision_{case} adro:appliedEdition adro:{eid} .\n\n')
+            # the List edition itself, where its text is held: when it came into
+            # effect, the entry the decision relied on, and the applicability that
+            # entry states for the substance the decision named
+            if d.get("list_text"):
+                lt = d["list_text"]
+                lsrc = lt["src"]
+                o.append(f'adro:{eid} adro:hasEffectiveFrom {dt(lt["effective_from"])} ;\n'
+                         f'    rdfs:comment "As stated on the cover of {lsrc}: {esc(lt["effective_quote"])}."@en .\n\n')
+                for (entry, number, title, sub, sublabel, cat, ctx, ctxquote) in lt["entries"]:
+                    counts["list_entry"] = counts.get("list_entry", 0) + 1
+                    o.append(f'adro:{entry} a adro:ProhibitedListEntry ;\n'
+                             f'    rdfs:label "{ename}, {number}"@en ;\n'
+                             f'    dcterms:title "{title}"@en ;\n'
+                             f'    obo:BFO_0000176 adro:{eid} ;\n'
+                             f'    obo:IAO_0000119 "{lsrc}" .\n\n')
+                    counts["applicability"] = counts.get("applicability", 0) + 1
+                    o.append(f'adro:App_{eid.split("_")[-1]}_{sub} a adro:ProhibitionApplicability ;\n'
+                             f'    rdfs:label "applicability of {sublabel} under the {ename}"@en ;\n'
+                             f'    adro:appliesTo adro:Substance_{sub} ;\n'
+                             f'    adro:hasCategory adro:{cat} ;\n'
+                             f'    adro:statedIn adro:{entry} ;\n'
+                             f'    adro:validFrom {dt(lt["effective_from"])} ;\n'
+                             f'    adro:competitionContext adro:{ctx} ;\n'
+                             f'    obo:IAO_0000119 "{lsrc}" ;\n'
+                             f'    rdfs:comment "Context as stated in the running header of section S1 of {lsrc}: {esc(ctxquote)}"@en .\n\n')
         else:
             omitted.append((src, "Prohibited List edition",
                             "the decision refers to the Prohibited List without naming an edition"))
