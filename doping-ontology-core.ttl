@@ -16,8 +16,7 @@
                 <http://purl.obolibrary.org/obo/iao.owl> ;
     dcterms:title "Anti-Doping Regulation Ontology (core)"@en ;
     dcterms:description "A BFO- and IAO-aligned ontology for anti-doping regulatory information, distinguishing normative documents, regulatory designations, procedural occurrents, and records of decisions."@en ;
-    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    rdfs:comment "Base IRI registration pending. Do not treat https://w3id.org/adro/ as resolvable until registered."@en .
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> .
 
 # Annotation properties reused from IAO
 obo:IAO_0000115 a owl:AnnotationProperty ; rdfs:label "definition"@en .

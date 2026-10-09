@@ -11,7 +11,7 @@ Generated from the files by `scripts/build_documentation.py`.
 | data properties | 20 |
 | named individuals | 1767 |
 | decisions | 220 |
-| triples, summed over the modules | 11282 |
+| triples, summed over the modules | 11281 |
 | triples, `dist/adro-full.ttl` | 11249 |
 | classes with a definition | 57 of 57 |
 | properties with a definition | 64 of 64 |
@@ -20,7 +20,7 @@ Generated from the files by `scripts/build_documentation.py`.
 
 | module | triples |
 |---|---|
-| `doping-ontology-core.ttl` | 838 |
+| `doping-ontology-core.ttl` | 837 |
 | `doping-ontology-designations.ttl` | 769 |
 | `doping-ontology-substances.ttl` | 5399 |
 | `doping-ontology-analytes.ttl` | 47 |
