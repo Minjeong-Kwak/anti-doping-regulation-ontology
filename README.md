@@ -7,7 +7,7 @@ Artifact Ontology.
 
 - Base IRI: `https://w3id.org/adro/`
 - Licence: [CC BY 4.0](LICENSE)
-- Authors: Minjeong Kwak, Jun-Phil Uhm, Minkyu Kim
+- Authors: Minkyu Kim, Minjeong Kwak, Jun-Phil Uhm
 
 ## What is here
 
